@@ -1,0 +1,4736 @@
+{
+  "1353622291950469191": [
+    {
+      "reportType": "mandat",
+      "ticketTarget": "vehicle",
+      "civilianDiscordId": "1353622291950469191",
+      "civilianFullName": "",
+      "vehicleInfo": "Renault,czarny",
+      "licensePlate": "BCQ-307",
+      "charges": [
+        {
+          "id": 7,
+          "category": "drogowe",
+          "name": "Zły stan techniczny pojazdu / Brak OC / Brak badania technicznego",
+          "price": 1750,
+          "lata": 0
+        },
+        {
+          "id": 4,
+          "category": "drogowe",
+          "name": "Brawurowa jazda",
+          "price": 3750,
+          "lata": 0
+        }
+      ],
+      "totalFine": 5500,
+      "location": "Brookmere",
+      "isAccepted": "Tak",
+      "deliveryMethod": "do ręki",
+      "photoUrl": "",
+      "id": "e40e58f9-a9c6-451d-ad48-8101292b191a",
+      "issueDate": "2025-12-21T18:58:47.802Z",
+      "author": "Mariusz Wojciechowski",
+      "authorBadge": "188",
+      "department": "WSP"
+    }
+  ],
+  "1260608955437023323": [
+    {
+      "reportType": "mandat",
+      "ticketTarget": "vehicle",
+      "civilianDiscordId": "1260608955437023323",
+      "civilianFullName": "",
+      "vehicleInfo": "BMW, W40, Szary",
+      "licensePlate": "XVX / California",
+      "charges": [
+        {
+          "id": 8,
+          "category": "drogowe",
+          "name": "Przejazd na czerwonym świetle / Znaku STOP",
+          "price": 1100,
+          "lata": 0
+        },
+        {
+          "id": 5,
+          "category": "drogowe",
+          "name": "Stwarzanie zagrożenia w ruchu drogowym",
+          "price": 3750,
+          "lata": 0
+        }
+      ],
+      "totalFine": 4850,
+      "location": "Parking przed zjazdem na Brookmere",
+      "isAccepted": "Tak",
+      "deliveryMethod": "do ręki",
+      "photoUrl": "",
+      "id": "c9e607b4-b075-485b-9474-4f59f2d634df",
+      "issueDate": "2025-12-22T22:20:26.296Z",
+      "author": "Ethan Davies",
+      "authorBadge": "201",
+      "department": "WSP"
+    },
+    {
+      "reportType": "mandat",
+      "ticketTarget": "vehicle",
+      "civilianDiscordId": "1260608955437023323",
+      "civilianFullName": "",
+      "vehicleInfo": "Bmw m4 szare",
+      "licensePlate": "XVX/California",
+      "charges": [
+        {
+          "id": 21,
+          "category": "drogowe",
+          "name": "Gazowanie na światłach / Drifty",
+          "price": 1750,
+          "lata": 0
+        },
+        {
+          "id": 8,
+          "category": "drogowe",
+          "name": "Przejazd na czerwonym świetle / Znaku STOP",
+          "price": 1100,
+          "lata": 0
+        }
+      ],
+      "totalFine": 2850,
+      "location": "wyjazd z brookmere (tor wyscigowy)",
+      "isAccepted": "Tak",
+      "deliveryMethod": "do ręki",
+      "photoUrl": "",
+      "id": "8ee95ac9-6a9d-4cb3-b7e9-823a51d4fd36",
+      "issueDate": "2025-12-22T19:26:43.326Z",
+      "author": "Natan West",
+      "authorBadge": "130",
+      "department": "WSP"
+    },
+    {
+      "reportType": "areszt",
+      "officerDiscordId": "1222192916009848858",
+      "civilianDiscordId": "1260608955437023323",
+      "civilianFullName": "Adrian West",
+      "civilianAge": "23",
+      "civilianGender": "M",
+      "confiscatedItems": "Wszelkie rzeczy służbowe jak i osobiste",
+      "photoUrl": "https://i.imgur.com/OdO1Y99.png",
+      "arrestLocation": "Główne skrzyżowanie łączące Brookmare z innymi miejscami",
+      "jailLocation": "WSP",
+      "charges": [
+        {
+          "id": 125,
+          "category": "lekkie",
+          "name": "Paserstwo (poniżej $2000)",
+          "price": 4255,
+          "lata": 10
+        },
+        {
+          "id": 113,
+          "category": "lekkie",
+          "name": "Próba przekupstwa",
+          "price": 8500,
+          "lata": 0
+        }
+      ],
+      "finalTotalFine": 12755,
+      "finalSentence": 10,
+      "id": "a9a64e48-22f0-4009-a76d-7e962814f3fe",
+      "issueDate": "2025-12-21T23:20:46.910Z",
+      "author": "Franciszek Trawa",
+      "authorBadge": "140",
+      "department": "WSP"
+    },
+    {
+      "reportType": "pouczenie",
+      "ticketTarget": "vehicle",
+      "civilianDiscordId": "1260608955437023323",
+      "civilianFullName": "",
+      "vehicleInfo": "BKM W40 szare",
+      "licensePlate": "XVX / California",
+      "charges": [
+        {
+          "id": 509,
+          "category": "predkosc",
+          "name": "Przekroczenie ponad 90 MPH na autostradzie + zabranie prawa jazdy",
+          "price": 9750,
+          "lata": 0
+        }
+      ],
+      "totalFine": 9750,
+      "location": "Za pierwszym miejscem postojowym na autostradzie od strony Roadmapa",
+      "isAccepted": "Tak",
+      "deliveryMethod": "do ręki",
+      "photoUrl": "",
+      "id": "877a00fb-353f-49f8-9f21-299623119c68",
+      "issueDate": "2025-12-21T19:02:58.914Z",
+      "author": "Franciszek Trawa",
+      "authorBadge": "140",
+      "department": "WSP"
+    }
+  ],
+  "1353600600448831529": [
+    {
+      "reportType": "mandat",
+      "ticketTarget": "vehicle",
+      "civilianDiscordId": "1353600600448831529",
+      "civilianFullName": "",
+      "vehicleInfo": "Audi RS5 sportback biały",
+      "licensePlate": "DBO-977 / California",
+      "charges": [
+        {
+          "id": 8,
+          "category": "drogowe",
+          "name": "Przejazd na czerwonym świetle / Znaku STOP",
+          "price": 1100,
+          "lata": 0
+        }
+      ],
+      "totalFine": 1100,
+      "location": "Osiedle przy mini lotnisku",
+      "isAccepted": "Tak",
+      "deliveryMethod": "do ręki",
+      "photoUrl": "",
+      "id": "4550b39c-d74c-47e0-8276-b023c214b029",
+      "issueDate": "2025-12-28T19:43:33.020Z",
+      "author": "Franciszek Trawa",
+      "authorBadge": "118",
+      "department": "WSP"
+    },
+    {
+      "reportType": "mandat",
+      "ticketTarget": "vehicle",
+      "civilianDiscordId": "1353600600448831529",
+      "civilianFullName": "",
+      "vehicleInfo": "Bullhorn,szary",
+      "licensePlate": "DSQ-540",
+      "charges": [
+        {
+          "id": 5,
+          "category": "drogowe",
+          "name": "Stwarzanie zagrożenia w ruchu drogowym",
+          "price": 3750,
+          "lata": 0
+        }
+      ],
+      "totalFine": 3750,
+      "location": "Lotnisko brookmere ",
+      "isAccepted": "Tak",
+      "deliveryMethod": "do ręki",
+      "photoUrl": "",
+      "id": "784a9b31-ed45-440d-b1d2-0f26abdabfcb",
+      "issueDate": "2025-12-21T19:30:40.636Z",
+      "author": "Mariusz Wojciechowski",
+      "authorBadge": "188",
+      "department": "WSP"
+    }
+  ],
+  "1364910519194095646": [
+    {
+      "reportType": "mandat",
+      "ticketTarget": "vehicle",
+      "civilianDiscordId": "1364910519194095646",
+      "civilianFullName": "",
+      "vehicleInfo": "BKM W40 Szare",
+      "licensePlate": "XVX / California",
+      "charges": [
+        {
+          "id": 25,
+          "category": "drogowe",
+          "name": "Nadmierne używanie sygnału dźwiękowego / świateł drogowych",
+          "price": 750,
+          "lata": 0
+        }
+      ],
+      "totalFine": 750,
+      "location": "Jarmark Brookmare",
+      "isAccepted": "Tak",
+      "deliveryMethod": "do ręki",
+      "photoUrl": "",
+      "id": "c8e718bf-9c21-4a0c-beb3-64fee3d9eac0",
+      "issueDate": "2025-12-28T23:33:05.845Z",
+      "author": "Franciszek Trawa",
+      "authorBadge": "118",
+      "department": "WSP"
+    },
+    {
+      "reportType": "areszt",
+      "officerDiscordId": "1129788250958090271",
+      "civilianDiscordId": "1364910519194095646",
+      "civilianFullName": "Alex Samr",
+      "civilianAge": "25",
+      "civilianGender": "M",
+      "confiscatedItems": "Banan, telefon",
+      "photoUrl": "https://i.imgur.com/08aYjhg.png",
+      "arrestLocation": "Nowy komis samochodowy",
+      "jailLocation": "WSP",
+      "charges": [
+        {
+          "id": 201,
+          "category": "ciezkie",
+          "name": "Ucieczka przed WSP",
+          "price": 9500,
+          "lata": 25
+        },
+        {
+          "id": 21,
+          "category": "drogowe",
+          "name": "Gazowanie na światłach / Drifty",
+          "price": 1750,
+          "lata": 0
+        }
+      ],
+      "finalTotalFine": 11250,
+      "finalSentence": 25,
+      "id": "b136af7c-18c7-4a3c-9ebb-4a2973dacf1a",
+      "issueDate": "2025-12-25T22:18:10.959Z",
+      "author": "John Davis",
+      "authorBadge": "101",
+      "department": "WSP"
+    },
+    {
+      "reportType": "mandat",
+      "ticketTarget": "vehicle",
+      "civilianDiscordId": "1364910519194095646",
+      "civilianFullName": "",
+      "vehicleInfo": "Audi rs7, czarny",
+      "licensePlate": "WN22",
+      "charges": [
+        {
+          "id": 21,
+          "category": "drogowe",
+          "name": "Gazowanie na światłach / Drifty",
+          "price": 1750,
+          "lata": 0
+        }
+      ],
+      "totalFine": 1750,
+      "location": "Brookmere Square ",
+      "isAccepted": "Tak",
+      "deliveryMethod": "do ręki",
+      "photoUrl": "",
+      "id": "4f110e17-a5c9-45b0-825a-5258059c8885",
+      "issueDate": "2025-12-22T21:56:32.811Z",
+      "author": "Mariusz Wojciechowski",
+      "authorBadge": "188",
+      "department": "WSP"
+    },
+    {
+      "reportType": "mandat",
+      "ticketTarget": "vehicle",
+      "civilianDiscordId": "1364910519194095646",
+      "civilianFullName": "",
+      "vehicleInfo": "2024 Audi RS7 Performance Sportback Czarne",
+      "licensePlate": "WN22, NY",
+      "charges": [
+        {
+          "id": 18,
+          "category": "drogowe",
+          "name": "Jazda pod prąd",
+          "price": 3250,
+          "lata": 0
+        }
+      ],
+      "totalFine": 3250,
+      "location": "Obok Dom's Workshop",
+      "isAccepted": "Nie",
+      "deliveryMethod": "do ręki",
+      "photoUrl": "",
+      "id": "df97fd8d-37c9-486c-93d0-1910f9ec7d32",
+      "issueDate": "2025-12-21T19:37:36.700Z",
+      "author": "Natalia Castelano Wilczek",
+      "authorBadge": "104",
+      "department": "WSP"
+    }
+  ],
+  "1213878375358275666": [
+    {
+      "reportType": "mandat",
+      "ticketTarget": "vehicle",
+      "civilianDiscordId": "1213878375358275666",
+      "civilianFullName": "",
+      "vehicleInfo": "BKM e40 Szare",
+      "licensePlate": "OCH-544 / California",
+      "charges": [
+        {
+          "id": 40,
+          "category": "drogowe",
+          "name": "Zatrzymanie się w miejscu niedozwolonym",
+          "price": 2250,
+          "lata": 0
+        }
+      ],
+      "totalFine": 2250,
+      "location": "Urząd Brookmare",
+      "isAccepted": "Tak",
+      "deliveryMethod": "do ręki",
+      "photoUrl": "https://i.imgur.com/RS40b16.png",
+      "id": "28eea5c7-bf67-4012-ac85-c39818a582c4",
+      "issueDate": "2025-12-23T19:49:24.968Z",
+      "author": "Franciszek Trawa",
+      "authorBadge": "140",
+      "department": "WSP"
+    },
+    {
+      "reportType": "pouczenie",
+      "ticketTarget": "vehicle",
+      "civilianDiscordId": "1213878375358275666",
+      "civilianFullName": "",
+      "vehicleInfo": "BMW M4, Srebrny",
+      "licensePlate": "OCH-544 | California",
+      "charges": [
+        {
+          "id": 25,
+          "category": "drogowe",
+          "name": "Nadmierne używanie sygnału dźwiękowego / świateł drogowych",
+          "price": 750,
+          "lata": 0
+        }
+      ],
+      "totalFine": 750,
+      "location": "Brookmere Square",
+      "isAccepted": "Tak",
+      "deliveryMethod": "do ręki",
+      "photoUrl": "",
+      "id": "26b09185-2e99-4225-8250-dde750b0ff62",
+      "issueDate": "2025-12-21T19:54:15.614Z",
+      "author": "John Jacob Byrd",
+      "authorBadge": "103",
+      "department": "WSP"
+    }
+  ],
+  "1367181113994510346": [
+    {
+      "reportType": "areszt",
+      "officerDiscordId": "947919909583728680",
+      "civilianDiscordId": "1367181113994510346",
+      "civilianFullName": "Khloe Gold",
+      "civilianAge": "17",
+      "civilianGender": "K",
+      "confiscatedItems": "Telefon, Pusty portfel (na pokaz)",
+      "photoUrl": "https://i.imgur.com/iBP4VuH.png",
+      "arrestLocation": "Wyjazd z Brookmere w prawo,",
+      "jailLocation": "WSP",
+      "charges": [
+        {
+          "id": 16,
+          "category": "drogowe",
+          "name": "Jazda bez prawa jazdy, przedłużenie zabrania o 7 dni + odcholowanie pojazdu na parking WSP",
+          "price": 9500,
+          "lata": 10
+        },
+        {
+          "id": 5,
+          "category": "drogowe",
+          "name": "Stwarzanie zagrożenia w ruchu drogowym",
+          "price": 3750,
+          "lata": 0
+        }
+      ],
+      "finalTotalFine": 13250,
+      "finalSentence": 10,
+      "id": "460bb9b8-22b0-49da-967f-f6ab89a62e1e",
+      "issueDate": "2025-12-22T19:55:01.808Z",
+      "author": "Adam Wilczek",
+      "authorBadge": "102",
+      "department": "WSP"
+    },
+    {
+      "reportType": "mandat",
+      "ticketTarget": "vehicle",
+      "civilianDiscordId": "1367181113994510346",
+      "civilianFullName": "",
+      "vehicleInfo": "2025 Audi RS Q8 Performante Czerwone",
+      "licensePlate": "VDY-418, WI",
+      "charges": [
+        {
+          "id": 509,
+          "category": "predkosc",
+          "name": "Przekroczenie ponad 90 MPH na autostradzie + zabranie prawa jazdy",
+          "price": 9750,
+          "lata": 0
+        }
+      ],
+      "totalFine": 9750,
+      "location": "Zjazd na HWY41",
+      "isAccepted": "Tak",
+      "deliveryMethod": "elektroniczny",
+      "photoUrl": "",
+      "id": "937ae2f6-b398-40a0-989a-ecb464ecc7ff",
+      "issueDate": "2025-12-21T20:00:53.681Z",
+      "author": "Natalie Castellano-Wilczek",
+      "authorBadge": "104",
+      "department": "WSP"
+    }
+  ],
+  "1260566769911861258": [
+    {
+      "reportType": "mandat",
+      "ticketTarget": "vehicle",
+      "civilianDiscordId": "1260566769911861258",
+      "civilianFullName": "",
+      "vehicleInfo": "Elgrand Horizon",
+      "licensePlate": "EBK-802",
+      "charges": [
+        {
+          "id": 508,
+          "category": "predkosc",
+          "name": "Przekroczenie ponad 80 MPH + zabranie prawa jazdy",
+          "price": 10750,
+          "lata": 0
+        },
+        {
+          "id": 102,
+          "category": "lekkie",
+          "name": "Niewykonywanie poleceń FP",
+          "price": 4000,
+          "lata": 0
+        }
+      ],
+      "totalFine": 14750,
+      "location": "Przed mostem wodospad",
+      "isAccepted": "Tak",
+      "deliveryMethod": "do ręki",
+      "photoUrl": "",
+      "id": "58b5dc7f-5316-4f9c-928e-08c59f30bdf9",
+      "issueDate": "2025-12-21T20:48:04.529Z",
+      "author": "Adam Wilczek",
+      "authorBadge": "102",
+      "department": "WSP"
+    },
+    {
+      "reportType": "mandat",
+      "ticketTarget": "vehicle",
+      "civilianDiscordId": "1260566769911861258",
+      "civilianFullName": "",
+      "vehicleInfo": "2008 Elgrand Horizon Sport RWD Biały",
+      "licensePlate": "EBK-802, WI",
+      "charges": [
+        {
+          "id": 21,
+          "category": "drogowe",
+          "name": "Gazowanie na światłach / Drifty",
+          "price": 1750,
+          "lata": 0
+        }
+      ],
+      "totalFine": 1750,
+      "location": "Parking obok placu zabaw w Brookmere",
+      "isAccepted": "Tak",
+      "deliveryMethod": "do ręki",
+      "photoUrl": "",
+      "id": "5e4d703c-daf6-4123-ab22-ae8134a2da5c",
+      "issueDate": "2025-12-21T20:30:06.661Z",
+      "author": "Natalie Castellano-Wilczek",
+      "authorBadge": "104",
+      "department": "WSP"
+    }
+  ],
+  "1184145464468193320": [
+    {
+      "reportType": "mandat",
+      "ticketTarget": "vehicle",
+      "civilianDiscordId": "1184145464468193320",
+      "civilianFullName": "",
+      "vehicleInfo": "Celestial Type-5 Czarne",
+      "licensePlate": "TT-2 / Wisconsin",
+      "charges": [
+        {
+          "id": 7,
+          "category": "drogowe",
+          "name": "Zły stan techniczny pojazdu / Brak OC / Brak badania technicznego",
+          "price": 1750,
+          "lata": 0
+        }
+      ],
+      "totalFine": 1750,
+      "location": "Most na autostradzie (nad rzeką)",
+      "isAccepted": "Tak",
+      "deliveryMethod": "do ręki",
+      "photoUrl": "",
+      "id": "d05feedc-e5d3-4794-9a75-da264c61f2fb",
+      "issueDate": "2025-12-21T21:03:08.496Z",
+      "author": "Franciszek Trawa",
+      "authorBadge": "140",
+      "department": "WSP"
+    }
+  ],
+  "941595879348002847": [
+    {
+      "reportType": "pouczenie",
+      "ticketTarget": "vehicle",
+      "civilianDiscordId": "941595879348002847",
+      "civilianFullName": "",
+      "vehicleInfo": "2026 Celestial Type-6 Czarne",
+      "licensePlate": "VICY, Wisconsin",
+      "charges": [
+        {
+          "id": 500,
+          "category": "predkosc",
+          "name": "Przekroczenie do 6 MPH ponad limit",
+          "price": 500,
+          "lata": 0
+        }
+      ],
+      "totalFine": 500,
+      "location": "HWY 41",
+      "isAccepted": "Tak",
+      "deliveryMethod": "do ręki",
+      "photoUrl": "",
+      "id": "c92acc3f-5e54-4988-92a0-a624ad36d7fe",
+      "issueDate": "2025-12-21T21:15:17.635Z",
+      "author": "Natalie Castellano-Wilczek",
+      "authorBadge": "104",
+      "department": "WSP"
+    }
+  ],
+  "1261380904627208253": [
+    {
+      "reportType": "mandat",
+      "ticketTarget": "vehicle",
+      "civilianDiscordId": "1261380904627208253",
+      "civilianFullName": "",
+      "vehicleInfo": "Stuttgart",
+      "licensePlate": "AOM 53G / Tenneesse",
+      "charges": [
+        {
+          "id": 220,
+          "category": "ciezkie",
+          "name": "Włamanie",
+          "price": 8500,
+          "lata": 20
+        },
+        {
+          "id": 221,
+          "category": "ciezkie",
+          "name": "Napaśc z użyciem broni",
+          "price": 15500,
+          "lata": 40
+        },
+        {
+          "id": 222,
+          "category": "ciezkie",
+          "name": "Próba odbicia z konwoju PD",
+          "price": 22500,
+          "lata": 40
+        },
+        {
+          "id": 223,
+          "category": "ciezkie",
+          "name": "Ucieczka z konowju PD",
+          "price": 32500,
+          "lata": 50
+        },
+        {
+          "id": 224,
+          "category": "ciezkie",
+          "name": "Pomoc w ucieczce z konwoju PD",
+          "price": 22500,
+          "lata": 40
+        },
+        {
+          "id": 407,
+          "category": "sila",
+          "name": "Morderstwo",
+          "price": 125000,
+          "lata": 300
+        },
+        {
+          "id": 406,
+          "category": "sila",
+          "name": "Udział w bójce",
+          "price": 8500,
+          "lata": 0
+        },
+        {
+          "id": 405,
+          "category": "sila",
+          "name": "Naruszenie nietykalności cielestnej / Dóbr osobistych",
+          "price": 12500,
+          "lata": 10
+        },
+        {
+          "id": 404,
+          "category": "sila",
+          "name": "Nieumyślne spowodowanie uszczerbku na zdrowiu",
+          "price": 12500,
+          "lata": 10
+        },
+        {
+          "id": 403,
+          "category": "sila",
+          "name": "Groźby karalne",
+          "price": 6750,
+          "lata": 10
+        },
+        {
+          "id": 402,
+          "category": "sila",
+          "name": "Napaść na FP",
+          "price": 22750,
+          "lata": 35
+        },
+        {
+          "id": 401,
+          "category": "sila",
+          "name": "Usiłowanie zabójstwa FP",
+          "price": 95000,
+          "lata": 190
+        },
+        {
+          "id": 400,
+          "category": "sila",
+          "name": "Usiłowanie zabójstwa obywatela",
+          "price": 70500,
+          "lata": 110
+        }
+      ],
+      "totalFine": 455000,
+      "location": "Pierwszy Zakret Odrazu Za Zjazdem Na Tor",
+      "isAccepted": "Tak",
+      "deliveryMethod": "do ręki",
+      "photoUrl": "",
+      "id": "84458bb8-7137-4402-b8e3-a1c7550b8f2d",
+      "issueDate": "2025-12-29T18:02:34.718Z"
+    },
+    {
+      "reportType": "mandat",
+      "ticketTarget": "vehicle",
+      "civilianDiscordId": "1261380904627208253",
+      "civilianFullName": "",
+      "vehicleInfo": "Porsche, 911 Turbo s, czarny",
+      "licensePlate": "WEST / WISCONSIN",
+      "charges": [
+        {
+          "id": 4,
+          "category": "drogowe",
+          "name": "Brawurowa jazda",
+          "price": 3750,
+          "lata": 0
+        }
+      ],
+      "totalFine": 3750,
+      "location": "Skatepark",
+      "isAccepted": "Tak",
+      "deliveryMethod": "do ręki",
+      "photoUrl": "",
+      "id": "f3563341-3966-4973-92e7-1f799d031bc2",
+      "issueDate": "2025-12-27T00:10:07.268Z",
+      "author": "Ethan Davies",
+      "authorBadge": "201",
+      "department": "WSP"
+    },
+    {
+      "reportType": "areszt",
+      "officerDiscordId": "1222192916009848858",
+      "civilianDiscordId": "1261380904627208253",
+      "civilianFullName": "Mathew South",
+      "civilianAge": "26",
+      "civilianGender": "M",
+      "confiscatedItems": "Telefon ",
+      "photoUrl": "",
+      "arrestLocation": "Centrum Brookmare",
+      "jailLocation": "WSP",
+      "charges": [
+        {
+          "id": 114,
+          "category": "lekkie",
+          "name": "Kradzież radiowozu",
+          "price": 22500,
+          "lata": 30
+        }
+      ],
+      "finalTotalFine": 52500,
+      "finalSentence": 0,
+      "id": "f0df7674-8536-4bd1-8219-43115b6ad794",
+      "issueDate": "2025-12-24T22:18:44.795Z",
+      "author": "Franciszek Trawa",
+      "authorBadge": "140",
+      "department": "WSP"
+    },
+    {
+      "reportType": "pouczenie",
+      "ticketTarget": "vehicle",
+      "civilianDiscordId": "1261380904627208253",
+      "civilianFullName": "",
+      "vehicleInfo": "Falcon, Distinct, Czarny",
+      "licensePlate": "WYU-974",
+      "charges": [
+        {
+          "id": 25,
+          "category": "drogowe",
+          "name": "Nadmierne używanie sygnału dźwiękowego / świateł drogowych",
+          "price": 750,
+          "lata": 0
+        }
+      ],
+      "totalFine": 750,
+      "location": "Brookmere centrum",
+      "isAccepted": "Tak",
+      "deliveryMethod": "do ręki",
+      "photoUrl": "",
+      "id": "11368a17-e034-444e-b4ef-16626d2952a0",
+      "issueDate": "2025-12-22T21:18:21.261Z",
+      "author": "Ethan Davies",
+      "authorBadge": "201",
+      "department": "WSP"
+    },
+    {
+      "reportType": "mandat",
+      "ticketTarget": "vehicle",
+      "civilianDiscordId": "1261380904627208253",
+      "civilianFullName": "",
+      "vehicleInfo": "Audi, Rs3, Niebieski",
+      "licensePlate": "WWL-298 / Texas",
+      "charges": [
+        {
+          "id": 5,
+          "category": "drogowe",
+          "name": "Stwarzanie zagrożenia w ruchu drogowym",
+          "price": 3750,
+          "lata": 0
+        },
+        {
+          "id": 11,
+          "category": "drogowe",
+          "name": "Winny kolizji drogowej",
+          "price": 2150,
+          "lata": 0
+        }
+      ],
+      "totalFine": 5900,
+      "location": "Brookmere ",
+      "isAccepted": "Nie",
+      "deliveryMethod": "do ręki",
+      "photoUrl": "",
+      "id": "f6999046-6b33-4115-b5ee-65e1aa1574b5",
+      "issueDate": "2025-12-21T21:57:52.915Z",
+      "author": "Ethan Davies",
+      "authorBadge": "215",
+      "department": "WSP"
+    }
+  ],
+  "1205918843680063489": [
+    {
+      "reportType": "mandat",
+      "ticketTarget": "vehicle",
+      "civilianDiscordId": "1205918843680063489",
+      "civilianFullName": "",
+      "vehicleInfo": "BKM",
+      "licensePlate": "SHI-316",
+      "charges": [
+        {
+          "id": 15,
+          "category": "drogowe",
+          "name": "Niszczenie mienia publicznego / Jazda po zieleni",
+          "price": 1800,
+          "lata": 0
+        },
+        {
+          "id": 103,
+          "category": "lekkie",
+          "name": "Obraza FP",
+          "price": 950,
+          "lata": 0
+        },
+        {
+          "id": 102,
+          "category": "lekkie",
+          "name": "Niewykonywanie poleceń FP",
+          "price": 4000,
+          "lata": 0
+        }
+      ],
+      "totalFine": 6750,
+      "location": "Parking przy parkingu podziemnym",
+      "isAccepted": "Tak",
+      "deliveryMethod": "do ręki",
+      "photoUrl": "",
+      "id": "29efac9e-5af8-4ae2-9117-c531fdc9cecb",
+      "issueDate": "2025-12-21T22:15:01.472Z",
+      "author": "Franciszek Trawa",
+      "authorBadge": "140",
+      "department": "WSP"
+    }
+  ],
+  "1139350757024481300": [
+    {
+      "reportType": "areszt",
+      "officerDiscordId": "1129788250958090271",
+      "civilianDiscordId": "1139350757024481300",
+      "civilianFullName": "david basso",
+      "civilianAge": "35",
+      "civilianGender": "M",
+      "confiscatedItems": "Telefon, dokumenty",
+      "photoUrl": "https://i.imgur.com/jTpNID8.png",
+      "arrestLocation": "Nowy komis samochodowy",
+      "jailLocation": "WSP",
+      "charges": [
+        {
+          "id": 203,
+          "category": "ciezkie",
+          "name": "Pomoc w ucieczce",
+          "price": 9000,
+          "lata": 20
+        },
+        {
+          "id": 116,
+          "category": "lekkie",
+          "name": "Ucieczka z miejsca zdarzenia",
+          "price": 4500,
+          "lata": 0
+        }
+      ],
+      "finalTotalFine": 13500,
+      "finalSentence": 20,
+      "id": "4bc6c303-ab7d-4d6c-837d-560e98b2a126",
+      "issueDate": "2025-12-22T18:56:50.503Z",
+      "author": "John Davis",
+      "authorBadge": "101",
+      "department": "WSP"
+    }
+  ],
+  "1093989124102422639": [
+    {
+      "reportType": "mandat",
+      "ticketTarget": "vehicle",
+      "civilianDiscordId": "1093989124102422639",
+      "civilianFullName": "",
+      "vehicleInfo": "Ford Mustang",
+      "licensePlate": "XJN-738 Texas",
+      "charges": [
+        {
+          "id": 509,
+          "category": "predkosc",
+          "name": "Przekroczenie ponad 90 MPH na autostradzie + zabranie prawa jazdy",
+          "price": 9750,
+          "lata": 0
+        }
+      ],
+      "totalFine": 9750,
+      "location": "Truck Stop autostrada.",
+      "isAccepted": "Tak",
+      "deliveryMethod": "do ręki",
+      "photoUrl": "",
+      "id": "84f69d40-8abb-43a2-8d12-8fe8eb400537",
+      "issueDate": "2025-12-22T20:30:05.390Z",
+      "author": "Adam Wilczek",
+      "authorBadge": "102",
+      "department": "WSP"
+    }
+  ],
+  "677137230053113907": [
+    {
+      "reportType": "pouczenie",
+      "ticketTarget": "vehicle",
+      "civilianDiscordId": "677137230053113907",
+      "civilianFullName": "",
+      "vehicleInfo": "Bkm, Series20, Filoetowe",
+      "licensePlate": "1B58 / Texas",
+      "charges": [],
+      "totalFine": 0,
+      "location": "Zjazd z autostrady",
+      "isAccepted": "Tak",
+      "deliveryMethod": "do ręki",
+      "photoUrl": "",
+      "id": "b9a4c9d5-0299-460b-b875-07ddcb4a1ac3",
+      "issueDate": "2025-12-23T19:03:56.398Z",
+      "author": "Jacob Garcia",
+      "authorBadge": "222",
+      "department": "WSP"
+    },
+    {
+      "reportType": "mandat",
+      "ticketTarget": "vehicle",
+      "civilianDiscordId": "677137230053113907",
+      "civilianFullName": "",
+      "vehicleInfo": "BKM Regen M Coupe białe",
+      "licensePlate": "W8-XVX / California",
+      "charges": [
+        {
+          "id": 5,
+          "category": "drogowe",
+          "name": "Stwarzanie zagrożenia w ruchu drogowym",
+          "price": 3750,
+          "lata": 0
+        }
+      ],
+      "totalFine": 3750,
+      "location": "Przy village hall Brookmare",
+      "isAccepted": "Tak",
+      "deliveryMethod": "do ręki",
+      "photoUrl": "",
+      "id": "15b42f8d-e6e6-4571-a5c8-6f69cd0f173a",
+      "issueDate": "2025-12-22T20:39:41.419Z",
+      "author": "Franciszek Trawa",
+      "authorBadge": "140",
+      "department": "WSP"
+    }
+  ],
+  "759501661852139581": [
+    {
+      "reportType": "mandat",
+      "ticketTarget": "vehicle",
+      "civilianDiscordId": "759501661852139581",
+      "civilianFullName": "",
+      "vehicleInfo": "Mizushima, Yari, Biały",
+      "licensePlate": "211 00U / WISCONSIN",
+      "charges": [
+        {
+          "id": 2,
+          "category": "drogowe",
+          "name": "Jazda bez świateł",
+          "price": 750,
+          "lata": 0
+        },
+        {
+          "id": 5,
+          "category": "drogowe",
+          "name": "Stwarzanie zagrożenia w ruchu drogowym",
+          "price": 3750,
+          "lata": 0
+        }
+      ],
+      "totalFine": 4500,
+      "location": "Obok placu do zdawania prawa jazdy.",
+      "isAccepted": "Tak",
+      "deliveryMethod": "do ręki",
+      "photoUrl": "",
+      "id": "9ea00f58-7960-4e7e-adc9-f768422a456c",
+      "issueDate": "2025-12-22T22:01:46.022Z",
+      "author": "Ethan Davies",
+      "authorBadge": "201",
+      "department": "WSP"
+    }
+  ],
+  "714208277898067989": [
+    {
+      "reportType": "areszt",
+      "officerDiscordId": "1129788250958090271",
+      "civilianDiscordId": "714208277898067989",
+      "civilianFullName": "Tyler Smith",
+      "civilianAge": "24",
+      "civilianGender": "M",
+      "confiscatedItems": "Nóż, Telefon",
+      "photoUrl": "https://i.imgur.com/UFNiFW3.png",
+      "arrestLocation": "Autostrada",
+      "jailLocation": "WSP",
+      "charges": [
+        {
+          "id": 3,
+          "category": "drogowe",
+          "name": "Przekroczenie prędkości w mieście",
+          "price": 2500,
+          "lata": 0
+        },
+        {
+          "id": 4,
+          "category": "drogowe",
+          "name": "Brawurowa jazda",
+          "price": 3750,
+          "lata": 0
+        },
+        {
+          "id": 5,
+          "category": "drogowe",
+          "name": "Stwarzanie zagrożenia w ruchu drogowym",
+          "price": 3750,
+          "lata": 0
+        },
+        {
+          "id": 6,
+          "category": "drogowe",
+          "name": "Nie zatrzymanie do kontroli",
+          "price": 4250,
+          "lata": 5
+        },
+        {
+          "id": 8,
+          "category": "drogowe",
+          "name": "Przejazd na czerwonym świetle / Znaku STOP",
+          "price": 1100,
+          "lata": 0
+        },
+        {
+          "id": 18,
+          "category": "drogowe",
+          "name": "Jazda pod prąd",
+          "price": 3250,
+          "lata": 0
+        },
+        {
+          "id": 19,
+          "category": "drogowe",
+          "name": "Nielegalny U-Turn",
+          "price": 650,
+          "lata": 0
+        },
+        {
+          "id": 22,
+          "category": "drogowe",
+          "name": "Nielegalne wyprzedzanie / na lini ciągłej",
+          "price": 1000,
+          "lata": 0
+        },
+        {
+          "id": 36,
+          "category": "drogowe",
+          "name": "Jazda lewym pasem",
+          "price": 850,
+          "lata": 0
+        },
+        {
+          "id": 38,
+          "category": "drogowe",
+          "name": "Nieużycie kierunkowskazu",
+          "price": 300,
+          "lata": 0
+        },
+        {
+          "id": 102,
+          "category": "lekkie",
+          "name": "Niewykonywanie poleceń FP",
+          "price": 4000,
+          "lata": 0
+        },
+        {
+          "id": 110,
+          "category": "lekkie",
+          "name": "Stawianie oporu",
+          "price": 5400,
+          "lata": 10
+        },
+        {
+          "id": 200,
+          "category": "ciezkie",
+          "name": "Groźby przy użyciu broni",
+          "price": 11500,
+          "lata": 45
+        },
+        {
+          "id": 201,
+          "category": "ciezkie",
+          "name": "Ucieczka przed WSP",
+          "price": 9500,
+          "lata": 25
+        },
+        {
+          "id": 509,
+          "category": "predkosc",
+          "name": "Przekroczenie ponad 90 MPH na autostradzie + zabranie prawa jazdy",
+          "price": 9750,
+          "lata": 0
+        }
+      ],
+      "finalTotalFine": 61550,
+      "finalSentence": 85,
+      "id": "b253bead-9622-4f64-869f-33bb51152c03",
+      "issueDate": "2025-12-22T22:07:09.789Z",
+      "author": "John Davis",
+      "authorBadge": "101",
+      "department": "WSP"
+    }
+  ],
+  "822560493242810408": [
+    {
+      "reportType": "mandat",
+      "ticketTarget": "vehicle",
+      "civilianDiscordId": "822560493242810408",
+      "civilianFullName": "",
+      "vehicleInfo": "BMW, M340I, Niebieski",
+      "licensePlate": "M340I / California",
+      "charges": [
+        {
+          "id": 503,
+          "category": "predkosc",
+          "name": "Przekroczenie od 16 MPH do 20 MPH ponad limit",
+          "price": 3250,
+          "lata": 0
+        }
+      ],
+      "totalFine": 3250,
+      "location": "Przed zjazdem na brookmere",
+      "isAccepted": "Tak",
+      "deliveryMethod": "do ręki",
+      "photoUrl": "",
+      "id": "6d6ce0e4-d71a-49c4-bb79-1867354234d9",
+      "issueDate": "2025-12-22T22:10:31.914Z",
+      "author": "Ethan Davies",
+      "authorBadge": "201",
+      "department": "WSP"
+    }
+  ],
+  "775343883541676052": [
+    {
+      "reportType": "areszt",
+      "officerDiscordId": "1129788250958090271",
+      "civilianDiscordId": "775343883541676052",
+      "civilianFullName": "Kristoffer Meyer",
+      "civilianAge": "45",
+      "civilianGender": "M",
+      "confiscatedItems": "N/A",
+      "photoUrl": "https://i.imgur.com/Zhwr9AA.png",
+      "arrestLocation": "Za komornictwem.",
+      "jailLocation": "WSP",
+      "charges": [
+        {
+          "id": 15,
+          "category": "drogowe",
+          "name": "Niszczenie mienia publicznego / Jazda po zieleni",
+          "price": 1800,
+          "lata": 0
+        },
+        {
+          "id": 201,
+          "category": "ciezkie",
+          "name": "Ucieczka przed WSP",
+          "price": 9500,
+          "lata": 25
+        }
+      ],
+      "finalTotalFine": 11300,
+      "finalSentence": 25,
+      "id": "15c7c54c-c69f-4e46-b983-4c15f75dc06b",
+      "issueDate": "2025-12-22T23:21:15.151Z",
+      "author": "John Davis",
+      "authorBadge": "101",
+      "department": "WSP"
+    },
+    {
+      "reportType": "mandat",
+      "ticketTarget": "vehicle",
+      "civilianDiscordId": "775343883541676052",
+      "civilianFullName": "",
+      "vehicleInfo": "Chevlon L/M Srebrny ",
+      "licensePlate": "PMN-885 Wisconsin ",
+      "charges": [
+        {
+          "id": 15,
+          "category": "drogowe",
+          "name": "Niszczenie mienia publicznego / Jazda po zieleni",
+          "price": 1800,
+          "lata": 0
+        }
+      ],
+      "totalFine": 1800,
+      "location": "Urzad Brookmeere ",
+      "isAccepted": "Tak",
+      "deliveryMethod": "do ręki",
+      "photoUrl": "https://i.imgur.com/171TkBt.png",
+      "id": "c7f44466-61a3-4f15-a7f2-90922a9e61ab",
+      "issueDate": "2025-12-22T22:57:15.528Z",
+      "author": "Olivia Sterling",
+      "authorBadge": "139",
+      "department": "WSP"
+    },
+    {
+      "reportType": "mandat",
+      "ticketTarget": "vehicle",
+      "civilianDiscordId": "775343883541676052",
+      "civilianFullName": "",
+      "vehicleInfo": "Chevlon L/M Beżowy",
+      "licensePlate": "PMN-885 / Wisconsin",
+      "charges": [
+        {
+          "id": 8,
+          "category": "drogowe",
+          "name": "Przejazd na czerwonym świetle / Znaku STOP",
+          "price": 1100,
+          "lata": 0
+        }
+      ],
+      "totalFine": 1100,
+      "location": "Domki przy Brookmare w dołku",
+      "isAccepted": "Tak",
+      "deliveryMethod": "do ręki",
+      "photoUrl": "",
+      "id": "16f93a41-d35d-4736-9f61-332a3ebc2b50",
+      "issueDate": "2025-12-22T22:39:28.737Z",
+      "author": "Franciszek Trawa",
+      "authorBadge": "140",
+      "department": "WSP"
+    },
+    {
+      "reportType": "mandat",
+      "ticketTarget": "vehicle",
+      "civilianDiscordId": "775343883541676052",
+      "civilianFullName": "",
+      "vehicleInfo": "Chevlon L/M Beżowy",
+      "licensePlate": "PMN-885 / Wisconsin",
+      "charges": [
+        {
+          "id": 8,
+          "category": "drogowe",
+          "name": "Przejazd na czerwonym świetle / Znaku STOP",
+          "price": 1100,
+          "lata": 0
+        }
+      ],
+      "totalFine": 1100,
+      "location": "Domki przy Brookmare w dołku",
+      "isAccepted": "Tak",
+      "deliveryMethod": "do ręki",
+      "photoUrl": "",
+      "id": "e33455bf-a234-4c3d-ab67-b7e2f4593e33",
+      "issueDate": "2025-12-22T22:28:58.468Z",
+      "author": "Franciszek Trawa",
+      "authorBadge": "140",
+      "department": "WSP"
+    }
+  ],
+  "974762987560788079": [
+    {
+      "reportType": "areszt",
+      "officerDiscordId": "3969452287",
+      "civilianDiscordId": "974762987560788079",
+      "civilianFullName": "Mateo Smith",
+      "civilianAge": "36",
+      "civilianGender": "M",
+      "confiscatedItems": "",
+      "photoUrl": "",
+      "arrestLocation": "Parking obok BMA",
+      "jailLocation": "WSP",
+      "charges": [
+        {
+          "id": 16,
+          "category": "drogowe",
+          "name": "Jazda bez prawa jazdy, przedłużenie zabrania o 7 dni + odcholowanie pojazdu na parking WSP",
+          "price": 9500,
+          "lata": 10
+        }
+      ],
+      "finalTotalFine": 9500,
+      "finalSentence": 10,
+      "id": "6d42b3fe-b107-4ea8-86e3-94939b4096b3",
+      "issueDate": "2025-12-25T20:01:56.796Z",
+      "author": "David Basso",
+      "authorBadge": "264",
+      "department": "WSP"
+    },
+    {
+      "reportType": "mandat",
+      "ticketTarget": "vehicle",
+      "civilianDiscordId": "974762987560788079",
+      "civilianFullName": "",
+      "vehicleInfo": "Bkm, W1040t, Szary",
+      "licensePlate": "NYZ-666 / WISCONSIN",
+      "charges": [
+        {
+          "id": 508,
+          "category": "predkosc",
+          "name": "Przekroczenie ponad 80 MPH + zabranie prawa jazdy",
+          "price": 10750,
+          "lata": 0
+        },
+        {
+          "id": 102,
+          "category": "lekkie",
+          "name": "Niewykonywanie poleceń FP",
+          "price": 4000,
+          "lata": 0
+        }
+      ],
+      "totalFine": 14750,
+      "location": "Droga na zdawanie prawa jazdy od brookmere miasta.",
+      "isAccepted": "Tak",
+      "deliveryMethod": "do ręki",
+      "photoUrl": "",
+      "id": "c634060e-b642-4e4d-9b42-3eba8a1d272c",
+      "issueDate": "2025-12-22T22:40:05.083Z",
+      "author": "Ethan Davies",
+      "authorBadge": "201",
+      "department": "WSP"
+    }
+  ],
+  "1241841494646591629": [
+    {
+      "reportType": "mandat",
+      "ticketTarget": "vehicle",
+      "civilianDiscordId": "1241841494646591629",
+      "civilianFullName": "",
+      "vehicleInfo": "Viking, Torslanda Sedan, Złoty",
+      "licensePlate": "KLASA / Alaska",
+      "charges": [
+        {
+          "id": 8,
+          "category": "drogowe",
+          "name": "Przejazd na czerwonym świetle / Znaku STOP",
+          "price": 1100,
+          "lata": 0
+        }
+      ],
+      "totalFine": 1100,
+      "location": "Brookmere",
+      "isAccepted": "Tak",
+      "deliveryMethod": "do ręki",
+      "photoUrl": "",
+      "id": "6abbe281-9c18-45d4-8217-f060b1c0b999",
+      "issueDate": "2025-12-26T19:05:34.863Z",
+      "author": "Jacob Garcia",
+      "authorBadge": "222",
+      "department": "WSP"
+    },
+    {
+      "reportType": "areszt",
+      "officerDiscordId": "602751766324445218",
+      "civilianDiscordId": "1241841494646591629",
+      "civilianFullName": "Nathaniel Kvaran",
+      "civilianAge": "24",
+      "civilianGender": "M",
+      "confiscatedItems": "1x Dowod",
+      "photoUrl": "https://i.imgur.com/CUJaYQP.png",
+      "arrestLocation": "Obok Tunelu ",
+      "jailLocation": "WSP",
+      "charges": [
+        {
+          "id": 201,
+          "category": "ciezkie",
+          "name": "Ucieczka przed WSP",
+          "price": 9500,
+          "lata": 25
+        }
+      ],
+      "finalTotalFine": 9500,
+      "finalSentence": 25,
+      "id": "e8514f55-a7c6-4bc7-94a9-ea28b6877fa5",
+      "issueDate": "2025-12-23T22:58:39.063Z",
+      "author": "Natalie Castellano-Wilczek",
+      "authorBadge": "104",
+      "department": "WSP"
+    },
+    {
+      "reportType": "mandat",
+      "ticketTarget": "vehicle",
+      "civilianDiscordId": "1241841494646591629",
+      "civilianFullName": "",
+      "vehicleInfo": "Viking, Torslanda sedan, Wyblakły żółty",
+      "licensePlate": "KLASA / ALASKA",
+      "charges": [
+        {
+          "id": 25,
+          "category": "drogowe",
+          "name": "Nadmierne używanie sygnału dźwiękowego / świateł drogowych",
+          "price": 750,
+          "lata": 0
+        }
+      ],
+      "totalFine": 750,
+      "location": "Brookmere przy skate park.",
+      "isAccepted": "Tak",
+      "deliveryMethod": "do ręki",
+      "photoUrl": "",
+      "id": "bbdf72f7-8871-4cf6-9d91-add4454a19e8",
+      "issueDate": "2025-12-22T22:52:50.956Z",
+      "author": "Ethan Davies",
+      "authorBadge": "201",
+      "department": "WSP"
+    },
+    {
+      "reportType": "mandat",
+      "ticketTarget": "vehicle",
+      "civilianDiscordId": "1241841494646591629",
+      "civilianFullName": "",
+      "vehicleInfo": "Viking Torslanda Sedan wyblakły zółty",
+      "licensePlate": "KLASA / Alaska",
+      "charges": [
+        {
+          "id": 104,
+          "category": "lekkie",
+          "name": "Utrudnianie pracy służbom publicznym",
+          "price": 3500,
+          "lata": 0
+        },
+        {
+          "id": 100,
+          "category": "lekkie",
+          "name": "Zakłócanie porządku publicznego",
+          "price": 950,
+          "lata": 0
+        }
+      ],
+      "totalFine": 4450,
+      "location": "Parking przy placu treningowym",
+      "isAccepted": "Tak",
+      "deliveryMethod": "do ręki",
+      "photoUrl": "",
+      "id": "4b000228-fa0e-4a22-8d7d-c42eb00a72ef",
+      "issueDate": "2025-12-22T22:42:44.577Z",
+      "author": "Franciszek Trawa",
+      "authorBadge": "140",
+      "department": "WSP"
+    }
+  ],
+  "851850275789996054": [
+    {
+      "reportType": "pouczenie",
+      "ticketTarget": "vehicle",
+      "civilianDiscordId": "851850275789996054",
+      "civilianFullName": "",
+      "vehicleInfo": "Bandit, Advance Beast, Czarny",
+      "licensePlate": "FREEDOM / Texas",
+      "charges": [],
+      "totalFine": 0,
+      "location": "Farma",
+      "isAccepted": "Tak",
+      "deliveryMethod": "do ręki",
+      "photoUrl": "",
+      "id": "7a709afc-44a2-4a48-99ad-bf687c5f3b36",
+      "issueDate": "2025-12-23T18:44:29.591Z",
+      "author": "Jacob Garcia",
+      "authorBadge": "222",
+      "department": "WSP"
+    }
+  ],
+  "781075335088570408": [
+    {
+      "reportType": "mandat",
+      "ticketTarget": "vehicle",
+      "civilianDiscordId": "781075335088570408",
+      "civilianFullName": "",
+      "vehicleInfo": "Stuttgart",
+      "licensePlate": "AOM 53G / Tenneesse",
+      "charges": [
+        {
+          "id": 205,
+          "category": "ciezkie",
+          "name": "Prowokacja WSP",
+          "price": 9500,
+          "lata": 10
+        },
+        {
+          "id": 206,
+          "category": "ciezkie",
+          "name": "Próba napaści",
+          "price": 11000,
+          "lata": 10
+        }
+      ],
+      "totalFine": 20500,
+      "location": "Pierwszy Zakret Odrazu Za Zjazdem Na Tor",
+      "isAccepted": "Tak",
+      "deliveryMethod": "do ręki",
+      "photoUrl": "",
+      "id": "8ec1da2d-f2fc-4cfe-84f2-b52069d30ae3",
+      "issueDate": "2025-12-29T18:00:41.213Z"
+    },
+    {
+      "reportType": "mandat",
+      "ticketTarget": "vehicle",
+      "civilianDiscordId": "781075335088570408",
+      "civilianFullName": "",
+      "vehicleInfo": "Stuttgart",
+      "licensePlate": "AOM 53G / Tenneesse",
+      "charges": [
+        {
+          "id": 202,
+          "category": "ciezkie",
+          "name": "Porwanie",
+          "price": 22500,
+          "lata": 40
+        }
+      ],
+      "totalFine": 22500,
+      "location": "Pierwszy Zakret Odrazu Za Zjazdem Na Tor",
+      "isAccepted": "Tak",
+      "deliveryMethod": "do ręki",
+      "photoUrl": "",
+      "id": "3bfdb0a6-6a53-411f-b440-d3455dc6543e",
+      "issueDate": "2025-12-29T18:00:26.891Z"
+    },
+    {
+      "reportType": "mandat",
+      "ticketTarget": "vehicle",
+      "civilianDiscordId": "781075335088570408",
+      "civilianFullName": "",
+      "vehicleInfo": "Chryslus",
+      "licensePlate": "UDN-516 / Wisconsin",
+      "charges": [
+        {
+          "id": 1,
+          "category": "drogowe",
+          "name": "Jazda pod wpływem alkoholu lub substancji odurzających + zabrane prawojazdy",
+          "price": 5500,
+          "lata": 15
+        },
+        {
+          "id": 2,
+          "category": "drogowe",
+          "name": "Jazda bez świateł",
+          "price": 750,
+          "lata": 0
+        },
+        {
+          "id": 3,
+          "category": "drogowe",
+          "name": "Przekroczenie prędkości w mieście",
+          "price": 2500,
+          "lata": 0
+        },
+        {
+          "id": 4,
+          "category": "drogowe",
+          "name": "Brawurowa jazda",
+          "price": 3750,
+          "lata": 0
+        },
+        {
+          "id": 5,
+          "category": "drogowe",
+          "name": "Stwarzanie zagrożenia w ruchu drogowym",
+          "price": 3750,
+          "lata": 0
+        },
+        {
+          "id": 6,
+          "category": "drogowe",
+          "name": "Nie zatrzymanie do kontroli",
+          "price": 4250,
+          "lata": 5
+        },
+        {
+          "id": 7,
+          "category": "drogowe",
+          "name": "Zły stan techniczny pojazdu / Brak OC / Brak badania technicznego",
+          "price": 1750,
+          "lata": 0
+        },
+        {
+          "id": 8,
+          "category": "drogowe",
+          "name": "Przejazd na czerwonym świetle / Znaku STOP",
+          "price": 1100,
+          "lata": 0
+        },
+        {
+          "id": 9,
+          "category": "drogowe",
+          "name": "Zniszczenie mienia",
+          "price": 1950,
+          "lata": 0
+        },
+        {
+          "id": 10,
+          "category": "drogowe",
+          "name": "Winny wypadku drogowemu",
+          "price": 3350,
+          "lata": 0
+        },
+        {
+          "id": 11,
+          "category": "drogowe",
+          "name": "Winny kolizji drogowej",
+          "price": 2150,
+          "lata": 0
+        },
+        {
+          "id": 12,
+          "category": "drogowe",
+          "name": "Potrącenie przechodnia",
+          "price": 5250,
+          "lata": 0
+        },
+        {
+          "id": 14,
+          "category": "drogowe",
+          "name": "Przejście przez ulicę w miejscu niedozwolonym",
+          "price": 750,
+          "lata": 0
+        },
+        {
+          "id": 121,
+          "category": "lekkie",
+          "name": "Wyłudzenie ubezpieczenia poprzez fałszywą kradzież auta",
+          "price": 17500,
+          "lata": 10
+        },
+        {
+          "id": 122,
+          "category": "lekkie",
+          "name": "Podpalenie prywatnej posesji",
+          "price": 13500,
+          "lata": 15
+        },
+        {
+          "id": 123,
+          "category": "lekkie",
+          "name": "Podpalenie rządowej(publicznej) posesji",
+          "price": 22500,
+          "lata": 25
+        },
+        {
+          "id": 129,
+          "category": "lekkie",
+          "name": "Stalking",
+          "price": 9755,
+          "lata": 35
+        },
+        {
+          "id": 200,
+          "category": "ciezkie",
+          "name": "Groźby przy użyciu broni",
+          "price": 11500,
+          "lata": 45
+        },
+        {
+          "id": 202,
+          "category": "ciezkie",
+          "name": "Porwanie",
+          "price": 22500,
+          "lata": 40
+        },
+        {
+          "id": 204,
+          "category": "ciezkie",
+          "name": "Współudział w przestępstwie",
+          "price": 12625,
+          "lata": 25
+        }
+      ],
+      "totalFine": 146680,
+      "location": "Pierwszy Zakret Odrazu Za Zjazdem Na Tor",
+      "isAccepted": "Tak",
+      "deliveryMethod": "do ręki",
+      "photoUrl": "",
+      "id": "4a46c11d-139c-4df6-829c-05e7a86ad30c",
+      "issueDate": "2025-12-29T17:55:05.669Z"
+    },
+    {
+      "reportType": "mandat",
+      "ticketTarget": "vehicle",
+      "civilianDiscordId": "781075335088570408",
+      "civilianFullName": "",
+      "vehicleInfo": "Chryslus",
+      "licensePlate": "UDN-516 / Wisconsin",
+      "charges": [
+        {
+          "id": 10,
+          "category": "drogowe",
+          "name": "Winny wypadku drogowemu",
+          "price": 3350,
+          "lata": 0
+        }
+      ],
+      "totalFine": 3350,
+      "location": "Pierwszy Zakret Odrazu Za Zjazdem Na Tor",
+      "isAccepted": "Tak",
+      "deliveryMethod": "do ręki",
+      "photoUrl": "",
+      "id": "1c1204c8-81bd-45d6-b534-e2faf2470725",
+      "issueDate": "2025-12-28T19:46:01.041Z"
+    },
+    {
+      "reportType": "mandat",
+      "ticketTarget": "vehicle",
+      "civilianDiscordId": "781075335088570408",
+      "civilianFullName": "",
+      "vehicleInfo": "Falcon (pojazd DOTu)",
+      "licensePlate": "DOT-669 / Wisconsin",
+      "charges": [
+        {
+          "id": 25,
+          "category": "drogowe",
+          "name": "Nadmierne używanie sygnału dźwiękowego / świateł drogowych",
+          "price": 750,
+          "lata": 0
+        }
+      ],
+      "totalFine": 750,
+      "location": "Autostrada",
+      "isAccepted": "Tak",
+      "deliveryMethod": "do ręki",
+      "photoUrl": "",
+      "id": "5a9215ce-f332-4c1e-8ede-457bd69a0bf9",
+      "issueDate": "2025-12-23T18:58:52.343Z",
+      "author": "Franciszek Trawa",
+      "authorBadge": "140",
+      "department": "WSP"
+    }
+  ],
+  "535526548976173079": [
+    {
+      "reportType": "mandat",
+      "ticketTarget": "vehicle",
+      "civilianDiscordId": "535526548976173079",
+      "civilianFullName": "",
+      "vehicleInfo": "Renault Megane R.S szare",
+      "licensePlate": "RTO-600 / Wisconsin",
+      "charges": [
+        {
+          "id": 8,
+          "category": "drogowe",
+          "name": "Przejazd na czerwonym świetle / Znaku STOP",
+          "price": 1100,
+          "lata": 0
+        }
+      ],
+      "totalFine": 1100,
+      "location": "Parking przydrożny przed torem wyścigowym",
+      "isAccepted": "Tak",
+      "deliveryMethod": "do ręki",
+      "photoUrl": "",
+      "id": "dc8cd80c-6043-4aa8-9c41-d444e5ed0121",
+      "issueDate": "2025-12-23T19:12:44.099Z",
+      "author": "Franciszek Trawa",
+      "authorBadge": "140",
+      "department": "WSP"
+    }
+  ],
+  "1212157669264335022": [
+    {
+      "reportType": "areszt",
+      "officerDiscordId": "1129788250958090271",
+      "civilianDiscordId": "1212157669264335022",
+      "civilianFullName": "Victor Lauren",
+      "civilianAge": "27",
+      "civilianGender": "M",
+      "confiscatedItems": "Telefon, woda",
+      "photoUrl": "https://i.imgur.com/rnCbVqK.png",
+      "arrestLocation": "Przed nowym komisem samochodowym.",
+      "jailLocation": "WSP",
+      "charges": [
+        {
+          "id": 201,
+          "category": "ciezkie",
+          "name": "Ucieczka przed WSP",
+          "price": 9500,
+          "lata": 25
+        }
+      ],
+      "finalTotalFine": 9500,
+      "finalSentence": 25,
+      "id": "d52aaf59-29cf-4cde-a487-1b1ea9c5eb0d",
+      "issueDate": "2025-12-23T20:25:52.014Z",
+      "author": "John Davis",
+      "authorBadge": "101",
+      "department": "WSP"
+    }
+  ],
+  "514157268712030210": [
+    {
+      "reportType": "mandat",
+      "ticketTarget": "vehicle",
+      "civilianDiscordId": "514157268712030210",
+      "civilianFullName": "",
+      "vehicleInfo": "BKM Regen Coupe Beater",
+      "licensePlate": "012-KZL / Wisconsin",
+      "charges": [
+        {
+          "id": 5,
+          "category": "drogowe",
+          "name": "Stwarzanie zagrożenia w ruchu drogowym",
+          "price": 3750,
+          "lata": 0
+        },
+        {
+          "id": 25,
+          "category": "drogowe",
+          "name": "Nadmierne używanie sygnału dźwiękowego / świateł drogowych",
+          "price": 750,
+          "lata": 0
+        }
+      ],
+      "totalFine": 4500,
+      "location": "Skrzyżowanie łączące Brookmare z osiedlami",
+      "isAccepted": "Tak",
+      "deliveryMethod": "do ręki",
+      "photoUrl": "",
+      "id": "732708ba-ee00-4e4f-9ef4-4bf212078028",
+      "issueDate": "2025-12-25T23:20:54.076Z",
+      "author": "Franciszek Trawa",
+      "authorBadge": "140",
+      "department": "WSP"
+    },
+    {
+      "reportType": "areszt",
+      "officerDiscordId": "1222192916009848858",
+      "civilianDiscordId": "514157268712030210",
+      "civilianFullName": "Katherine Riva",
+      "civilianAge": "44",
+      "civilianGender": "M",
+      "confiscatedItems": "Telefon x1, E-papieros x1, Torebka x1",
+      "photoUrl": "https://i.imgur.com/E6lQXCG.png",
+      "arrestLocation": "Parking przy drodze przed torem wyścigowym",
+      "jailLocation": "WSP",
+      "charges": [
+        {
+          "id": 5,
+          "category": "drogowe",
+          "name": "Stwarzanie zagrożenia w ruchu drogowym",
+          "price": 3750,
+          "lata": 0
+        },
+        {
+          "id": 11,
+          "category": "drogowe",
+          "name": "Winny kolizji drogowej",
+          "price": 2150,
+          "lata": 0
+        },
+        {
+          "id": 100,
+          "category": "lekkie",
+          "name": "Zakłócanie porządku publicznego",
+          "price": 950,
+          "lata": 0
+        },
+        {
+          "id": 103,
+          "category": "lekkie",
+          "name": "Obraza FP",
+          "price": 950,
+          "lata": 0
+        },
+        {
+          "id": 104,
+          "category": "lekkie",
+          "name": "Utrudnianie pracy służbom publicznym",
+          "price": 3500,
+          "lata": 0
+        },
+        {
+          "id": 110,
+          "category": "lekkie",
+          "name": "Stawianie oporu",
+          "price": 5400,
+          "lata": 10
+        },
+        {
+          "id": 102,
+          "category": "lekkie",
+          "name": "Niewykonywanie poleceń FP",
+          "price": 4000,
+          "lata": 0
+        },
+        {
+          "id": 402,
+          "category": "sila",
+          "name": "Napaść na FP",
+          "price": 22750,
+          "lata": 35
+        }
+      ],
+      "finalTotalFine": 43450,
+      "finalSentence": 45,
+      "id": "6852eb27-415d-4f97-84f0-a81987524594",
+      "issueDate": "2025-12-23T21:19:54.966Z",
+      "author": "Franciszek Trawa",
+      "authorBadge": "140",
+      "department": "WSP"
+    }
+  ],
+  "1205967651675840623": [
+    {
+      "reportType": "areszt",
+      "officerDiscordId": "1129788250958090271",
+      "civilianDiscordId": "1205967651675840623",
+      "civilianFullName": "Adam Blue",
+      "civilianAge": "21",
+      "civilianGender": "M",
+      "confiscatedItems": "N/A (wyszedł więc nie było jak mu zabrać przedmiotów)",
+      "photoUrl": "",
+      "arrestLocation": "Tunel od strony stacji, wodospadu",
+      "jailLocation": "WSP",
+      "charges": [
+        {
+          "id": 4,
+          "category": "drogowe",
+          "name": "Brawurowa jazda",
+          "price": 3750,
+          "lata": 0
+        },
+        {
+          "id": 3,
+          "category": "drogowe",
+          "name": "Przekroczenie prędkości w mieście",
+          "price": 2500,
+          "lata": 0
+        },
+        {
+          "id": 5,
+          "category": "drogowe",
+          "name": "Stwarzanie zagrożenia w ruchu drogowym",
+          "price": 3750,
+          "lata": 0
+        },
+        {
+          "id": 6,
+          "category": "drogowe",
+          "name": "Nie zatrzymanie do kontroli",
+          "price": 4250,
+          "lata": 5
+        },
+        {
+          "id": 8,
+          "category": "drogowe",
+          "name": "Przejazd na czerwonym świetle / Znaku STOP",
+          "price": 1100,
+          "lata": 0
+        },
+        {
+          "id": 9,
+          "category": "drogowe",
+          "name": "Zniszczenie mienia",
+          "price": 1950,
+          "lata": 0
+        },
+        {
+          "id": 15,
+          "category": "drogowe",
+          "name": "Niszczenie mienia publicznego / Jazda po zieleni",
+          "price": 1800,
+          "lata": 0
+        },
+        {
+          "id": 18,
+          "category": "drogowe",
+          "name": "Jazda pod prąd",
+          "price": 3250,
+          "lata": 0
+        },
+        {
+          "id": 19,
+          "category": "drogowe",
+          "name": "Nielegalny U-Turn",
+          "price": 650,
+          "lata": 0
+        },
+        {
+          "id": 22,
+          "category": "drogowe",
+          "name": "Nielegalne wyprzedzanie / na lini ciągłej",
+          "price": 1000,
+          "lata": 0
+        },
+        {
+          "id": 23,
+          "category": "drogowe",
+          "name": "Brake checking",
+          "price": 1200,
+          "lata": 0
+        },
+        {
+          "id": 29,
+          "category": "drogowe",
+          "name": "Nie poprawne zatrzymanie przed przejazdem kolejowym",
+          "price": 1250,
+          "lata": 0
+        },
+        {
+          "id": 31,
+          "category": "drogowe",
+          "name": "Objechanie / Znisczenie rogatek na przejeździe",
+          "price": 3000,
+          "lata": 0
+        },
+        {
+          "id": 32,
+          "category": "drogowe",
+          "name": "Przejazd przez rogatki gdy się zamykają / otwierają",
+          "price": 1500,
+          "lata": 0
+        },
+        {
+          "id": 33,
+          "category": "drogowe",
+          "name": "Skręt ze złego pasa",
+          "price": 700,
+          "lata": 0
+        },
+        {
+          "id": 34,
+          "category": "drogowe",
+          "name": "Źle zarejestrowany pojazd + odholowanie pojazdu",
+          "price": 3500,
+          "lata": 0
+        },
+        {
+          "id": 35,
+          "category": "drogowe",
+          "name": "Przejazd przez ciągłą linie",
+          "price": 500,
+          "lata": 0
+        },
+        {
+          "id": 36,
+          "category": "drogowe",
+          "name": "Jazda lewym pasem",
+          "price": 850,
+          "lata": 0
+        },
+        {
+          "id": 38,
+          "category": "drogowe",
+          "name": "Nieużycie kierunkowskazu",
+          "price": 300,
+          "lata": 0
+        },
+        {
+          "id": 102,
+          "category": "lekkie",
+          "name": "Niewykonywanie poleceń FP",
+          "price": 4000,
+          "lata": 0
+        },
+        {
+          "id": 110,
+          "category": "lekkie",
+          "name": "Stawianie oporu",
+          "price": 5400,
+          "lata": 10
+        },
+        {
+          "id": 201,
+          "category": "ciezkie",
+          "name": "Ucieczka przed WSP",
+          "price": 9500,
+          "lata": 25
+        },
+        {
+          "id": 508,
+          "category": "predkosc",
+          "name": "Przekroczenie ponad 80 MPH + zabranie prawa jazdy",
+          "price": 10750,
+          "lata": 0
+        }
+      ],
+      "finalTotalFine": 66450,
+      "finalSentence": 40,
+      "id": "282a6106-a923-4e06-b57b-9e92c26e5101",
+      "issueDate": "2025-12-23T23:27:11.605Z",
+      "author": "John Davis",
+      "authorBadge": "101",
+      "department": "WSP"
+    }
+  ],
+  "889133118051721257": [
+    {
+      "reportType": "mandat",
+      "ticketTarget": "vehicle",
+      "civilianDiscordId": "889133118051721257",
+      "civilianFullName": "",
+      "vehicleInfo": "Nissan, GTR R35/ Pomarańczowy",
+      "licensePlate": "CLZ-896 / Ontario",
+      "charges": [
+        {
+          "id": 509,
+          "category": "predkosc",
+          "name": "Przekroczenie ponad 90 MPH na autostradzie + zabranie prawa jazdy",
+          "price": 9750,
+          "lata": 0
+        }
+      ],
+      "totalFine": 9750,
+      "location": "Autostrada na górce",
+      "isAccepted": "Tak",
+      "deliveryMethod": "do ręki",
+      "photoUrl": "",
+      "id": "39fdb325-edcf-43bb-a2c4-1ffc5641a2a6",
+      "issueDate": "2025-12-25T19:30:04.399Z",
+      "author": "Ethan Davies",
+      "authorBadge": "201",
+      "department": "WSP"
+    }
+  ],
+  "919533118745100298": [
+    {
+      "reportType": "mandat",
+      "ticketTarget": "vehicle",
+      "civilianDiscordId": "919533118745100298",
+      "civilianFullName": "",
+      "vehicleInfo": "Stuttgart, E-Saloon, Czarny",
+      "licensePlate": "WW-550A, Arizona",
+      "charges": [
+        {
+          "id": 8,
+          "category": "drogowe",
+          "name": "Przejazd na czerwonym świetle / Znaku STOP",
+          "price": 1100,
+          "lata": 0
+        }
+      ],
+      "totalFine": 1100,
+      "location": "Skrzyzowanie na domki Brookmoree",
+      "isAccepted": "Tak",
+      "deliveryMethod": "do ręki",
+      "photoUrl": "",
+      "id": "fc66fb8e-a5ce-4520-8ea6-fcd924b55ca5",
+      "issueDate": "2025-12-25T23:14:31.741Z",
+      "author": "Adrian West",
+      "authorBadge": "205",
+      "department": "WSP"
+    },
+    {
+      "reportType": "mandat",
+      "ticketTarget": "vehicle",
+      "civilianDiscordId": "919533118745100298",
+      "civilianFullName": "",
+      "vehicleInfo": "mercedes  czarny es550",
+      "licensePlate": "WW-550A",
+      "charges": [
+        {
+          "id": 8,
+          "category": "drogowe",
+          "name": "Przejazd na czerwonym świetle / Znaku STOP",
+          "price": 1100,
+          "lata": 0
+        }
+      ],
+      "totalFine": 1100,
+      "location": "z tylu banku na brookmere",
+      "isAccepted": "Tak",
+      "deliveryMethod": "do ręki",
+      "photoUrl": "",
+      "id": "07a37637-f9ed-4841-a179-8696cb6ba302",
+      "issueDate": "2025-12-25T20:33:08.599Z",
+      "author": "Henry Morelli",
+      "authorBadge": "238",
+      "department": "WSP"
+    }
+  ],
+  "1375513368739446926": [
+    {
+      "reportType": "pouczenie",
+      "ticketTarget": "vehicle",
+      "civilianDiscordId": "1375513368739446926",
+      "civilianFullName": "",
+      "vehicleInfo": "BKM Gottfrieding Czarny",
+      "licensePlate": "QIE-297 / Wisconsin",
+      "charges": [
+        {
+          "id": 7,
+          "category": "drogowe",
+          "name": "Zły stan techniczny pojazdu / Brak OC / Brak badania technicznego",
+          "price": 1750,
+          "lata": 0
+        }
+      ],
+      "totalFine": 1750,
+      "location": "Parking przydrożny przed torem wyścigowym",
+      "isAccepted": "Tak",
+      "deliveryMethod": "do ręki",
+      "photoUrl": "",
+      "id": "175623c1-1cb1-4cc0-a1c5-6b7b65fc3b5e",
+      "issueDate": "2025-12-25T22:12:05.127Z",
+      "author": "Franciszek Trawa",
+      "authorBadge": "140",
+      "department": "WSP"
+    }
+  ],
+  "1190267052993282118": [
+    {
+      "reportType": "areszt",
+      "officerDiscordId": "1129788250958090271",
+      "civilianDiscordId": "1190267052993282118",
+      "civilianFullName": "Louis Cartier",
+      "civilianAge": "19",
+      "civilianGender": "M",
+      "confiscatedItems": "Podejrzany nic przy sobie nie miał",
+      "photoUrl": "https://i.imgur.com/OpEqZGV.png",
+      "arrestLocation": "Stacja Brookmere",
+      "jailLocation": "WSP",
+      "charges": [
+        {
+          "id": 201,
+          "category": "ciezkie",
+          "name": "Ucieczka przed WSP",
+          "price": 9500,
+          "lata": 25
+        },
+        {
+          "id": 507,
+          "category": "predkosc",
+          "name": "Przekroczenie od 41 MPH ponad limit",
+          "price": 9250,
+          "lata": 0
+        }
+      ],
+      "finalTotalFine": 18750,
+      "finalSentence": 25,
+      "id": "e58fdc10-f063-44b9-a82f-4caf36ecc2fc",
+      "issueDate": "2025-12-27T23:30:56.699Z",
+      "author": "John Davis",
+      "authorBadge": "101",
+      "department": "WSP"
+    },
+    {
+      "reportType": "mandat",
+      "ticketTarget": "vehicle",
+      "civilianDiscordId": "1190267052993282118",
+      "civilianFullName": "",
+      "vehicleInfo": "Golf. 8R. szary",
+      "licensePlate": "R8FOZZ / TEXAS",
+      "charges": [
+        {
+          "id": 11,
+          "category": "drogowe",
+          "name": "Winny kolizji drogowej",
+          "price": 2150,
+          "lata": 0
+        }
+      ],
+      "totalFine": 2150,
+      "location": "Przy posterunku w Brookmere",
+      "isAccepted": "Tak",
+      "deliveryMethod": "do ręki",
+      "photoUrl": "",
+      "id": "32137703-c3a9-4d61-8ffe-aad96cd49779",
+      "issueDate": "2025-12-27T20:43:22.035Z",
+      "author": "Ethan Davies",
+      "authorBadge": "201",
+      "department": "WSP"
+    },
+    {
+      "reportType": "mandat",
+      "ticketTarget": "vehicle",
+      "civilianDiscordId": "1190267052993282118",
+      "civilianFullName": "",
+      "vehicleInfo": "Golf, szary ",
+      "licensePlate": "R8FOZZ/Texas",
+      "charges": [
+        {
+          "id": 3,
+          "category": "drogowe",
+          "name": "Przekroczenie prędkości w mieście",
+          "price": 2500,
+          "lata": 0
+        },
+        {
+          "id": 504,
+          "category": "predkosc",
+          "name": "Przekroczenie od 21 MPH do 25 MPH ponad limit",
+          "price": 5250,
+          "lata": 0
+        }
+      ],
+      "totalFine": 7750,
+      "location": "Zakręt obok toru ",
+      "isAccepted": "Nie",
+      "deliveryMethod": "do ręki",
+      "photoUrl": "",
+      "id": "70b6c096-b2de-4388-90f5-a7dd18c7bfd8",
+      "issueDate": "2025-12-27T20:07:13.232Z",
+      "author": "Jacob Mick",
+      "authorBadge": "230",
+      "department": "WSP"
+    },
+    {
+      "reportType": "mandat",
+      "ticketTarget": "vehicle",
+      "civilianDiscordId": "1190267052993282118",
+      "civilianFullName": "",
+      "vehicleInfo": "Viking , Compact, czarny",
+      "licensePlate": "VQW-390 / Wisconsin",
+      "charges": [
+        {
+          "id": 5,
+          "category": "drogowe",
+          "name": "Stwarzanie zagrożenia w ruchu drogowym",
+          "price": 3750,
+          "lata": 0
+        },
+        {
+          "id": 17,
+          "category": "drogowe",
+          "name": "Wymuszenie pierwszeństwa",
+          "price": 1250,
+          "lata": 0
+        }
+      ],
+      "totalFine": 5000,
+      "location": "Stacja Brookmere",
+      "isAccepted": "Tak",
+      "deliveryMethod": "do ręki",
+      "photoUrl": "",
+      "id": "f8ea1a79-8fff-42db-aecf-5f3f6beaa550",
+      "issueDate": "2025-12-26T20:48:25.821Z",
+      "author": "Ethan Davies",
+      "authorBadge": "201",
+      "department": "WSP"
+    },
+    {
+      "reportType": "mandat",
+      "ticketTarget": "vehicle",
+      "civilianDiscordId": "1190267052993282118",
+      "civilianFullName": "",
+      "vehicleInfo": "Viking,ciemny",
+      "licensePlate": "VQW-390",
+      "charges": [
+        {
+          "id": 5,
+          "category": "drogowe",
+          "name": "Stwarzanie zagrożenia w ruchu drogowym",
+          "price": 3750,
+          "lata": 0
+        },
+        {
+          "id": 7,
+          "category": "drogowe",
+          "name": "Zły stan techniczny pojazdu / Brak OC / Brak badania technicznego",
+          "price": 1750,
+          "lata": 0
+        }
+      ],
+      "totalFine": 5500,
+      "location": "Wjazd do brookemere",
+      "isAccepted": "Tak",
+      "deliveryMethod": "do ręki",
+      "photoUrl": "",
+      "id": "dde74e91-fcbe-4987-993d-2926d7b73856",
+      "issueDate": "2025-12-25T22:21:13.423Z",
+      "author": "David Basso",
+      "authorBadge": "264",
+      "department": "WSP"
+    }
+  ],
+  "1011983836462186516": [
+    {
+      "reportType": "mandat",
+      "ticketTarget": "vehicle",
+      "civilianDiscordId": "1011983836462186516",
+      "civilianFullName": "",
+      "vehicleInfo": "BKM Regen M CSL Szary",
+      "licensePlate": "M-Dream / California",
+      "charges": [
+        {
+          "id": 4,
+          "category": "drogowe",
+          "name": "Brawurowa jazda",
+          "price": 3750,
+          "lata": 0
+        }
+      ],
+      "totalFine": 3750,
+      "location": "Rzeka przy wodospadzie",
+      "isAccepted": "Tak",
+      "deliveryMethod": "do ręki",
+      "photoUrl": "",
+      "id": "9847bfc9-7783-4f94-9f19-5e1145c5bd54",
+      "issueDate": "2025-12-28T22:59:20.639Z",
+      "author": "Franciszek Trawa",
+      "authorBadge": "118",
+      "department": "WSP"
+    },
+    {
+      "reportType": "pouczenie",
+      "ticketTarget": "vehicle",
+      "civilianDiscordId": "1011983836462186516",
+      "civilianFullName": "",
+      "vehicleInfo": "BKM Regen M CSL",
+      "licensePlate": "M-Dream / California",
+      "charges": [
+        {
+          "id": 5,
+          "category": "drogowe",
+          "name": "Stwarzanie zagrożenia w ruchu drogowym",
+          "price": 3750,
+          "lata": 0
+        }
+      ],
+      "totalFine": 3750,
+      "location": "Parking przydrożny przed torem wyścigowym",
+      "isAccepted": "Tak",
+      "deliveryMethod": "do ręki",
+      "photoUrl": "",
+      "id": "0c0ec6d0-c232-4354-b76b-351361ca3a81",
+      "issueDate": "2025-12-28T22:17:14.827Z",
+      "author": "Franciszek Trawa",
+      "authorBadge": "118",
+      "department": "WSP"
+    },
+    {
+      "reportType": "mandat",
+      "ticketTarget": "person",
+      "civilianDiscordId": "1011983836462186516",
+      "civilianFullName": "Henry Morelli",
+      "vehicleInfo": "",
+      "licensePlate": "",
+      "charges": [
+        {
+          "id": 105,
+          "category": "lekkie",
+          "name": "Fałszywe zgłoszenie",
+          "price": 3250,
+          "lata": 0
+        }
+      ],
+      "totalFine": 3250,
+      "location": "FD Brookmare",
+      "isAccepted": "Tak",
+      "deliveryMethod": "do ręki",
+      "photoUrl": "",
+      "id": "5d69e491-1a20-40bc-88a5-cb463a06c43f",
+      "issueDate": "2025-12-28T21:37:48.674Z",
+      "author": "Franciszek Trawa",
+      "authorBadge": "118",
+      "department": "WSP"
+    },
+    {
+      "reportType": "mandat",
+      "ticketTarget": "vehicle",
+      "civilianDiscordId": "1011983836462186516",
+      "civilianFullName": "",
+      "vehicleInfo": "Elgrand, Horizon, Biały",
+      "licensePlate": "SOE-986 / Wisconsin",
+      "charges": [
+        {
+          "id": 5,
+          "category": "drogowe",
+          "name": "Stwarzanie zagrożenia w ruchu drogowym",
+          "price": 3750,
+          "lata": 0
+        },
+        {
+          "id": 508,
+          "category": "predkosc",
+          "name": "Przekroczenie ponad 80 MPH + zabranie prawa jazdy",
+          "price": 10750,
+          "lata": 0
+        }
+      ],
+      "totalFine": 14500,
+      "location": "Tunnel",
+      "isAccepted": "Tak",
+      "deliveryMethod": "do ręki",
+      "photoUrl": "",
+      "id": "510e6aea-518c-4987-8c0b-fb35da6ca2f4",
+      "issueDate": "2025-12-25T22:41:18.860Z",
+      "author": "Adrian West",
+      "authorBadge": "205",
+      "department": "WSP"
+    }
+  ],
+  "864948534289629214": [
+    {
+      "reportType": "mandat",
+      "ticketTarget": "vehicle",
+      "civilianDiscordId": "864948534289629214",
+      "civilianFullName": "",
+      "vehicleInfo": "Ford Exploler, szary",
+      "licensePlate": "101",
+      "charges": [
+        {
+          "id": 11,
+          "category": "drogowe",
+          "name": "Winny kolizji drogowej",
+          "price": 2150,
+          "lata": 0
+        }
+      ],
+      "totalFine": 2150,
+      "location": "Szpital",
+      "isAccepted": "Tak",
+      "deliveryMethod": "elektroniczny",
+      "photoUrl": "",
+      "id": "e939561e-d357-4c46-b8a1-13c225a275a4",
+      "issueDate": "2025-12-28T22:15:11.230Z",
+      "author": "John Davis",
+      "authorBadge": "101",
+      "department": "WSP"
+    },
+    {
+      "reportType": "pouczenie",
+      "ticketTarget": "vehicle",
+      "civilianDiscordId": "864948534289629214",
+      "civilianFullName": "",
+      "vehicleInfo": "Bkm, Hofmeister M, Biały",
+      "licensePlate": "M5FTW / California",
+      "charges": [],
+      "totalFine": 0,
+      "location": "Brookmere",
+      "isAccepted": "Tak",
+      "deliveryMethod": "do ręki",
+      "photoUrl": "",
+      "id": "c3faed1f-1240-4370-b021-b84d34c3e7b2",
+      "issueDate": "2025-12-26T19:08:24.181Z",
+      "author": "Jacob Garcia",
+      "authorBadge": "222",
+      "department": "WSP"
+    }
+  ],
+  "1286048811130556477": [
+    {
+      "reportType": "mandat",
+      "ticketTarget": "vehicle",
+      "civilianDiscordId": "1286048811130556477",
+      "civilianFullName": "",
+      "vehicleInfo": "Bkm W20 Czarny",
+      "licensePlate": "PNH-620",
+      "charges": [
+        {
+          "id": 21,
+          "category": "drogowe",
+          "name": "Gazowanie na światłach / Drifty",
+          "price": 1750,
+          "lata": 0
+        },
+        {
+          "id": 5,
+          "category": "drogowe",
+          "name": "Stwarzanie zagrożenia w ruchu drogowym",
+          "price": 3750,
+          "lata": 0
+        },
+        {
+          "id": 27,
+          "category": "drogowe",
+          "name": "Tamowanie ruchu",
+          "price": 2000,
+          "lata": 0
+        }
+      ],
+      "totalFine": 7500,
+      "location": "Obok wjazdu na brook",
+      "isAccepted": "Tak",
+      "deliveryMethod": "elektroniczny",
+      "photoUrl": "",
+      "id": "719ccfb4-fd06-484c-aa43-16927e818bab",
+      "issueDate": "2025-12-26T20:02:12.140Z",
+      "author": "Andrew Evangelista",
+      "authorBadge": "233",
+      "department": "WSP"
+    }
+  ],
+  "1219721664674402366": [
+    {
+      "reportType": "areszt",
+      "officerDiscordId": "3969452287",
+      "civilianDiscordId": "1219721664674402366",
+      "civilianFullName": "Dayvon Lean",
+      "civilianAge": "25",
+      "civilianGender": "M",
+      "confiscatedItems": "Telefon",
+      "photoUrl": "https://i.imgur.com/yuqw6rj.png",
+      "arrestLocation": "Pod wodospadem",
+      "jailLocation": "WSP",
+      "charges": [
+        {
+          "id": 6,
+          "category": "drogowe",
+          "name": "Nie zatrzymanie do kontroli",
+          "price": 4250,
+          "lata": 5
+        },
+        {
+          "id": 201,
+          "category": "ciezkie",
+          "name": "Ucieczka przed WSP",
+          "price": 9500,
+          "lata": 25
+        },
+        {
+          "id": 226,
+          "category": "ciezkie",
+          "name": "Włamanie na Komende",
+          "price": 16500,
+          "lata": 30
+        },
+        {
+          "id": 404,
+          "category": "sila",
+          "name": "Nieumyślne spowodowanie uszczerbku na zdrowiu",
+          "price": 12500,
+          "lata": 10
+        }
+      ],
+      "finalTotalFine": 42750,
+      "finalSentence": 70,
+      "id": "7d77ea06-ef6b-41f0-823a-7d3153d40ebe",
+      "issueDate": "2025-12-26T20:49:39.927Z",
+      "author": "David Basso",
+      "authorBadge": "264",
+      "department": "WSP"
+    }
+  ],
+  "1064839615460167741": [
+    {
+      "reportType": "mandat",
+      "ticketTarget": "vehicle",
+      "civilianDiscordId": "1064839615460167741",
+      "civilianFullName": "",
+      "vehicleInfo": "Mercedes, czarny ",
+      "licensePlate": "RYSZARD/Wisconsin ",
+      "charges": [
+        {
+          "id": 503,
+          "category": "predkosc",
+          "name": "Przekroczenie od 16 MPH do 20 MPH ponad limit",
+          "price": 3250,
+          "lata": 0
+        }
+      ],
+      "totalFine": 3250,
+      "location": "Autostrada ",
+      "isAccepted": "Tak",
+      "deliveryMethod": "do ręki",
+      "photoUrl": "",
+      "id": "129c18b4-9af8-4acc-b976-e4322f4c2413",
+      "issueDate": "2025-12-27T20:31:14.915Z",
+      "author": "Jacob Mick",
+      "authorBadge": "230",
+      "department": "WSP"
+    },
+    {
+      "reportType": "mandat",
+      "ticketTarget": "person",
+      "civilianDiscordId": "1064839615460167741",
+      "civilianFullName": "Ryszard Klimczak",
+      "vehicleInfo": "",
+      "licensePlate": "",
+      "charges": [
+        {
+          "id": 100,
+          "category": "lekkie",
+          "name": "Zakłócanie porządku publicznego",
+          "price": 950,
+          "lata": 0
+        }
+      ],
+      "totalFine": 950,
+      "location": "Posterunek WSP Brookmare",
+      "isAccepted": "Tak",
+      "deliveryMethod": "do ręki",
+      "photoUrl": "",
+      "id": "ba2e39af-7abb-4d53-bace-906a65d3907d",
+      "issueDate": "2025-12-26T21:43:40.792Z",
+      "author": "Franciszek Trawa",
+      "authorBadge": "140",
+      "department": "WSP"
+    }
+  ],
+  "1216171379226050641": [
+    {
+      "reportType": "areszt",
+      "officerDiscordId": "1188827558280691822",
+      "civilianDiscordId": "1216171379226050641",
+      "civilianFullName": "Travis Hayes",
+      "civilianAge": "20",
+      "civilianGender": "M",
+      "confiscatedItems": "Telefon",
+      "photoUrl": "https://i.imgur.com/V4Xr05T.png",
+      "arrestLocation": "Brookmere Centrum ",
+      "jailLocation": "WSP",
+      "charges": [
+        {
+          "id": 25,
+          "category": "drogowe",
+          "name": "Nadmierne używanie sygnału dźwiękowego / świateł drogowych",
+          "price": 750,
+          "lata": 0
+        },
+        {
+          "id": 102,
+          "category": "lekkie",
+          "name": "Niewykonywanie poleceń FP",
+          "price": 4000,
+          "lata": 0
+        },
+        {
+          "id": 104,
+          "category": "lekkie",
+          "name": "Utrudnianie pracy służbom publicznym",
+          "price": 3500,
+          "lata": 0
+        },
+        {
+          "id": 110,
+          "category": "lekkie",
+          "name": "Stawianie oporu",
+          "price": 5400,
+          "lata": 10
+        },
+        {
+          "id": 12,
+          "category": "drogowe",
+          "name": "Potrącenie przechodnia",
+          "price": 5250,
+          "lata": 0
+        }
+      ],
+      "finalTotalFine": 18900,
+      "finalSentence": 10,
+      "id": "f975195d-2e0a-46e7-a9ae-c17d8cba53e2",
+      "issueDate": "2025-12-26T22:03:52.352Z",
+      "author": "Ethan Davies",
+      "authorBadge": "201",
+      "department": "WSP"
+    }
+  ],
+  "1453087555921776772": [
+    {
+      "reportType": "mandat",
+      "ticketTarget": "vehicle",
+      "civilianDiscordId": "1453087555921776772",
+      "civilianFullName": "",
+      "vehicleInfo": "Stuttgart, E-Saloon 053, Biały",
+      "licensePlate": "A0M 053 / Tennese",
+      "charges": [
+        {
+          "id": 8,
+          "category": "drogowe",
+          "name": "Przejazd na czerwonym świetle / Znaku STOP",
+          "price": 1100,
+          "lata": 0
+        }
+      ],
+      "totalFine": 1100,
+      "location": "Brookmere",
+      "isAccepted": "Tak",
+      "deliveryMethod": "elektroniczny",
+      "photoUrl": "",
+      "id": "54aa5bbb-f8d9-4683-a749-2a5d39698c61",
+      "issueDate": "2025-12-26T22:22:11.138Z",
+      "author": "Jacob Garcia",
+      "authorBadge": "196",
+      "department": "WSP"
+    }
+  ],
+  "1304212100255842355": [
+    {
+      "reportType": "mandat",
+      "ticketTarget": "vehicle",
+      "civilianDiscordId": "1304212100255842355",
+      "civilianFullName": "",
+      "vehicleInfo": "Stuttgart E-saloon szary",
+      "licensePlate": "QJF-830 / Wisconsin",
+      "charges": [
+        {
+          "id": 4,
+          "category": "drogowe",
+          "name": "Brawurowa jazda",
+          "price": 3750,
+          "lata": 0
+        },
+        {
+          "id": 5,
+          "category": "drogowe",
+          "name": "Stwarzanie zagrożenia w ruchu drogowym",
+          "price": 3750,
+          "lata": 0
+        },
+        {
+          "id": 7,
+          "category": "drogowe",
+          "name": "Zły stan techniczny pojazdu / Brak OC / Brak badania technicznego",
+          "price": 1750,
+          "lata": 0
+        },
+        {
+          "id": 9,
+          "category": "drogowe",
+          "name": "Zniszczenie mienia",
+          "price": 1950,
+          "lata": 0
+        },
+        {
+          "id": 100,
+          "category": "lekkie",
+          "name": "Zakłócanie porządku publicznego",
+          "price": 950,
+          "lata": 0
+        },
+        {
+          "id": 102,
+          "category": "lekkie",
+          "name": "Niewykonywanie poleceń FP",
+          "price": 4000,
+          "lata": 0
+        },
+        {
+          "id": 104,
+          "category": "lekkie",
+          "name": "Utrudnianie pracy służbom publicznym",
+          "price": 3500,
+          "lata": 0
+        }
+      ],
+      "totalFine": 19650,
+      "location": "Tyły brookmare",
+      "isAccepted": "Tak",
+      "deliveryMethod": "elektroniczny",
+      "photoUrl": "",
+      "id": "6f206a59-f103-45b6-8946-6309d53d31f6",
+      "issueDate": "2025-12-27T00:15:25.991Z",
+      "author": "Franciszek Trawa",
+      "authorBadge": "140",
+      "department": "WSP"
+    },
+    {
+      "reportType": "mandat",
+      "ticketTarget": "vehicle",
+      "civilianDiscordId": "1304212100255842355",
+      "civilianFullName": "",
+      "vehicleInfo": "Stuttgart E-saloon biały",
+      "licensePlate": "QJF-830 / Wisconsin",
+      "charges": [
+        {
+          "id": 5,
+          "category": "drogowe",
+          "name": "Stwarzanie zagrożenia w ruchu drogowym",
+          "price": 3750,
+          "lata": 0
+        },
+        {
+          "id": 11,
+          "category": "drogowe",
+          "name": "Winny kolizji drogowej",
+          "price": 2150,
+          "lata": 0
+        }
+      ],
+      "totalFine": 5900,
+      "location": "Jarmark Brookmare",
+      "isAccepted": "Tak",
+      "deliveryMethod": "elektroniczny",
+      "photoUrl": "",
+      "id": "923bbb5d-8ba4-482c-9c46-8155dc939229",
+      "issueDate": "2025-12-27T00:12:13.265Z",
+      "author": "Franciszek Trawa",
+      "authorBadge": "140",
+      "department": "WSP"
+    },
+    {
+      "reportType": "mandat",
+      "ticketTarget": "vehicle",
+      "civilianDiscordId": "1304212100255842355",
+      "civilianFullName": "",
+      "vehicleInfo": "Stuttgart E-saloon szary",
+      "licensePlate": "XAHAXAX / Wisconsin",
+      "charges": [
+        {
+          "id": 102,
+          "category": "lekkie",
+          "name": "Niewykonywanie poleceń FP",
+          "price": 4000,
+          "lata": 0
+        },
+        {
+          "id": 7,
+          "category": "drogowe",
+          "name": "Zły stan techniczny pojazdu / Brak OC / Brak badania technicznego",
+          "price": 1750,
+          "lata": 0
+        }
+      ],
+      "totalFine": 5750,
+      "location": "Wjazd Brookmare od strony toru",
+      "isAccepted": "Tak",
+      "deliveryMethod": "do ręki",
+      "photoUrl": "",
+      "id": "7278ea21-daad-4a11-aecf-8d94817f993f",
+      "issueDate": "2025-12-26T23:37:09.585Z",
+      "author": "Franciszek Trawa",
+      "authorBadge": "140",
+      "department": "WSP"
+    },
+    {
+      "reportType": "areszt",
+      "officerDiscordId": "1222192916009848858",
+      "civilianDiscordId": "1304212100255842355",
+      "civilianFullName": "William Fox",
+      "civilianAge": "43",
+      "civilianGender": "M",
+      "confiscatedItems": "Brak",
+      "photoUrl": "https://i.imgur.com/ozorlWX.png",
+      "arrestLocation": "Centrum Brookmare",
+      "jailLocation": "WSP",
+      "charges": [
+        {
+          "id": 202,
+          "category": "ciezkie",
+          "name": "Porwanie",
+          "price": 22500,
+          "lata": 40
+        },
+        {
+          "id": 112,
+          "category": "lekkie",
+          "name": "Chodzenie zamaskowanym po mieście",
+          "price": 1800,
+          "lata": 0
+        },
+        {
+          "id": 400,
+          "category": "sila",
+          "name": "Usiłowanie zabójstwa obywatela",
+          "price": 70500,
+          "lata": 110
+        },
+        {
+          "id": 405,
+          "category": "sila",
+          "name": "Naruszenie nietykalności cielestnej / Dóbr osobistych",
+          "price": 12500,
+          "lata": 10
+        },
+        {
+          "id": 208,
+          "category": "ciezkie",
+          "name": "Nękanie obywatela/obywatelki",
+          "price": 10000,
+          "lata": 25
+        }
+      ],
+      "finalTotalFine": 117300,
+      "finalSentence": 185,
+      "id": "6c351cd5-2d74-44c5-acc4-4aeb6af5cc5a",
+      "issueDate": "2025-12-26T22:33:19.595Z",
+      "author": "Franciszek Trawa",
+      "authorBadge": "140",
+      "department": "WSP"
+    },
+    {
+      "reportType": "mandat",
+      "ticketTarget": "vehicle",
+      "civilianDiscordId": "1304212100255842355",
+      "civilianFullName": "",
+      "vehicleInfo": "Wolfsburg Charge Zółty",
+      "licensePlate": "QJF-830 / Wisconsin",
+      "charges": [
+        {
+          "id": 8,
+          "category": "drogowe",
+          "name": "Przejazd na czerwonym świetle / Znaku STOP",
+          "price": 1100,
+          "lata": 0
+        },
+        {
+          "id": 11,
+          "category": "drogowe",
+          "name": "Winny kolizji drogowej",
+          "price": 2150,
+          "lata": 0
+        },
+        {
+          "id": 5,
+          "category": "drogowe",
+          "name": "Stwarzanie zagrożenia w ruchu drogowym",
+          "price": 3750,
+          "lata": 0
+        }
+      ],
+      "totalFine": 7000,
+      "location": "Centrum Brookmare",
+      "isAccepted": "Tak",
+      "deliveryMethod": "do ręki",
+      "photoUrl": "",
+      "id": "629d39e3-4c23-4fff-85dd-d4a24781d609",
+      "issueDate": "2025-12-26T22:26:51.081Z",
+      "author": "Franciszek Trawa",
+      "authorBadge": "140",
+      "department": "WSP"
+    }
+  ],
+  "848612076564906035": [
+    {
+      "reportType": "mandat",
+      "ticketTarget": "person",
+      "civilianDiscordId": "848612076564906035",
+      "civilianFullName": "Jacob Mick",
+      "vehicleInfo": "",
+      "licensePlate": "",
+      "charges": [
+        {
+          "id": 105,
+          "category": "lekkie",
+          "name": "Fałszywe zgłoszenie",
+          "price": 3250,
+          "lata": 0
+        }
+      ],
+      "totalFine": 3250,
+      "location": "Brookmere",
+      "isAccepted": "Tak",
+      "deliveryMethod": "elektroniczny",
+      "photoUrl": "",
+      "id": "7adf6f40-dca9-4081-b940-728fb4afdea6",
+      "issueDate": "2025-12-28T22:40:41.481Z",
+      "author": "Ethan Davies",
+      "authorBadge": "201",
+      "department": "WSP"
+    },
+    {
+      "reportType": "mandat",
+      "ticketTarget": "person",
+      "civilianDiscordId": "848612076564906035",
+      "civilianFullName": "Jacob Mick",
+      "vehicleInfo": "",
+      "licensePlate": "",
+      "charges": [
+        {
+          "id": 104,
+          "category": "lekkie",
+          "name": "Utrudnianie pracy służbom publicznym",
+          "price": 3500,
+          "lata": 0
+        }
+      ],
+      "totalFine": 3500,
+      "location": "Parking obok brookmere",
+      "isAccepted": "Tak",
+      "deliveryMethod": "do ręki",
+      "photoUrl": "",
+      "id": "1ae74ef0-f535-4bbe-aba5-ce1c0fc2e371",
+      "issueDate": "2025-12-28T22:17:59.214Z",
+      "author": "Ethan Davies",
+      "authorBadge": "201",
+      "department": "WSP"
+    },
+    {
+      "reportType": "pouczenie",
+      "ticketTarget": "person",
+      "civilianDiscordId": "848612076564906035",
+      "civilianFullName": "Jacob Mick",
+      "vehicleInfo": "",
+      "licensePlate": "",
+      "charges": [
+        {
+          "id": 105,
+          "category": "lekkie",
+          "name": "Fałszywe zgłoszenie",
+          "price": 3250,
+          "lata": 0
+        }
+      ],
+      "totalFine": 3250,
+      "location": "FD Brookmare",
+      "isAccepted": "Tak",
+      "deliveryMethod": "do ręki",
+      "photoUrl": "",
+      "id": "7a90c6ae-2285-44da-bb23-cc0efe96ebb4",
+      "issueDate": "2025-12-28T21:37:04.295Z",
+      "author": "Franciszek Trawa",
+      "authorBadge": "118",
+      "department": "WSP"
+    },
+    {
+      "reportType": "areszt",
+      "officerDiscordId": "1222192916009848858",
+      "civilianDiscordId": "848612076564906035",
+      "civilianFullName": "Jacob Mick",
+      "civilianAge": "25",
+      "civilianGender": "M",
+      "confiscatedItems": "Telefon, dokumenty, zabawki erotyczne.",
+      "photoUrl": "https://i.imgur.com/X66DHak.png",
+      "arrestLocation": "Autostrada",
+      "jailLocation": "WSP",
+      "charges": [
+        {
+          "id": 16,
+          "category": "drogowe",
+          "name": "Jazda bez prawa jazdy, przedłużenie zabrania o 7 dni + odcholowanie pojazdu na parking WSP",
+          "price": 9500,
+          "lata": 10
+        }
+      ],
+      "finalTotalFine": 19500,
+      "finalSentence": 0,
+      "id": "88dd8219-87ad-4444-b435-6866e9b0c658",
+      "issueDate": "2025-12-28T20:55:33.668Z",
+      "author": "Franciszek Trawa",
+      "authorBadge": "118",
+      "department": "WSP"
+    },
+    {
+      "reportType": "mandat",
+      "ticketTarget": "vehicle",
+      "civilianDiscordId": "848612076564906035",
+      "civilianFullName": "",
+      "vehicleInfo": "Audi RS6 Avant szare",
+      "licensePlate": "QTR4 / Wisconsin",
+      "charges": [
+        {
+          "id": 26,
+          "category": "drogowe",
+          "name": "Utrudnianie płynności ruchu",
+          "price": 1000,
+          "lata": 0
+        }
+      ],
+      "totalFine": 1000,
+      "location": "Autostrada",
+      "isAccepted": "Tak",
+      "deliveryMethod": "elektroniczny",
+      "photoUrl": "",
+      "id": "0a34e2e0-1055-4111-9139-b0728f86e1b3",
+      "issueDate": "2025-12-28T20:32:09.599Z",
+      "author": "Franciszek Trawa",
+      "authorBadge": "118",
+      "department": "WSP"
+    },
+    {
+      "reportType": "pouczenie",
+      "ticketTarget": "vehicle",
+      "civilianDiscordId": "848612076564906035",
+      "civilianFullName": "",
+      "vehicleInfo": "Audi RS6 Avant szare",
+      "licensePlate": "QTR4 / Wisconsin",
+      "charges": [
+        {
+          "id": 5,
+          "category": "drogowe",
+          "name": "Stwarzanie zagrożenia w ruchu drogowym",
+          "price": 3750,
+          "lata": 0
+        }
+      ],
+      "totalFine": 3750,
+      "location": "Domki na skarpie",
+      "isAccepted": "Tak",
+      "deliveryMethod": "do ręki",
+      "photoUrl": "",
+      "id": "9263ac1b-e6e0-4d4e-a378-eb27ffbedb38",
+      "issueDate": "2025-12-28T20:20:01.120Z",
+      "author": "Franciszek Trawa",
+      "authorBadge": "118",
+      "department": "WSP"
+    },
+    {
+      "reportType": "mandat",
+      "ticketTarget": "vehicle",
+      "civilianDiscordId": "848612076564906035",
+      "civilianFullName": "",
+      "vehicleInfo": "Audi, Rs6 Avant, Szary",
+      "licensePlate": "QTR4 / Wisconsin",
+      "charges": [
+        {
+          "id": 502,
+          "category": "predkosc",
+          "name": "Przekroczenie od 11 MPH do 15 MPH ponad limit",
+          "price": 2250,
+          "lata": 0
+        }
+      ],
+      "totalFine": 2250,
+      "location": "Brookmere",
+      "isAccepted": "Tak",
+      "deliveryMethod": "do ręki",
+      "photoUrl": "",
+      "id": "c518430b-1902-45f1-b3db-c607c0ef8dc8",
+      "issueDate": "2025-12-26T23:20:16.617Z",
+      "author": "Jacob Garcia",
+      "authorBadge": "196",
+      "department": "WSP"
+    },
+    {
+      "reportType": "mandat",
+      "ticketTarget": "vehicle",
+      "civilianDiscordId": "848612076564906035",
+      "civilianFullName": "",
+      "vehicleInfo": "Audi Rs6 Szare",
+      "licensePlate": "QTR4/Wisconsin",
+      "charges": [
+        {
+          "id": 509,
+          "category": "predkosc",
+          "name": "Przekroczenie ponad 90 MPH na autostradzie + zabranie prawa jazdy",
+          "price": 9750,
+          "lata": 0
+        }
+      ],
+      "totalFine": 9750,
+      "location": "Autostrada",
+      "isAccepted": "Tak",
+      "deliveryMethod": "do ręki",
+      "photoUrl": "",
+      "id": "49711b11-cb54-490c-be86-f0a7639e8322",
+      "issueDate": "2025-12-26T22:30:06.187Z",
+      "author": "David Basso",
+      "authorBadge": "264",
+      "department": "WSP"
+    }
+  ],
+  "911642659221827585": [
+    {
+      "reportType": "mandat",
+      "ticketTarget": "vehicle",
+      "civilianDiscordId": "911642659221827585",
+      "civilianFullName": "",
+      "vehicleInfo": "Volkswagen, Golf 7R, Niebieski",
+      "licensePlate": "GOLF-IK",
+      "charges": [
+        {
+          "id": 509,
+          "category": "predkosc",
+          "name": "Przekroczenie ponad 90 MPH na autostradzie + zabranie prawa jazdy",
+          "price": 9750,
+          "lata": 0
+        }
+      ],
+      "totalFine": 9750,
+      "location": "Stacja NextStop na autostradzie",
+      "isAccepted": "Tak",
+      "deliveryMethod": "do ręki",
+      "photoUrl": "",
+      "id": "b371da01-f12c-401d-907b-4ad6435732fe",
+      "issueDate": "2025-12-26T22:31:03.520Z",
+      "author": "Ethan Davies",
+      "authorBadge": "201",
+      "department": "WSP"
+    }
+  ],
+  "1276569262823182479": [
+    {
+      "reportType": "mandat",
+      "ticketTarget": "vehicle",
+      "civilianDiscordId": "1276569262823182479",
+      "civilianFullName": "",
+      "vehicleInfo": "BKM, W30 Manual Competition RWD, Bordowy",
+      "licensePlate": "LUCKY7 / TEXAS",
+      "charges": [
+        {
+          "id": 5,
+          "category": "drogowe",
+          "name": "Stwarzanie zagrożenia w ruchu drogowym",
+          "price": 3750,
+          "lata": 0
+        },
+        {
+          "id": 2,
+          "category": "drogowe",
+          "name": "Jazda bez świateł",
+          "price": 750,
+          "lata": 0
+        },
+        {
+          "id": 17,
+          "category": "drogowe",
+          "name": "Wymuszenie pierwszeństwa",
+          "price": 1250,
+          "lata": 0
+        },
+        {
+          "id": 10,
+          "category": "drogowe",
+          "name": "Winny wypadku drogowemu",
+          "price": 3350,
+          "lata": 0
+        }
+      ],
+      "totalFine": 9100,
+      "location": "Przed Brookmere obok parkingu",
+      "isAccepted": "Tak",
+      "deliveryMethod": "do ręki",
+      "photoUrl": "",
+      "id": "41cb0fa8-b440-4166-8158-09a47442d0f9",
+      "issueDate": "2025-12-28T23:19:32.479Z",
+      "author": "Ethan Davies",
+      "authorBadge": "201",
+      "department": "WSP"
+    },
+    {
+      "reportType": "mandat",
+      "ticketTarget": "vehicle",
+      "civilianDiscordId": "1276569262823182479",
+      "civilianFullName": "",
+      "vehicleInfo": "Bkm, Series40 Grand Tourer, Biały",
+      "licensePlate": "M4-440 / Texas",
+      "charges": [
+        {
+          "id": 10,
+          "category": "drogowe",
+          "name": "Winny wypadku drogowemu",
+          "price": 3350,
+          "lata": 0
+        }
+      ],
+      "totalFine": 3350,
+      "location": "Brookmere",
+      "isAccepted": "Tak",
+      "deliveryMethod": "do ręki",
+      "photoUrl": "",
+      "id": "3f803098-540a-48b2-bf4d-a9016f692d8a",
+      "issueDate": "2025-12-26T23:18:42.227Z",
+      "author": "Jacob Garcia",
+      "authorBadge": "196",
+      "department": "WSP"
+    }
+  ],
+  "1125106051981774959": [
+    {
+      "reportType": "mandat",
+      "ticketTarget": "vehicle",
+      "civilianDiscordId": "1125106051981774959",
+      "civilianFullName": "",
+      "vehicleInfo": "Czerwony Land Rover",
+      "licensePlate": "ORW-H25",
+      "charges": [
+        {
+          "id": 13,
+          "category": "drogowe",
+          "name": "Niewłaściwe parkowanie",
+          "price": 1000,
+          "lata": 0
+        }
+      ],
+      "totalFine": 1000,
+      "location": "Urząd Brookmere",
+      "isAccepted": "Tak",
+      "deliveryMethod": "elektroniczny",
+      "photoUrl": "",
+      "id": "85ff6a97-62b4-46d8-b69b-292de79aa17b",
+      "issueDate": "2025-12-27T19:11:18.540Z",
+      "author": "Casper West",
+      "authorBadge": "101",
+      "department": "WSP"
+    }
+  ],
+  "1133548675071746149": [
+    {
+      "reportType": "mandat",
+      "ticketTarget": "vehicle",
+      "civilianDiscordId": "1133548675071746149",
+      "civilianFullName": "",
+      "vehicleInfo": "Mercedes",
+      "licensePlate": "SANTIA",
+      "charges": [
+        {
+          "id": 3,
+          "category": "drogowe",
+          "name": "Przekroczenie prędkości w mieście",
+          "price": 2500,
+          "lata": 0
+        }
+      ],
+      "totalFine": 2500,
+      "location": "skrzyzowanie golden meadow",
+      "isAccepted": "Tak",
+      "deliveryMethod": "do ręki",
+      "photoUrl": "",
+      "id": "ed804428-5eae-48cc-b311-edfa38cf7659",
+      "issueDate": "2025-12-27T23:39:38.099Z",
+      "author": "Mathew South",
+      "authorBadge": "267",
+      "department": "WSP"
+    },
+    {
+      "reportType": "mandat",
+      "ticketTarget": "vehicle",
+      "civilianDiscordId": "1133548675071746149",
+      "civilianFullName": "",
+      "vehicleInfo": "Stuttgart vaihigen 63 coupe",
+      "licensePlate": "SANTIA/Delware",
+      "charges": [
+        {
+          "id": 502,
+          "category": "predkosc",
+          "name": "Przekroczenie od 11 MPH do 15 MPH ponad limit",
+          "price": 2250,
+          "lata": 0
+        }
+      ],
+      "totalFine": 2250,
+      "location": "Most obok wodospadu",
+      "isAccepted": "Tak",
+      "deliveryMethod": "do ręki",
+      "photoUrl": "",
+      "id": "3c0bc762-e906-4691-8981-9696104659a2",
+      "issueDate": "2025-12-27T21:50:16.238Z",
+      "author": "David Basso",
+      "authorBadge": "264",
+      "department": "WSP"
+    }
+  ],
+  "807675586637070367": [
+    {
+      "reportType": "areszt",
+      "officerDiscordId": "1129788250958090271",
+      "civilianDiscordId": "807675586637070367",
+      "civilianFullName": "Victor Janke",
+      "civilianAge": "25",
+      "civilianGender": "M",
+      "confiscatedItems": "Podejrzany nic przy sobie nie miał.",
+      "photoUrl": "https://i.imgur.com/TwHSolD.png",
+      "arrestLocation": "Cenex (Greenville)",
+      "jailLocation": "WSP",
+      "charges": [
+        {
+          "id": 3,
+          "category": "drogowe",
+          "name": "Przekroczenie prędkości w mieście",
+          "price": 2500,
+          "lata": 0
+        },
+        {
+          "id": 4,
+          "category": "drogowe",
+          "name": "Brawurowa jazda",
+          "price": 3750,
+          "lata": 0
+        },
+        {
+          "id": 5,
+          "category": "drogowe",
+          "name": "Stwarzanie zagrożenia w ruchu drogowym",
+          "price": 3750,
+          "lata": 0
+        },
+        {
+          "id": 6,
+          "category": "drogowe",
+          "name": "Nie zatrzymanie do kontroli",
+          "price": 4250,
+          "lata": 5
+        },
+        {
+          "id": 8,
+          "category": "drogowe",
+          "name": "Przejazd na czerwonym świetle / Znaku STOP",
+          "price": 1100,
+          "lata": 0
+        },
+        {
+          "id": 10,
+          "category": "drogowe",
+          "name": "Winny wypadku drogowemu",
+          "price": 3350,
+          "lata": 0
+        },
+        {
+          "id": 11,
+          "category": "drogowe",
+          "name": "Winny kolizji drogowej",
+          "price": 2150,
+          "lata": 0
+        },
+        {
+          "id": 15,
+          "category": "drogowe",
+          "name": "Niszczenie mienia publicznego / Jazda po zieleni",
+          "price": 1800,
+          "lata": 0
+        },
+        {
+          "id": 18,
+          "category": "drogowe",
+          "name": "Jazda pod prąd",
+          "price": 3250,
+          "lata": 0
+        },
+        {
+          "id": 19,
+          "category": "drogowe",
+          "name": "Nielegalny U-Turn",
+          "price": 650,
+          "lata": 0
+        },
+        {
+          "id": 22,
+          "category": "drogowe",
+          "name": "Nielegalne wyprzedzanie / na lini ciągłej",
+          "price": 1000,
+          "lata": 0
+        },
+        {
+          "id": 23,
+          "category": "drogowe",
+          "name": "Brake checking",
+          "price": 1200,
+          "lata": 0
+        },
+        {
+          "id": 33,
+          "category": "drogowe",
+          "name": "Skręt ze złego pasa",
+          "price": 700,
+          "lata": 0
+        },
+        {
+          "id": 38,
+          "category": "drogowe",
+          "name": "Nieużycie kierunkowskazu",
+          "price": 300,
+          "lata": 0
+        },
+        {
+          "id": 102,
+          "category": "lekkie",
+          "name": "Niewykonywanie poleceń FP",
+          "price": 4000,
+          "lata": 0
+        },
+        {
+          "id": 110,
+          "category": "lekkie",
+          "name": "Stawianie oporu",
+          "price": 5400,
+          "lata": 10
+        },
+        {
+          "id": 201,
+          "category": "ciezkie",
+          "name": "Ucieczka przed WSP",
+          "price": 9500,
+          "lata": 25
+        },
+        {
+          "id": 508,
+          "category": "predkosc",
+          "name": "Przekroczenie ponad 80 MPH + zabranie prawa jazdy",
+          "price": 10750,
+          "lata": 0
+        }
+      ],
+      "finalTotalFine": 59400,
+      "finalSentence": 40,
+      "id": "8bfbb4db-48bc-461a-99bc-4198a9a47692",
+      "issueDate": "2025-12-27T22:31:05.860Z",
+      "author": "John Davis",
+      "authorBadge": "101",
+      "department": "WSP"
+    }
+  ],
+  "1208088152284073984": [
+    {
+      "reportType": "mandat",
+      "ticketTarget": "vehicle",
+      "civilianDiscordId": "1208088152284073984",
+      "civilianFullName": "",
+      "vehicleInfo": "BKM Series 30 Wagon Niebieski/granatowy",
+      "licensePlate": "WNO-121 / Wisconsin",
+      "charges": [
+        {
+          "id": 502,
+          "category": "predkosc",
+          "name": "Przekroczenie od 11 MPH do 15 MPH ponad limit",
+          "price": 2250,
+          "lata": 0
+        }
+      ],
+      "totalFine": 2250,
+      "location": "TAX OFFICE",
+      "isAccepted": "Tak",
+      "deliveryMethod": "do ręki",
+      "photoUrl": "",
+      "id": "3f2f113b-a774-4fe2-848f-fdac02e50722",
+      "issueDate": "2025-12-27T22:40:27.728Z",
+      "author": "Franciszek Trawa",
+      "authorBadge": "118",
+      "department": "WSP"
+    }
+  ],
+  "743126892026265781": [
+    {
+      "reportType": "areszt",
+      "officerDiscordId": "1222192916009848858",
+      "civilianDiscordId": "743126892026265781",
+      "civilianFullName": "Paweł Pawelen",
+      "civilianAge": "24",
+      "civilianGender": "M",
+      "confiscatedItems": "Brak",
+      "photoUrl": "https://i.imgur.com/EUrinyB.png",
+      "arrestLocation": "Jarmark",
+      "jailLocation": "WSP",
+      "charges": [
+        {
+          "id": 103,
+          "category": "lekkie",
+          "name": "Obraza FP",
+          "price": 950,
+          "lata": 0
+        },
+        {
+          "id": 102,
+          "category": "lekkie",
+          "name": "Niewykonywanie poleceń FP",
+          "price": 4000,
+          "lata": 0
+        },
+        {
+          "id": 9,
+          "category": "drogowe",
+          "name": "Zniszczenie mienia",
+          "price": 1950,
+          "lata": 0
+        },
+        {
+          "id": 104,
+          "category": "lekkie",
+          "name": "Utrudnianie pracy służbom publicznym",
+          "price": 3500,
+          "lata": 0
+        },
+        {
+          "id": 106,
+          "category": "lekkie",
+          "name": "Niszczenie cudzej własności",
+          "price": 950,
+          "lata": 0
+        },
+        {
+          "id": 208,
+          "category": "ciezkie",
+          "name": "Nękanie obywatela/obywatelki",
+          "price": 10000,
+          "lata": 25
+        }
+      ],
+      "finalTotalFine": 21350,
+      "finalSentence": 25,
+      "id": "bf48aeec-602e-49a8-a56b-d7b601c5868c",
+      "issueDate": "2025-12-27T23:16:29.525Z",
+      "author": "Franciszek Trawa",
+      "authorBadge": "118",
+      "department": "WSP"
+    }
+  ],
+  "480333454194769920": [
+    {
+      "reportType": "mandat",
+      "ticketTarget": "vehicle",
+      "civilianDiscordId": "480333454194769920",
+      "civilianFullName": "",
+      "vehicleInfo": "Ranger Rover Sport SVR, Czarny",
+      "licensePlate": "EXA-841, California",
+      "charges": [
+        {
+          "id": 507,
+          "category": "predkosc",
+          "name": "Przekroczenie od 41 MPH ponad limit",
+          "price": 9250,
+          "lata": 0
+        }
+      ],
+      "totalFine": 9250,
+      "location": "Tunel w stronę wodospadu.",
+      "isAccepted": "Tak",
+      "deliveryMethod": "do ręki",
+      "photoUrl": "",
+      "id": "b4b46669-4177-4834-9397-bc20e1cf6cfd",
+      "issueDate": "2025-12-27T23:46:44.857Z",
+      "author": "John Jacob Byrd",
+      "authorBadge": "103",
+      "department": "WSP"
+    }
+  ],
+  "1333897671471267871": [
+    {
+      "reportType": "mandat",
+      "ticketTarget": "vehicle",
+      "civilianDiscordId": "1333897671471267871",
+      "civilianFullName": "",
+      "vehicleInfo": "2023 Porsche 718 Cayman GT4RS Różowe",
+      "licensePlate": "GT4RS, TX",
+      "charges": [
+        {
+          "id": 7,
+          "category": "drogowe",
+          "name": "Zły stan techniczny pojazdu / Brak OC / Brak badania technicznego",
+          "price": 1750,
+          "lata": 0
+        },
+        {
+          "id": 21,
+          "category": "drogowe",
+          "name": "Gazowanie na światłach / Drifty",
+          "price": 1750,
+          "lata": 0
+        }
+      ],
+      "totalFine": 3500,
+      "location": "Zjazd obok Roadmap",
+      "isAccepted": "Tak",
+      "deliveryMethod": "do ręki",
+      "photoUrl": "",
+      "id": "72825174-8c5b-46b4-8c71-d1638998ed2c",
+      "issueDate": "2025-12-28T19:39:32.175Z",
+      "author": "Natalie Castellano-Wilczek",
+      "authorBadge": "104",
+      "department": "WSP"
+    }
+  ],
+  "1152540596771233803": [
+    {
+      "reportType": "mandat",
+      "ticketTarget": "vehicle",
+      "civilianDiscordId": "1152540596771233803",
+      "civilianFullName": "",
+      "vehicleInfo": "BMW m4 Cs",
+      "licensePlate": "CS/Texas",
+      "charges": [
+        {
+          "id": 4,
+          "category": "drogowe",
+          "name": "Brawurowa jazda",
+          "price": 3750,
+          "lata": 0
+        }
+      ],
+      "totalFine": 3750,
+      "location": "zakret przy wjezdzie na autostrade",
+      "isAccepted": "Tak",
+      "deliveryMethod": "do ręki",
+      "photoUrl": "",
+      "id": "7d8e17b8-2d85-444e-9140-0c6ed8ed7369",
+      "issueDate": "2025-12-28T21:02:47.522Z",
+      "author": "David Basso",
+      "authorBadge": "264",
+      "department": "WSP"
+    }
+  ],
+  "1004107581364649985": [
+    {
+      "reportType": "mandat",
+      "ticketTarget": "person",
+      "civilianDiscordId": "1004107581364649985",
+      "civilianFullName": "Lukas Lake",
+      "vehicleInfo": "",
+      "licensePlate": "",
+      "charges": [
+        {
+          "id": 5,
+          "category": "drogowe",
+          "name": "Stwarzanie zagrożenia w ruchu drogowym",
+          "price": 3750,
+          "lata": 0
+        }
+      ],
+      "totalFine": 3750,
+      "location": "Parking przydrożny przed torem wyścigowym",
+      "isAccepted": "Tak",
+      "deliveryMethod": "do ręki",
+      "photoUrl": "",
+      "id": "4eb6de49-7b62-4d0d-ac28-a1e810eabfaa",
+      "issueDate": "2025-12-28T23:40:32.329Z",
+      "author": "Franciszek Trawa",
+      "authorBadge": "118",
+      "department": "WSP"
+    }
+  ],
+  "1454222881176162528": [
+    {
+      "reportType": "mandat",
+      "ticketTarget": "vehicle",
+      "civilianDiscordId": "1454222881176162528",
+      "civilianFullName": "",
+      "vehicleInfo": "Stuttgart",
+      "licensePlate": "AOM 53G / Tenneesse",
+      "charges": [
+        {
+          "id": 400,
+          "category": "sila",
+          "name": "Usiłowanie zabójstwa obywatela",
+          "price": 70500,
+          "lata": 110
+        },
+        {
+          "id": 405,
+          "category": "sila",
+          "name": "Naruszenie nietykalności cielestnej / Dóbr osobistych",
+          "price": 12500,
+          "lata": 10
+        },
+        {
+          "id": 406,
+          "category": "sila",
+          "name": "Udział w bójce",
+          "price": 8500,
+          "lata": 0
+        },
+        {
+          "id": 407,
+          "category": "sila",
+          "name": "Morderstwo",
+          "price": 125000,
+          "lata": 300
+        }
+      ],
+      "totalFine": 216500,
+      "location": "Pierwszy Zakret Odrazu Za Zjazdem Na Tor",
+      "isAccepted": "Tak",
+      "deliveryMethod": "do ręki",
+      "photoUrl": "",
+      "id": "5881994f-71ce-4459-95b1-a06fd576d726",
+      "issueDate": "2025-12-29T18:03:36.881Z"
+    },
+    {
+      "reportType": "mandat",
+      "ticketTarget": "vehicle",
+      "civilianDiscordId": "1454222881176162528",
+      "civilianFullName": "",
+      "vehicleInfo": "Stuttgart",
+      "licensePlate": "AOM 53G / Tenneesse",
+      "charges": [
+        {
+          "id": 1,
+          "category": "drogowe",
+          "name": "Jazda pod wpływem alkoholu lub substancji odurzających + zabrane prawojazdy",
+          "price": 5500,
+          "lata": 15
+        },
+        {
+          "id": 2,
+          "category": "drogowe",
+          "name": "Jazda bez świateł",
+          "price": 750,
+          "lata": 0
+        },
+        {
+          "id": 3,
+          "category": "drogowe",
+          "name": "Przekroczenie prędkości w mieście",
+          "price": 2500,
+          "lata": 0
+        },
+        {
+          "id": 4,
+          "category": "drogowe",
+          "name": "Brawurowa jazda",
+          "price": 3750,
+          "lata": 0
+        },
+        {
+          "id": 5,
+          "category": "drogowe",
+          "name": "Stwarzanie zagrożenia w ruchu drogowym",
+          "price": 3750,
+          "lata": 0
+        },
+        {
+          "id": 6,
+          "category": "drogowe",
+          "name": "Nie zatrzymanie do kontroli",
+          "price": 4250,
+          "lata": 5
+        },
+        {
+          "id": 8,
+          "category": "drogowe",
+          "name": "Przejazd na czerwonym świetle / Znaku STOP",
+          "price": 1100,
+          "lata": 0
+        },
+        {
+          "id": 9,
+          "category": "drogowe",
+          "name": "Zniszczenie mienia",
+          "price": 1950,
+          "lata": 0
+        },
+        {
+          "id": 11,
+          "category": "drogowe",
+          "name": "Winny kolizji drogowej",
+          "price": 2150,
+          "lata": 0
+        },
+        {
+          "id": 12,
+          "category": "drogowe",
+          "name": "Potrącenie przechodnia",
+          "price": 5250,
+          "lata": 0
+        },
+        {
+          "id": 13,
+          "category": "drogowe",
+          "name": "Niewłaściwe parkowanie",
+          "price": 1000,
+          "lata": 0
+        },
+        {
+          "id": 14,
+          "category": "drogowe",
+          "name": "Przejście przez ulicę w miejscu niedozwolonym",
+          "price": 750,
+          "lata": 0
+        },
+        {
+          "id": 15,
+          "category": "drogowe",
+          "name": "Niszczenie mienia publicznego / Jazda po zieleni",
+          "price": 1800,
+          "lata": 0
+        },
+        {
+          "id": 16,
+          "category": "drogowe",
+          "name": "Jazda bez prawa jazdy, przedłużenie zabrania o 7 dni + odcholowanie pojazdu na parking WSP",
+          "price": 9500,
+          "lata": 10
+        },
+        {
+          "id": 17,
+          "category": "drogowe",
+          "name": "Wymuszenie pierwszeństwa",
+          "price": 1250,
+          "lata": 0
+        },
+        {
+          "id": 18,
+          "category": "drogowe",
+          "name": "Jazda pod prąd",
+          "price": 3250,
+          "lata": 0
+        },
+        {
+          "id": 21,
+          "category": "drogowe",
+          "name": "Gazowanie na światłach / Drifty",
+          "price": 1750,
+          "lata": 0
+        },
+        {
+          "id": 20,
+          "category": "drogowe",
+          "name": "Udział w nielegalnym zlocie / wyścigu",
+          "price": 1500,
+          "lata": 0
+        },
+        {
+          "id": 19,
+          "category": "drogowe",
+          "name": "Nielegalny U-Turn",
+          "price": 650,
+          "lata": 0
+        },
+        {
+          "id": 22,
+          "category": "drogowe",
+          "name": "Nielegalne wyprzedzanie / na lini ciągłej",
+          "price": 1000,
+          "lata": 0
+        },
+        {
+          "id": 23,
+          "category": "drogowe",
+          "name": "Brake checking",
+          "price": 1200,
+          "lata": 0
+        },
+        {
+          "id": 24,
+          "category": "drogowe",
+          "name": "Omijanie barier / blokad służb mundurowych",
+          "price": 4550,
+          "lata": 10
+        },
+        {
+          "id": 25,
+          "category": "drogowe",
+          "name": "Nadmierne używanie sygnału dźwiękowego / świateł drogowych",
+          "price": 750,
+          "lata": 0
+        },
+        {
+          "id": 26,
+          "category": "drogowe",
+          "name": "Utrudnianie płynności ruchu",
+          "price": 1000,
+          "lata": 0
+        },
+        {
+          "id": 27,
+          "category": "drogowe",
+          "name": "Tamowanie ruchu",
+          "price": 2000,
+          "lata": 0
+        },
+        {
+          "id": 28,
+          "category": "drogowe",
+          "name": "Wjazd na przejazd przy migającym czerwonym swietle",
+          "price": 2250,
+          "lata": 0
+        },
+        {
+          "id": 29,
+          "category": "drogowe",
+          "name": "Nie poprawne zatrzymanie przed przejazdem kolejowym",
+          "price": 1250,
+          "lata": 0
+        },
+        {
+          "id": 30,
+          "category": "drogowe",
+          "name": "Zatrzymanie się na torach",
+          "price": 3500,
+          "lata": 0
+        },
+        {
+          "id": 31,
+          "category": "drogowe",
+          "name": "Objechanie / Znisczenie rogatek na przejeździe",
+          "price": 3000,
+          "lata": 0
+        },
+        {
+          "id": 32,
+          "category": "drogowe",
+          "name": "Przejazd przez rogatki gdy się zamykają / otwierają",
+          "price": 1500,
+          "lata": 0
+        },
+        {
+          "id": 33,
+          "category": "drogowe",
+          "name": "Skręt ze złego pasa",
+          "price": 700,
+          "lata": 0
+        },
+        {
+          "id": 34,
+          "category": "drogowe",
+          "name": "Źle zarejestrowany pojazd + odholowanie pojazdu",
+          "price": 3500,
+          "lata": 0
+        },
+        {
+          "id": 35,
+          "category": "drogowe",
+          "name": "Przejazd przez ciągłą linie",
+          "price": 500,
+          "lata": 0
+        },
+        {
+          "id": 36,
+          "category": "drogowe",
+          "name": "Jazda lewym pasem",
+          "price": 850,
+          "lata": 0
+        },
+        {
+          "id": 37,
+          "category": "drogowe",
+          "name": "Nie zachowanie prawa Move Over or Slow Down",
+          "price": 3000,
+          "lata": 0
+        },
+        {
+          "id": 38,
+          "category": "drogowe",
+          "name": "Nieużycie kierunkowskazu",
+          "price": 300,
+          "lata": 0
+        },
+        {
+          "id": 39,
+          "category": "drogowe",
+          "name": "Nieustąpienie pojazdu uprzywilejowanemu",
+          "price": 1750,
+          "lata": 0
+        },
+        {
+          "id": 40,
+          "category": "drogowe",
+          "name": "Zatrzymanie się w miejscu niedozwolonym",
+          "price": 2250,
+          "lata": 0
+        },
+        {
+          "id": 100,
+          "category": "lekkie",
+          "name": "Zakłócanie porządku publicznego",
+          "price": 950,
+          "lata": 0
+        },
+        {
+          "id": 101,
+          "category": "lekkie",
+          "name": "Spożywanie alkoholu w miejscu publicznym",
+          "price": 400,
+          "lata": 0
+        },
+        {
+          "id": 102,
+          "category": "lekkie",
+          "name": "Niewykonywanie poleceń FP",
+          "price": 4000,
+          "lata": 0
+        },
+        {
+          "id": 103,
+          "category": "lekkie",
+          "name": "Obraza FP",
+          "price": 950,
+          "lata": 0
+        },
+        {
+          "id": 104,
+          "category": "lekkie",
+          "name": "Utrudnianie pracy służbom publicznym",
+          "price": 3500,
+          "lata": 0
+        },
+        {
+          "id": 105,
+          "category": "lekkie",
+          "name": "Fałszywe zgłoszenie",
+          "price": 3250,
+          "lata": 0
+        },
+        {
+          "id": 106,
+          "category": "lekkie",
+          "name": "Niszczenie cudzej własności",
+          "price": 950,
+          "lata": 0
+        },
+        {
+          "id": 107,
+          "category": "lekkie",
+          "name": "Składanie fałszywych zeznań",
+          "price": 7500,
+          "lata": 15
+        },
+        {
+          "id": 108,
+          "category": "lekkie",
+          "name": "Kradzież pojazdu",
+          "price": 17500,
+          "lata": 15
+        },
+        {
+          "id": 110,
+          "category": "lekkie",
+          "name": "Stawianie oporu",
+          "price": 5400,
+          "lata": 10
+        },
+        {
+          "id": 109,
+          "category": "lekkie",
+          "name": "Posiadanie kontrabandy",
+          "price": 9000,
+          "lata": 10
+        },
+        {
+          "id": 111,
+          "category": "lekkie",
+          "name": "Kradzież cudzej własności",
+          "price": 5225,
+          "lata": 10
+        },
+        {
+          "id": 112,
+          "category": "lekkie",
+          "name": "Chodzenie zamaskowanym po mieście",
+          "price": 1800,
+          "lata": 0
+        },
+        {
+          "id": 113,
+          "category": "lekkie",
+          "name": "Próba przekupstwa",
+          "price": 8500,
+          "lata": 0
+        },
+        {
+          "id": 114,
+          "category": "lekkie",
+          "name": "Kradzież radiowozu",
+          "price": 22500,
+          "lata": 30
+        },
+        {
+          "id": 115,
+          "category": "lekkie",
+          "name": "Wtargnięcie na teren prywatny",
+          "price": 6750,
+          "lata": 10
+        },
+        {
+          "id": 116,
+          "category": "lekkie",
+          "name": "Ucieczka z miejsca zdarzenia",
+          "price": 4500,
+          "lata": 0
+        },
+        {
+          "id": 117,
+          "category": "lekkie",
+          "name": "Bezpodstwane użycie środków obezwładniających",
+          "price": 9500,
+          "lata": 25
+        },
+        {
+          "id": 118,
+          "category": "lekkie",
+          "name": "Złamanie zakazu o niezbliżanie się",
+          "price": 6500,
+          "lata": 10
+        },
+        {
+          "id": 119,
+          "category": "lekkie",
+          "name": "Nieetyczne propozycje w stronę FP (stosunek seks.)",
+          "price": 4750,
+          "lata": 0
+        },
+        {
+          "id": 120,
+          "category": "lekkie",
+          "name": "Czyny nieetyczne w miejscu publicznym (stosunek seks.)",
+          "price": 3500,
+          "lata": 0
+        },
+        {
+          "id": 121,
+          "category": "lekkie",
+          "name": "Wyłudzenie ubezpieczenia poprzez fałszywą kradzież auta",
+          "price": 17500,
+          "lata": 10
+        },
+        {
+          "id": 122,
+          "category": "lekkie",
+          "name": "Podpalenie prywatnej posesji",
+          "price": 13500,
+          "lata": 15
+        },
+        {
+          "id": 123,
+          "category": "lekkie",
+          "name": "Podpalenie rządowej(publicznej) posesji",
+          "price": 22500,
+          "lata": 25
+        },
+        {
+          "id": 124,
+          "category": "lekkie",
+          "name": "Paserstwo (powyżej $2000)",
+          "price": 9795,
+          "lata": 25
+        },
+        {
+          "id": 125,
+          "category": "lekkie",
+          "name": "Paserstwo (poniżej $2000)",
+          "price": 4255,
+          "lata": 10
+        },
+        {
+          "id": 126,
+          "category": "lekkie",
+          "name": "Oszustwo podczas sprzedaży auta",
+          "price": 7125,
+          "lata": 15
+        },
+        {
+          "id": 127,
+          "category": "lekkie",
+          "name": "Nielegalna prostytucja",
+          "price": 5500,
+          "lata": 15
+        },
+        {
+          "id": 128,
+          "category": "lekkie",
+          "name": "Zniesławnie",
+          "price": 4550,
+          "lata": 10
+        },
+        {
+          "id": 129,
+          "category": "lekkie",
+          "name": "Stalking",
+          "price": 9755,
+          "lata": 35
+        },
+        {
+          "id": 130,
+          "category": "lekkie",
+          "name": "Cyberprzemoc",
+          "price": 5850,
+          "lata": 30
+        },
+        {
+          "id": 200,
+          "category": "ciezkie",
+          "name": "Groźby przy użyciu broni",
+          "price": 11500,
+          "lata": 45
+        },
+        {
+          "id": 201,
+          "category": "ciezkie",
+          "name": "Ucieczka przed WSP",
+          "price": 9500,
+          "lata": 25
+        },
+        {
+          "id": 202,
+          "category": "ciezkie",
+          "name": "Porwanie",
+          "price": 22500,
+          "lata": 40
+        },
+        {
+          "id": 203,
+          "category": "ciezkie",
+          "name": "Pomoc w ucieczce",
+          "price": 9000,
+          "lata": 20
+        },
+        {
+          "id": 204,
+          "category": "ciezkie",
+          "name": "Współudział w przestępstwie",
+          "price": 12625,
+          "lata": 25
+        },
+        {
+          "id": 205,
+          "category": "ciezkie",
+          "name": "Prowokacja WSP",
+          "price": 9500,
+          "lata": 10
+        },
+        {
+          "id": 206,
+          "category": "ciezkie",
+          "name": "Próba napaści",
+          "price": 11000,
+          "lata": 10
+        },
+        {
+          "id": 207,
+          "category": "ciezkie",
+          "name": "Podszywanie się pod FP",
+          "price": 11500,
+          "lata": 25
+        },
+        {
+          "id": 208,
+          "category": "ciezkie",
+          "name": "Nękanie obywatela/obywatelki",
+          "price": 10000,
+          "lata": 25
+        },
+        {
+          "id": 209,
+          "category": "ciezkie",
+          "name": "Terroryzm",
+          "price": 62550,
+          "lata": 100
+        },
+        {
+          "id": 210,
+          "category": "ciezkie",
+          "name": "Napad na kasetke",
+          "price": 15500,
+          "lata": 20
+        },
+        {
+          "id": 211,
+          "category": "ciezkie",
+          "name": "Napad na bank Fox Mountain Community Bank / Moat & Castle CREDIT UNION",
+          "price": 22500,
+          "lata": 40
+        },
+        {
+          "id": 212,
+          "category": "ciezkie",
+          "name": "Napad na Fabryke",
+          "price": 21000,
+          "lata": 30
+        },
+        {
+          "id": 213,
+          "category": "ciezkie",
+          "name": "Napad na Apartament / Motel / Dom",
+          "price": 22000,
+          "lata": 25
+        },
+        {
+          "id": 214,
+          "category": "ciezkie",
+          "name": "Napad na Salon Samochodowy / Celestial / Ron Rivers Auto Group",
+          "price": 30000,
+          "lata": 35
+        },
+        {
+          "id": 215,
+          "category": "ciezkie",
+          "name": "Napad na Więzienie (próba odbicia zatrzymanego)",
+          "price": 62500,
+          "lata": 75
+        },
+        {
+          "id": 216,
+          "category": "ciezkie",
+          "name": "Napad na Greenville Town Hall",
+          "price": 33500,
+          "lata": 35
+        },
+        {
+          "id": 217,
+          "category": "ciezkie",
+          "name": "Napad na Komende",
+          "price": 56500,
+          "lata": 65
+        },
+        {
+          "id": 218,
+          "category": "ciezkie",
+          "name": "Rabunek Mieszkania / Domu",
+          "price": 12500,
+          "lata": 15
+        },
+        {
+          "id": 219,
+          "category": "ciezkie",
+          "name": "Przerwanie konwoju PD",
+          "price": 8750,
+          "lata": 20
+        },
+        {
+          "id": 220,
+          "category": "ciezkie",
+          "name": "Włamanie",
+          "price": 8500,
+          "lata": 20
+        },
+        {
+          "id": 221,
+          "category": "ciezkie",
+          "name": "Napaśc z użyciem broni",
+          "price": 15500,
+          "lata": 40
+        },
+        {
+          "id": 222,
+          "category": "ciezkie",
+          "name": "Próba odbicia z konwoju PD",
+          "price": 22500,
+          "lata": 40
+        },
+        {
+          "id": 223,
+          "category": "ciezkie",
+          "name": "Ucieczka z konowju PD",
+          "price": 32500,
+          "lata": 50
+        },
+        {
+          "id": 224,
+          "category": "ciezkie",
+          "name": "Pomoc w ucieczce z konwoju PD",
+          "price": 22500,
+          "lata": 40
+        },
+        {
+          "id": 225,
+          "category": "ciezkie",
+          "name": "Próba włamania na Komende",
+          "price": 11500,
+          "lata": 20
+        },
+        {
+          "id": 226,
+          "category": "ciezkie",
+          "name": "Włamanie na Komende",
+          "price": 16500,
+          "lata": 30
+        },
+        {
+          "id": 300,
+          "category": "bron",
+          "name": "Posiadanie narkotyków miękkich (marichuana powyżej 5g)",
+          "price": 5750,
+          "lata": 10
+        },
+        {
+          "id": 301,
+          "category": "bron",
+          "name": "Posiadanie narkotyków twardych (meta, koka)",
+          "price": 7500,
+          "lata": 10
+        },
+        {
+          "id": 302,
+          "category": "bron",
+          "name": "Handel narkotykami miękkimi",
+          "price": 22000,
+          "lata": 25
+        },
+        {
+          "id": 303,
+          "category": "bron",
+          "name": "Handel narkotykami twardymi",
+          "price": 29500,
+          "lata": 35
+        },
+        {
+          "id": 304,
+          "category": "bron",
+          "name": "Posiadanie broni bez pozwolenia",
+          "price": 19250,
+          "lata": 20
+        },
+        {
+          "id": 305,
+          "category": "bron",
+          "name": "Posiadanie rejstrowanej broni krótkiej",
+          "price": 9500,
+          "lata": 10
+        },
+        {
+          "id": 306,
+          "category": "bron",
+          "name": "Posiadanie nielegalnej broni długiej (strzelby, PM-Y)",
+          "price": 27500,
+          "lata": 30
+        },
+        {
+          "id": 307,
+          "category": "bron",
+          "name": "Handel bronią",
+          "price": 37500,
+          "lata": 55
+        },
+        {
+          "id": 308,
+          "category": "bron",
+          "name": "Bezpodstawne użycie broni",
+          "price": 11000,
+          "lata": 25
+        },
+        {
+          "id": 309,
+          "category": "bron",
+          "name": "Posiadanie broni kl. 3 (karabiny szturmowe, wyborowe)",
+          "price": 37500,
+          "lata": 35
+        },
+        {
+          "id": 310,
+          "category": "bron",
+          "name": "Posiadanie broni kl. 4 (materiały wybuchowe)",
+          "price": 44500,
+          "lata": 55
+        },
+        {
+          "id": 400,
+          "category": "sila",
+          "name": "Usiłowanie zabójstwa obywatela",
+          "price": 70500,
+          "lata": 110
+        },
+        {
+          "id": 401,
+          "category": "sila",
+          "name": "Usiłowanie zabójstwa FP",
+          "price": 95000,
+          "lata": 190
+        },
+        {
+          "id": 402,
+          "category": "sila",
+          "name": "Napaść na FP",
+          "price": 22750,
+          "lata": 35
+        },
+        {
+          "id": 403,
+          "category": "sila",
+          "name": "Groźby karalne",
+          "price": 6750,
+          "lata": 10
+        },
+        {
+          "id": 404,
+          "category": "sila",
+          "name": "Nieumyślne spowodowanie uszczerbku na zdrowiu",
+          "price": 12500,
+          "lata": 10
+        },
+        {
+          "id": 405,
+          "category": "sila",
+          "name": "Naruszenie nietykalności cielestnej / Dóbr osobistych",
+          "price": 12500,
+          "lata": 10
+        },
+        {
+          "id": 406,
+          "category": "sila",
+          "name": "Udział w bójce",
+          "price": 8500,
+          "lata": 0
+        },
+        {
+          "id": 407,
+          "category": "sila",
+          "name": "Morderstwo",
+          "price": 125000,
+          "lata": 300
+        },
+        {
+          "id": 500,
+          "category": "predkosc",
+          "name": "Przekroczenie do 6 MPH ponad limit",
+          "price": 500,
+          "lata": 0
+        },
+        {
+          "id": 501,
+          "category": "predkosc",
+          "name": "Przekroczenie od 6 MPH do 10 MPH ponad limit",
+          "price": 1250,
+          "lata": 0
+        },
+        {
+          "id": 502,
+          "category": "predkosc",
+          "name": "Przekroczenie od 11 MPH do 15 MPH ponad limit",
+          "price": 2250,
+          "lata": 0
+        },
+        {
+          "id": 503,
+          "category": "predkosc",
+          "name": "Przekroczenie od 16 MPH do 20 MPH ponad limit",
+          "price": 3250,
+          "lata": 0
+        },
+        {
+          "id": 504,
+          "category": "predkosc",
+          "name": "Przekroczenie od 21 MPH do 25 MPH ponad limit",
+          "price": 5250,
+          "lata": 0
+        },
+        {
+          "id": 505,
+          "category": "predkosc",
+          "name": "Przekroczenie od 26 MPH do 30 MPH ponad limit",
+          "price": 7250,
+          "lata": 0
+        },
+        {
+          "id": 506,
+          "category": "predkosc",
+          "name": "Przekroczenie od 31 MPH do 40 MPH ponad limit",
+          "price": 8250,
+          "lata": 0
+        },
+        {
+          "id": 507,
+          "category": "predkosc",
+          "name": "Przekroczenie od 41 MPH ponad limit",
+          "price": 9250,
+          "lata": 0
+        },
+        {
+          "id": 508,
+          "category": "predkosc",
+          "name": "Przekroczenie ponad 80 MPH + zabranie prawa jazdy",
+          "price": 10750,
+          "lata": 0
+        },
+        {
+          "id": 509,
+          "category": "predkosc",
+          "name": "Przekroczenie ponad 90 MPH na autostradzie + zabranie prawa jazdy",
+          "price": 9750,
+          "lata": 0
+        }
+      ],
+      "totalFine": 1561180,
+      "location": "Pierwszy Zakret Odrazu Za Zjazdem Na Tor",
+      "isAccepted": "Tak",
+      "deliveryMethod": "do ręki",
+      "photoUrl": "",
+      "id": "f4afc00c-1c11-4e05-8990-57e84ebc7ac7",
+      "issueDate": "2025-12-29T18:00:04.569Z"
+    }
+  ]
+}

@@ -1,0 +1,198 @@
+const express = require('express');
+const cors = require('cors');
+const fs = require('fs');
+const fetch = require('node-fetch');
+
+const app = express();
+const port = 3000;
+
+// --- ŚCIEŻKI DO PLIKÓW BAZY DANYCH ---
+const USERS_FILE_PATH = './db_users.json';
+const CITIZENS_FILE_PATH = './db_citizens.json';
+const RECORDS_FILE_PATH = './db_records.json';
+const BOLO_FILE_PATH = './db_bolo.json';
+const ANNOUNCEMENTS_FILE_PATH = './db_announcements.json';
+const DUTY_LOGS_FILE_PATH = './db_duty_logs.json';
+const NOTES_FILE_PATH = './db_notes.json';
+const COMPLAINTS_FILE_PATH = './db_complaints.json';
+const CHAT_FILE_PATH = './db_chat.json';
+
+// --- KONFIGURACJA ---
+const TICKET_WEBHOOK_URL = 'https://discord.com/api/webhooks/1410952846546960498/c6Z2soq8mEAipg9d70veXUKQfSzg3fAw9CR8VSRsj65Q8rkiF0cnzdcUsVpsWPCUOFmx';
+const ARREST_WEBHOOK_URL = 'https://discord.com/api/webhooks/1411595257384276128/GIBGRkK7XY0FZBZWn-ysLpH77KwFH-9t9osmvfOigxSovT_FFt3r-lHexlQfIsg76aR_';
+const COMPLAINT_WEBHOOK_URL = 'https://discord.com/api/webhooks/1413166942130540655/YYYvakc-pftmJRPR_BWOktC47jMNSCq13p62LuIoBlpf7pPUSPuTBzxM6zG26TTcQWM7';
+
+app.use(express.json({ limit: '50mb' }));
+app.use(cors());
+
+// --- BAZA DANYCH W PAMIĘCI SERWERA ---
+let users = {};
+let citizens = {};
+let records = {};
+let bolo = [];
+let announcements = [];
+let dutyLogs = {};
+let notes = {};
+let complaints = [];
+let chatMessages = [];
+let activeAlert = null;
+
+// --- FUNKCJE DO ZARZĄDZANIA DANYMI ---
+function loadDatabase() {
+    try {
+        if (fs.existsSync(USERS_FILE_PATH)) users = JSON.parse(fs.readFileSync(USERS_FILE_PATH));
+        else {
+            users = {'admin@wsp.gov': { id: 'admin', email: 'admin@wsp.gov', username: 'Administrator', password: 'admin', badge: '000', rank: 'Chief of Police', isAdmin: true }};
+            saveData(USERS_FILE_PATH, users);
+        }
+        if (fs.existsSync(CITIZENS_FILE_PATH)) citizens = JSON.parse(fs.readFileSync(CITIZENS_FILE_PATH));
+        if (fs.existsSync(RECORDS_FILE_PATH)) records = JSON.parse(fs.readFileSync(RECORDS_FILE_PATH));
+        if (fs.existsSync(BOLO_FILE_PATH)) bolo = JSON.parse(fs.readFileSync(BOLO_FILE_PATH));
+        if (fs.existsSync(ANNOUNCEMENTS_FILE_PATH)) announcements = JSON.parse(fs.readFileSync(ANNOUNCEMENTS_FILE_PATH));
+        if (fs.existsSync(DUTY_LOGS_FILE_PATH)) dutyLogs = JSON.parse(fs.readFileSync(DUTY_LOGS_FILE_PATH));
+        if (fs.existsSync(NOTES_FILE_PATH)) notes = JSON.parse(fs.readFileSync(NOTES_FILE_PATH));
+        if (fs.existsSync(COMPLAINTS_FILE_PATH)) complaints = JSON.parse(fs.readFileSync(COMPLAINTS_FILE_PATH));
+        if (fs.existsSync(CHAT_FILE_PATH)) chatMessages = JSON.parse(fs.readFileSync(CHAT_FILE_PATH));
+        console.log('Bazy danych zostały pomyślnie załadowane.');
+    } catch (error) {
+        console.error('Błąd wczytywania baz danych:', error);
+    }
+}
+
+function saveData(filePath, data) {
+    try {
+        fs.writeFileSync(filePath, JSON.stringify(data, null, 2));
+    } catch (error) {
+        console.error(`Błąd zapisu do pliku ${filePath}:`, error);
+    }
+}
+
+// Middleware do weryfikacji tokenu
+const verifyToken = (req, res, next) => {
+    const token = req.headers.authorization;
+    const user = Object.values(users).find(u => u.email === token);
+    if (!user) return res.status(401).json({ message: 'Brak autoryzacji' });
+    req.user = user;
+    next();
+};
+
+const verifyAdmin = (req, res, next) => {
+    if (!req.user || !req.user.isAdmin) return res.status(403).json({ message: 'Brak uprawnień administratora' });
+    next();
+};
+
+// --- ENDPOINTY APLIKACJI ---
+
+// Logowanie
+app.post('/api/login', (req, res) => {
+    const { username, password } = req.body;
+    const user = users[username];
+    if (user && user.password === password) {
+        res.json({ success: true, token: user.email });
+    } else {
+        res.status(401).json({ success: false, message: 'Nieprawidłowe dane logowania' });
+    }
+});
+
+// Dane zalogowanego użytkownika
+app.get('/api/user-data', verifyToken, (req, res) => {
+    res.json({ userData: req.user });
+});
+
+// Synchronizacja z botem Discord
+app.post('/api/sync-citizens', (req, res) => {
+    const members = req.body;
+    if (Array.isArray(members)) {
+        const newCitizens = {};
+        members.forEach(m => {
+            const existingCitizen = citizens[m.discordId] || { ticketCount: 0, arrestCount: 0, warningCount: 0 };
+            newCitizens[m.discordId] = { ...existingCitizen, ...m };
+        });
+        citizens = newCitizens;
+        saveData(CITIZENS_FILE_PATH, citizens);
+        console.log(`Zaktualizowano bazę danych. Liczba obywateli: ${Object.keys(citizens).length}`);
+        res.json({ success: true, syncedCount: members.length });
+    } else {
+        res.status(400).json({ message: 'Nieprawidłowe dane.' });
+    }
+});
+
+app.get('/api/citizens', verifyToken, (req, res) => {
+    res.json(Object.values(citizens));
+});
+
+app.get('/api/citizen/:id', verifyToken, (req, res) => {
+    const citizenId = req.params.id;
+    const citizenData = citizens[citizenId];
+    if (citizenData) {
+        const citizenRecords = records[citizenId] || [];
+        res.json({ 
+            ...citizenData, 
+            tickets: citizenRecords.filter(r => r.reportType === 'mandat'),
+            warnings: citizenRecords.filter(r => r.reportType === 'pouczenie'),
+            arrests: citizenRecords.filter(r => r.reportType === 'areszt')
+        });
+    } else {
+        res.status(404).json({ message: 'Nie znaleziono obywatela' });
+    }
+});
+
+// Zgłoszenia (mandaty, pouczenia, areszty)
+app.post('/api/records', verifyToken, (req, res) => {
+    const reportData = { ...req.body, id: Date.now(), issueDate: new Date(), author: req.user.username };
+    const citizenId = reportData.civilianDiscordId;
+
+    if (!records[citizenId]) records[citizenId] = [];
+    records[citizenId].unshift(reportData);
+    saveData(RECORDS_FILE_PATH, records);
+
+    if (citizens[citizenId]) {
+        if(reportData.reportType === 'mandat') citizens[citizenId].ticketCount = (citizens[citizenId].ticketCount || 0) + 1;
+        else if(reportData.reportType === 'pouczenie') citizens[citizenId].warningCount = (citizens[citizenId].warningCount || 0) + 1;
+        else if(reportData.reportType === 'areszt') citizens[citizenId].arrestCount = (citizens[citizenId].arrestCount || 0) + 1;
+        saveData(CITIZENS_FILE_PATH, citizens);
+    }
+    
+    // Wysyłanie na Discord
+    if (reportData.reportType === 'mandat' && TICKET_WEBHOOK_URL !== 'https://discord.com/api/webhooks/1410952846546960498/c6Z2soq8mEAipg9d70veXUKQfSzg3fAw9CR8VSRsj65Q8rkiF0cnzdcUsVpsWPCUOFmx') {
+        // ... formatowanie i wysyłanie wiadomości mandatu ...
+    } else if (reportData.reportType === 'areszt' && ARREST_WEBHOOK_URL !== 'https://discord.com/api/webhooks/1411595257384276128/GIBGRkK7XY0FZBZWn-ysLpH77KwFH-9t9osmvfOigxSovT_FFt3r-lHexlQfIsg76aR_') {
+        // ... formatowanie i wysyłanie wiadomości aresztu ...
+    }
+    
+    res.json({ success: true, message: 'Zgłoszenie zostało pomyślnie zapisane.' });
+});
+
+// Panel Admina
+app.get('/api/officers', verifyToken, verifyAdmin, (req, res) => res.json(Object.values(users)));
+
+app.post('/api/officers', verifyToken, verifyAdmin, (req, res) => {
+    const { email, username, password, badge, rank, isAdmin } = req.body;
+    if (users[email]) return res.status(400).json({ success: false, message: 'Użytkownik o tym emailu już istnieje.' });
+    
+    users[email] = { id: `user${Date.now()}`, email, username, password, badge, rank, isAdmin: isAdmin === 'true' };
+    saveData(USERS_FILE_PATH, users);
+    res.json({ success: true, user: users[email] });
+});
+
+app.delete('/api/officers/:email', verifyToken, verifyAdmin, (req, res) => {
+    const { email } = req.params;
+    if (users[email] && email === 'admin@wsp.gov') return res.status(403).json({ success: false, message: 'Nie można usunąć domyślnego administratora.' });
+    if (users[email]) {
+        delete users[email];
+        saveData(USERS_FILE_PATH, users);
+        res.json({ success: true, message: 'Funkcjonariusz usunięty.' });
+    } else {
+        res.status(404).json({ success: false, message: 'Nie znaleziono funkcjonariusza.' });
+    }
+});
+
+// Pozostałe funkcje (BOLO, Czat, Ogłoszenia, etc.)
+// ... (pełna implementacja reszty funkcji) ...
+
+// --- START SERWERA ---
+loadDatabase();
+app.listen(port, () => {
+    console.log(`Serwer MDT v2.0 działa na porcie ${port}`);
+});
+

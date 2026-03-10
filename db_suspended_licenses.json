@@ -1,0 +1,50 @@
+[
+  {
+    "id": "9d69d9b5-b016-43ec-aa0c-696be087bcfa",
+    "officerName": "Adam Wilczek",
+    "citizenId": "1093989124102422639",
+    "citizenName": "2008Chvrolet_Capt… (nnatann0412)",
+    "startsAt": "2025-12-22T20:32:29.501Z",
+    "expiresAt": "2025-12-29T20:32:29.501Z"
+  },
+  {
+    "id": "b3639a24-db53-424e-84c5-d80587be4318",
+    "officerName": "Ethan Davies",
+    "citizenId": "974762987560788079",
+    "citizenName": "ZINGS_3 (Zingss7)",
+    "startsAt": "2025-12-22T22:40:08.874Z",
+    "expiresAt": "2025-12-29T22:40:08.874Z"
+  },
+  {
+    "id": "bb954daf-2c55-4fd6-a42c-9f4fbd2f5a04",
+    "officerName": "Ethan Davies",
+    "citizenId": "889133118051721257",
+    "citizenName": "ninja3.m (elivexe)",
+    "startsAt": "2025-12-25T19:30:17.424Z",
+    "expiresAt": "2026-01-01T19:30:17.424Z"
+  },
+  {
+    "id": "b1445fa9-807a-44b2-b319-3dd4af1e4522",
+    "officerName": "Ethan Davies",
+    "citizenId": "911642659221827585",
+    "citizenName": "Mentosek",
+    "startsAt": "2025-12-26T22:31:08.832Z",
+    "expiresAt": "2026-01-02T22:31:08.832Z"
+  },
+  {
+    "id": "32aa8a1b-3bd6-414c-995c-fb71b8f53a0c",
+    "officerName": "John Davis",
+    "citizenId": "807675586637070367",
+    "citizenName": "VIO (viteki6)",
+    "startsAt": "2025-12-27T23:31:19.860Z",
+    "expiresAt": "2026-01-03T23:31:19.860Z"
+  },
+  {
+    "id": "65bff33c-1224-44bf-b30e-79f03fa44ab7",
+    "officerName": "Franciszek Trawa",
+    "citizenId": "848612076564906035",
+    "citizenName": "Fifiool (Revo_pad247)",
+    "startsAt": "2025-12-28T20:59:23.891Z",
+    "expiresAt": "2026-01-04T20:59:23.891Z"
+  }
+]

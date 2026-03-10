@@ -1,0 +1,21 @@
+const express = require('express');
+const cors = require('cors');
+const path = require('path');
+
+const app = express();
+const port = 3000;
+
+// Używamy middleware
+app.use(cors()); // Pozwala na komunikację z frontendem
+app.use(express.json()); // Pozwala na odczytywanie danych JSON z zapytań
+
+// Prosty endpoint do testowania
+app.get('/api/test', (req, res) => {
+    res.json({ message: 'API działa poprawnie!' });
+});
+
+// Endpoint do logowania (na razie prosty)
+app.post('/api/login', (req, res) => {
+    const { username, password } = req.body;
+
+    console.log(`Otrzymano próbę logowania dla: ${username}`

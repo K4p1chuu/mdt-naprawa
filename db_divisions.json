@@ -1,0 +1,70 @@
+{
+  "WSP": {
+    "K-9 CANINE": {
+      "lead": [
+        "John Davis (101)"
+      ],
+      "members": []
+    },
+    "Special Response Team": {
+      "lead": [
+        "John Davis (101)"
+      ],
+      "members": [
+        "Casper West (101)"
+      ]
+    },
+    "Speed Enforcement Unit": {
+      "lead": [
+        "John Davis (101)"
+      ],
+      "members": [
+        "Franciszek Trawa (140)",
+        "Natalie Castellano-Wilczek (104)"
+      ]
+    },
+    "Traffic Service Unit": {
+      "lead": [
+        "John Jacob Byrd (103)"
+      ],
+      "members": [
+        "Marcus Novi (246)",
+        "John Davis (101)",
+        "Franciszek Trawa (140)",
+        "Ethan Davies (201)"
+      ]
+    },
+    "Detective Task Unit": {
+      "lead": [
+        "John Davis (101)"
+      ],
+      "members": []
+    }
+  },
+  "OCSO": {
+    "Highway Patrol": {
+      "lead": [
+        "John Jacob Byrd (1001)"
+      ],
+      "members": []
+    },
+    "K-9 CANINE": {
+      "lead": [
+        "John Jacob Byrd (1001)"
+      ],
+      "members": []
+    },
+    "Special Emergency Response Team": {
+      "lead": [
+        "John Jacob Byrd (1001)"
+      ],
+      "members": []
+    },
+    "Special Investigation Unit": {
+      "lead": [
+        "John Jacob Byrd (1001)"
+      ],
+      "members": []
+    }
+  }
+}

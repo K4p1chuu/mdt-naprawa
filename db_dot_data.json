@@ -1,0 +1,16 @@
+{
+  "employees": [
+    {
+      "name": "Jan Kowalski",
+      "rank": "01 WisDOT Director",
+      "badge": "01"
+    }
+  ],
+  "prices": "<h3>Cennik Usług WisDOT</h3><ul><li>Holowanie pojazdu osobowego: $500</li><li>Naprawa na drodze: $300</li><li>Wymiana opony: $100</li></ul>",
+  "badges": [
+    {
+      "name": "Pracownik Miesiąca",
+      "image": "https://i.imgur.com/example.png"
+    }
+  ]
+}

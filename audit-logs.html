@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Logi Akcji - Chief Of the Police</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+    </style>
+</head>
+<body class="bg-gray-900 text-gray-200 flex h-screen">
+
+    <aside id="sidebar-container" class="w-64 bg-gray-800 p-4 flex flex-col min-h-screen flex-shrink-0"></aside>
+
+    <main class="flex-1 p-8 overflow-y-auto">
+        <div id="content">
+            <div class="flex justify-between items-center mb-6">
+                <h1 class="text-3xl font-bold text-white">Logi Akcji Funkcjonariuszy</h1>
+                <button onclick="refreshLogs()" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg flex items-center gap-2">
+                    <i data-lucide="refresh-cw" class="w-4 h-4"></i>
+                    Odśwież
+                </button>
+            </div>
+
+            <!-- Filtry -->
+            <div class="bg-gray-800 p-6 rounded-lg shadow-lg mb-6">
+                <h2 class="text-xl font-semibold text-white mb-4">Filtry</h2>
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+                    <div>
+                        <label class="block text-sm font-medium mb-2">Sekcja</label>
+                        <select id="filterSection" class="w-full bg-gray-700 text-white rounded p-2">
+                            <option value="">Wszystkie</option>
+                            <option value="Baza Obywateli">Baza Obywateli</option>
+                            <option value="BOLO">BOLO</option>
+                            <option value="Parking Policyjny">Parking Policyjny</option>
+                            <option value="Wstrzymane Prawa Jazdy">Wstrzymane Prawa Jazdy</option>
+                            <option value="Urlopy">Urlopy</option>
+                            <option value="Zarządzanie Użytkownikami">Zarządzanie Użytkownikami</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium mb-2">Odznaka funkcjonariusza</label>
+                        <input type="text" id="filterBadge" placeholder="np. 101" class="w-full bg-gray-700 text-white rounded p-2">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium mb-2">Data</label>
+                        <input type="date" id="filterDate" class="w-full bg-gray-700 text-white rounded p-2">
+                    </div>
+                    <div class="flex items-end">
+                        <button onclick="applyFilters()" class="w-full bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-lg">
+                            Zastosuj
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Statystyki -->
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-6 mb-6">
+                <div class="bg-gray-800 p-6 rounded-lg">
+                    <div class="text-gray-400 text-sm mb-2">Całkowita liczba akcji</div>
+                    <div id="statTotal" class="text-3xl font-bold text-white">-</div>
+                </div>
+                <div class="bg-gray-800 p-6 rounded-lg">
+                    <div class="text-gray-400 text-sm mb-2">Akcje dzisiaj</div>
+                    <div id="statToday" class="text-3xl font-bold text-blue-400">-</div>
+                </div>
+                <div class="bg-gray-800 p-6 rounded-lg">
+                    <div class="text-gray-400 text-sm mb-2">Najbardziej aktywny</div>
+                    <div id="statMostActive" class="text-lg font-bold text-green-400">-</div>
+                </div>
+                <div class="bg-gray-800 p-6 rounded-lg">
+                    <div class="text-gray-400 text-sm mb-2">Najczęstsza akcja</div>
+                    <div id="statMostCommon" class="text-lg font-bold text-yellow-400">-</div>
+                </div>
+            </div>
+
+            <!-- Tabela logów -->
+            <div class="bg-gray-800 p-6 rounded-lg shadow-lg">
+                <h2 class="text-xl font-semibold text-white mb-4">Historia Akcji</h2>
+                <div class="overflow-x-auto">
+                    <table class="min-w-full text-sm">
+                        <thead class="text-xs text-gray-400 uppercase bg-gray-700">
+                            <tr>
+                                <th class="px-4 py-3 text-left">Data i Godzina</th>
+                                <th class="px-4 py-3 text-left">Funkcjonariusz</th>
+                                <th class="px-4 py-3 text-left">Akcja</th>
+                                <th class="px-4 py-3 text-left">Sekcja</th>
+                                <th class="px-4 py-3 text-left">Szczegóły</th>
+                            </tr>
+                        </thead>
+                        <tbody id="logsTableBody" class="divide-y divide-gray-700">
+                            <tr>
+                                <td colspan="5" class="px-4 py-8 text-center text-gray-400">Ładowanie logów...</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <!-- Paginacja -->
+                <div id="pagination" class="mt-4 flex justify-between items-center">
+                    <div id="paginationInfo" class="text-sm text-gray-400"></div>
+                    <div id="paginationButtons" class="flex gap-2"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Komunikat o braku uprawnień -->
+        <div id="noAccess" class="hidden text-center py-12">
+            <h1 class="text-3xl font-bold text-red-500 mb-4">Brak Uprawnień</h1>
+            <p class="text-gray-400">Dostęp do logów akcji mają tylko:</p>
+            <ul class="text-gray-300 mt-4">
+                <li>Chief Of the Police (odznaka 00)</li>
+                <li>Superintendent (odznaka 101)</li>
+            </ul>
+        </div>
+    </main>
+
+    <script src="shared.js"></script>
+    <script>
+    let currentPage = 1;
+    let currentFilters = {};
+
+    document.addEventListener('DOMContentLoaded', async () => {
+        const userData = await loadSidebarAndUserData('audit-logs');
+        if(!userData) return;
+        
+        // Sprawdź uprawnienia
+        const hasAccess = userData.badge === '101' || 
+                          userData.badge === '00' || 
+                          userData.rank === 'Chief Of the Police' ||
+                          userData.rank === 'Superintendent';
+        
+        if (!hasAccess) {
+            document.getElementById('content').classList.add('hidden');
+            document.getElementById('noAccess').classList.remove('hidden');
+            return;
+        }
+        
+        // Załaduj logi
+        await loadLogs();
+        
+        // Inicjalizuj ikony LUCIDE (ważne - po załadowaniu HTML)
+        lucide.createIcons();
+        
+        // Dodaj event listenery do przycisków (dla pewności)
+        document.querySelector('button[onclick="refreshLogs()"]')?.addEventListener('click', (e) => {
+            e.preventDefault();
+            refreshLogs();
+        });
+        
+        document.querySelector('button[onclick="applyFilters()"]')?.addEventListener('click', (e) => {
+            e.preventDefault();
+            applyFilters();
+        });
+    });
+
+    async function loadLogs(page = 1) {
+        currentPage = page;
+        const token = localStorage.getItem('mdt-token');
+        
+        // Buduj URL z filtrami
+        let url = `/api/audit-logs?page=${page}&limit=50`;
+        if (currentFilters.section) url += `&section=${encodeURIComponent(currentFilters.section)}`;
+        if (currentFilters.badge) url += `&officerBadge=${encodeURIComponent(currentFilters.badge)}`;
+        if (currentFilters.date) url += `&date=${encodeURIComponent(currentFilters.date)}`;
+        
+        try {
+            const response = await fetch(url, {
+                headers: { 'Authorization': token }
+            });
+            
+            if (!response.ok) {
+                throw new Error('Błąd pobierania logów');
+            }
+            
+            const data = await response.json();
+            
+            // Wyświetl logi
+            displayLogs(data.logs);
+            
+            // Wyświetl paginację
+            displayPagination(data.pagination);
+            
+            // Oblicz statystyki
+            calculateStats(data.logs);
+            
+            // Inicjalizuj ikony Lucide (dla dynamicznie dodanych elementów)
+            setTimeout(() => lucide.createIcons(), 100);
+            
+        } catch (error) {
+            console.error('Błąd:', error);
+            document.getElementById('logsTableBody').innerHTML = `
+                <tr><td colspan="5" class="px-4 py-8 text-center text-red-400">Błąd ładowania logów</td></tr>
+            `;
+        }
+    }
+
+    function displayLogs(logs) {
+        const tbody = document.getElementById('logsTableBody');
+        
+        if (logs.length === 0) {
+            tbody.innerHTML = `
+                <tr><td colspan="5" class="px-4 py-8 text-center text-gray-400">Brak logów</td></tr>
+            `;
+            return;
+        }
+        
+        tbody.innerHTML = logs.map(log => {
+            const actionColors = {
+                'CREATE': 'text-green-400',
+                'UPDATE': 'text-blue-400',
+                'DELETE': 'text-red-400'
+            };
+            
+            const actionType = log.action.split('_')[0];
+            const colorClass = actionColors[actionType] || 'text-gray-300';
+            
+            // Formatuj szczegóły
+            const details = Object.entries(log.details || {})
+                .map(([key, value]) => `${key}: ${value}`)
+                .join(', ');
+            
+            return `
+                <tr class="hover:bg-gray-700">
+                    <td class="px-4 py-3 whitespace-nowrap">
+                        <div class="text-white">${log.date}</div>
+                        <div class="text-gray-400 text-xs">${log.time}</div>
+                    </td>
+                    <td class="px-4 py-3">
+                        <div class="text-white font-medium">${log.officerName}</div>
+                        <div class="text-gray-400 text-xs">${log.officerRank} | Odznaka ${log.officerBadge}</div>
+                    </td>
+                    <td class="px-4 py-3 ${colorClass} font-medium">
+                        ${log.action.replace(/_/g, ' ')}
+                    </td>
+                    <td class="px-4 py-3 text-gray-300">
+                        ${log.section}
+                    </td>
+                    <td class="px-4 py-3 text-gray-400 text-sm">
+                        ${details || '-'}
+                    </td>
+                </tr>
+            `;
+        }).join('');
+    }
+
+    function displayPagination(pagination) {
+        const info = document.getElementById('paginationInfo');
+        const buttons = document.getElementById('paginationButtons');
+        
+        info.textContent = `Strona ${pagination.page} z ${pagination.totalPages} (${pagination.total} logów)`;
+        
+        let buttonsHTML = '';
+        
+        // Przycisk Previous
+        if (pagination.page > 1) {
+            buttonsHTML += `<button onclick="loadLogs(${pagination.page - 1})" class="px-3 py-1 bg-gray-700 hover:bg-gray-600 rounded">← Poprzednia</button>`;
+        }
+        
+        // Przyciski stron
+        for (let i = Math.max(1, pagination.page - 2); i <= Math.min(pagination.totalPages, pagination.page + 2); i++) {
+            const isActive = i === pagination.page;
+            buttonsHTML += `
+                <button 
+                    onclick="loadLogs(${i})" 
+                    class="px-3 py-1 rounded ${isActive ? 'bg-blue-600 text-white' : 'bg-gray-700 hover:bg-gray-600'}"
+                >
+                    ${i}
+                </button>
+            `;
+        }
+        
+        // Przycisk Next
+        if (pagination.page < pagination.totalPages) {
+            buttonsHTML += `<button onclick="loadLogs(${pagination.page + 1})" class="px-3 py-1 bg-gray-700 hover:bg-gray-600 rounded">Następna →</button>`;
+        }
+        
+        buttons.innerHTML = buttonsHTML;
+    }
+
+    function calculateStats(logs) {
+        // Całkowita liczba (będzie z API)
+        document.getElementById('statTotal').textContent = logs.length;
+        
+        // Akcje dzisiaj
+        const today = new Date().toLocaleDateString('pl-PL');
+        const todayLogs = logs.filter(log => log.date === today);
+        document.getElementById('statToday').textContent = todayLogs.length;
+        
+        // Najbardziej aktywny funkcjonariusz
+        const officerCounts = {};
+        logs.forEach(log => {
+            const key = `${log.officerName} (${log.officerBadge})`;
+            officerCounts[key] = (officerCounts[key] || 0) + 1;
+        });
+        const mostActive = Object.entries(officerCounts).sort((a, b) => b[1] - a[1])[0];
+        document.getElementById('statMostActive').textContent = mostActive ? `${mostActive[0]} (${mostActive[1]})` : '-';
+        
+        // Najczęstsza akcja
+        const actionCounts = {};
+        logs.forEach(log => {
+            actionCounts[log.action] = (actionCounts[log.action] || 0) + 1;
+        });
+        const mostCommon = Object.entries(actionCounts).sort((a, b) => b[1] - a[1])[0];
+        document.getElementById('statMostCommon').textContent = mostCommon ? mostCommon[0].replace(/_/g, ' ') : '-';
+    }
+
+    function applyFilters() {
+        currentFilters = {
+            section: document.getElementById('filterSection').value,
+            badge: document.getElementById('filterBadge').value,
+            date: document.getElementById('filterDate').value ? 
+                  new Date(document.getElementById('filterDate').value).toLocaleDateString('pl-PL') : ''
+        };
+        
+        loadLogs(1); // Reset do strony 1 przy nowych filtrach
+    }
+
+    function refreshLogs() {
+        loadLogs(currentPage);
+    }
+    </script>
+</body>
+</html>

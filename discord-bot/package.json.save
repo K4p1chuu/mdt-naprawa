@@ -1,0 +1,14 @@
+{
+  "name": "wsp-mdt-sync-bot",
+  "version": "1.0.0",
+  "description": "Bot to sync Discord members with Kamarton",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "discord.js": "^14.14.1"
+   "node-fetch": "
+  }
+}
+

@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>WisDOT - Raporty</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        body { background-color: #1a1a1a; color: #f3f4f6; }
+        .report-section { background-color: #262626; padding: 20px; border-radius: 8px; margin-bottom: 20px; border: 1px solid #333; }
+        .input-line { background: transparent; border: none; border-bottom: 1px solid #555; color: #fbbf24; width: 100px; text-align: center; }
+        .input-line:focus { outline: none; border-bottom: 1px solid #fbbf24; }
+        
+        /* Styl dla edytora zdjęć */
+        #photoEditor {
+            min-height: 200px;
+            background-color: #1f1f1f;
+            border: 2px dashed #444;
+            padding: 10px;
+            color: #aaa;
+            overflow-y: auto;
+        }
+        #photoEditor img { max-width: 100%; border: 2px solid #fbbf24; margin-top: 5px; }
+    </style>
+</head>
+<body class="p-8 pb-32">
+
+    <div class="flex justify-between items-center mb-6">
+        <a href="dot-panel.html" class="text-yellow-500 hover:text-yellow-400">&larr; Powrót</a>
+        <h1 class="text-2xl font-bold text-yellow-500 uppercase">Raport Służbowy WisDOT</h1>
+        <button onclick="clearLocalStorage()" class="text-xs text-red-500 underline">Wyczyść autozapis</button>
+    </div>
+
+    <div class="max-w-4xl mx-auto">
+        
+        <!-- Sekcja 1: Szczegóły -->
+        <div class="report-section">
+            <h2 class="text-xl mb-4 font-bold border-b border-gray-600 pb-2">Szczegóły służby</h2>
+            <div class="grid grid-cols-1 gap-3 text-sm">
+                <label>Ilość odebranych wezwań dot. kolizji/wypadków: <input type="number" class="input-line autosave" id="calls"></label>
+                <label>Ilość wykonanych robót drogowych: <input type="number" class="input-line autosave" id="roadworks"></label>
+                <label>Ilość przetransportowanych pojazdów do warsztatu: <input type="number" class="input-line autosave" id="tows_workshop"></label>
+                <label>Ilość przetransportowanych pojazdów na parking policyjny: <input type="number" class="input-line autosave" id="tows_police"></label>
+                <label>Ilość przetransportowanych pojazdów na parking WisDOT: <input type="number" class="input-line autosave" id="tows_dot"></label>
+                <label>Ilość obsłużonych klientów mobilnego mechanika: <input type="number" class="input-line autosave" id="mechanic"></label>
+                <label>Ilość naprawionych sygnalizacji świetlnych: <input type="number" class="input-line autosave" id="lights"></label>
+                
+                <div class="mt-4 border-t border-gray-700 pt-4">
+                    <label>Łączna suma premii z transportu pojazdów ($): <input type="number" class="input-line autosave" id="premium_tows"></label><br>
+                    <label>Łączna suma premii z obsługi klientów mobilnego mechanika ($): <input type="number" class="input-line autosave" id="premium_mechanic"></label><br>
+                    <label>Łączna suma premii z naprawy sygnalizacji świetlnej ($): <input type="number" class="input-line autosave" id="premium_lights"></label>
+                </div>
+            </div>
+        </div>
+
+        <!-- Sekcja 2: Info -->
+        <div class="report-section">
+            <h2 class="text-xl mb-4 font-bold border-b border-gray-600 pb-2">Informacje o służbie</h2>
+            <div class="grid grid-cols-2 gap-4">
+                <div>
+                    <label class="block text-sm">Data odbytej służby:</label>
+                    <input type="date" class="bg-gray-800 text-white p-2 rounded w-full autosave" id="date">
+                </div>
+                <div>
+                    <label class="block text-sm">Ilość przerw:</label>
+                    <input type="number" class="bg-gray-800 text-white p-2 rounded w-full autosave" id="breaks_count">
+                </div>
+                <div>
+                    <label class="block text-sm">Łączna długość przerw (min):</label>
+                    <input type="number" class="bg-gray-800 text-white p-2 rounded w-full autosave" id="breaks_time">
+                </div>
+                <div>
+                    <label class="block text-sm">Ilość przepracowanych godzin:</label>
+                    <input type="number" class="bg-gray-800 text-white p-2 rounded w-full autosave" id="hours_worked">
+                </div>
+            </div>
+            
+            <div class="mt-6 grid grid-cols-2 gap-4">
+                <input type="text" placeholder="Imię i Nazwisko" class="bg-transparent border-b border-gray-500 w-full text-center autosave" id="name">
+                <input type="text" placeholder="Ranga" class="bg-transparent border-b border-gray-500 w-full text-center autosave" id="rank">
+                <input type="text" placeholder="Nr. ewidencyjny" class="bg-transparent border-b border-gray-500 w-full text-center autosave" id="badge_number">
+                <input type="text" placeholder="Podpis pracownika" class="bg-transparent border-b border-gray-500 w-full text-center autosave" id="signature">
+            </div>
+        </div>
+
+        <!-- Sekcja 3: Zdjęcia -->
+        <div class="report-section border-yellow-600 border-2">
+            <h2 class="text-xl mb-2 font-bold text-yellow-500"><i class="fas fa-camera"></i> Dokumentacja Zdjęciowa</h2>
+            <div class="bg-yellow-900 bg-opacity-20 p-2 text-sm text-yellow-200 mb-2 border-l-4 border-yellow-500">
+                <strong>UWAGA!</strong> Do raportu należy dodać zdjęcia ukazujące naprawę sygnalizacji (musi świecić na pomarańczowo) oraz widoczną godzinę.
+                <br><em>Kliknij poniżej i wciśnij CTRL+V aby wkleić zdjęcie ze schowka.</em>
+            </div>
+            
+            <!-- ContentEditable DIV do wklejania zdjęć -->
+            <div id="photoEditor" contenteditable="true" class="rounded">
+                Kliknij tutaj i wklej zrzuty ekranu (CTRL+V)...
+            </div>
+        </div>
+
+        <button onclick="submitReport()" class="w-full bg-green-600 hover:bg-green-700 text-white font-bold py-4 rounded shadow-lg text-xl uppercase tracking-wider">
+            Wyślij Raport
+        </button>
+
+    </div>
+
+    <script>
+        // AUTO-SAVE LOGIC
+        const inputs = document.querySelectorAll('.autosave');
+        const photoEditor = document.getElementById('photoEditor');
+
+        // Wczytywanie danych przy starcie
+        window.onload = function() {
+            inputs.forEach(input => {
+                const saved = localStorage.getItem('dot_report_' + input.id);
+                if(saved) input.value = saved;
+            });
+            const savedPhotos = localStorage.getItem('dot_report_photos');
+            if(savedPhotos) photoEditor.innerHTML = savedPhotos;
+        };
+
+        // Zapisywanie przy każdej zmianie
+        inputs.forEach(input => {
+            input.addEventListener('input', () => {
+                localStorage.setItem('dot_report_' + input.id, input.value);
+            });
+        });
+
+        // Obserwator zmian w edytorze zdjęć (bo 'input' nie działa na contenteditable idealnie)
+        const observer = new MutationObserver(() => {
+            localStorage.setItem('dot_report_photos', photoEditor.innerHTML);
+        });
+        observer.observe(photoEditor, { childList: true, subtree: true, characterData: true });
+
+        function clearLocalStorage() {
+            if(confirm("Czy na pewno chcesz wyczyścić formularz?")) {
+                inputs.forEach(input => localStorage.removeItem('dot_report_' + input.id));
+                localStorage.removeItem('dot_report_photos');
+                window.location.reload();
+            }
+        }
+
+        function submitReport() {
+            const data = {};
+            inputs.forEach(input => data[input.id] = input.value);
+            data.photosHTML = photoEditor.innerHTML;
+
+            fetch('/api/dot/report', {
+                method: 'POST',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify(data)
+            }).then(() => {
+                alert("Raport wysłany pomyślnie!");
+                // Czyścimy storage po udanym wysłaniu
+                inputs.forEach(input => localStorage.removeItem('dot_report_' + input.id));
+                localStorage.removeItem('dot_report_photos');
+                window.location.href = 'dot-panel.html';
+            }).catch(err => {
+                alert("Błąd wysyłania (zdjęcia mogą być zbyt duże). Spróbuj zmniejszyć ilość zdjęć.");
+                console.error(err);
+            });
+        }
+    </script>
+</body>
+</html>

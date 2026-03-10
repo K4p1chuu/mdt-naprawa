@@ -1,0 +1,50 @@
+[
+  {
+    "id": "a2c68e1a-a47f-4c84-8a3c-08a5f807809a",
+    "date": "2025-12-28T20:58:22.743Z",
+    "officerPing": "<@1222192916009848858>",
+    "ownerPing": "<@848612076564906035>",
+    "make": "Audi",
+    "model": "RS6 Avant",
+    "color": "Szary",
+    "plate": "QTR4 / Wisconsin",
+    "reason": "Jazda bez prawa jazdy.",
+    "photo": "https://cdn.discordapp.com/attachments/1442159343045967945/1454941526713962526/image.png?ex=6952eb63&is=695199e3&hm=b59a6e487aefc55c57d88c27b9bdec96205c5265c7714964733aee719f821b38&"
+  },
+  {
+    "id": "3a183d56-eb4e-4485-9b09-b97b30cbd2da",
+    "date": "2025-12-26T22:59:27.047Z",
+    "officerPing": "<@1188827558280691822>",
+    "ownerPing": "<@1304212100255842355>",
+    "make": "Wolfsburg",
+    "model": "Charge",
+    "color": "Żółty",
+    "plate": "QJF-830",
+    "reason": "Areszt po pościgu i pojazd niesprawny",
+    "photo": "https://cdn.discordapp.com/attachments/1439387041485033502/1454247186954063965/Zrzut_ekranu_2025-12-26_235804.png?ex=695064bb&is=694f133b&hm=06daf5b34f20ddd345e29dbd6d95c08f05ab9f1b1e80a9f509993c262e7b0f2c&"
+  },
+  {
+    "id": "75bfe158-1a63-46f3-843b-fdf0a4ef1f16",
+    "date": "2025-12-23T23:02:54.382Z",
+    "officerPing": "<@602751766324445218>",
+    "ownerPing": "<@1336019188552044644>",
+    "make": "Falcon",
+    "model": "Advance Pro",
+    "color": "Czarny",
+    "plate": "PLATTY, TX",
+    "reason": "Poscig",
+    "photo": "https://media.discordapp.net/attachments/1442884160967544963/1452792008044187890/image.png?ex=694c6afe&is=694b197e&hm=7b3735a4e801149b55fd0e11a17d72bd7e6ee24eeb284bfc8cb33b41370b959b&=&format=webp&quality=lossless&width=1878&height=1223"
+  },
+  {
+    "id": "b78cae7f-b4c8-478c-9c92-db2bf22e8f38",
+    "date": "2025-12-23T22:42:09.112Z",
+    "officerPing": "<@602751766324445218>",
+    "ownerPing": "<@1205967651675840623>",
+    "make": "BKM",
+    "model": "Regen M",
+    "color": "Fioletowy",
+    "plate": "-",
+    "reason": "Ucieczka przed WSP",
+    "photo": "https://media.discordapp.net/attachments/1258456618622779413/1453153541358227627/image.png?ex=694c6a32&is=694b18b2&hm=61f2f7ddb5f5aed305c1ab564a3235e598ace0021bc21ba38bc59fce1b4ab9ab&=&format=webp&quality=lossless&width=2094&height=1131"
+  }
+]

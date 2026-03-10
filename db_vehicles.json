@@ -1,0 +1,597 @@
+{
+  "WEST": {
+    "inspections": [],
+    "registeredAt": "2025-12-20T10:00:09.885Z",
+    "plate": "WEST",
+    "ownerId": "864948534289629214",
+    "ownerName": "k4p1chuu",
+    "lastInspection": null,
+    "status": "BRAK"
+  },
+  "NOQ-491": {
+    "inspections": [
+      {
+        "date": "2025-12-21T18:59:55.161Z",
+        "type": "POZYTYWNY WYNIK BADANIA TECHNICZNEGO",
+        "content": "**POZYTYWNY WYNIK BADANIA TECHNICZNEGO**\n\n**Właściciel pojazdu:** <@1011983836462186516>\n**Rodzaj nadwozia:** avant\n**Marka:** Audi\n**Model:** Rs6 avant\n**Trim:** performance\n**Rok Produkcji:** 2025\n**Numery rejestracyjne, stan:** NOQ-491, District Of Columbia\n**Historia pojazdu:** N/A\n**Data ostatnio wykonywanego Badania Technicznego:** 21.12.2025\n**Data następnego Badania Technicznego:** 21.01.2026\n**Stan licznika:** 13.8 mi\n**Wynik badania:** __Pozytywny__\n**Numer SKP:** GVW/02/003\n"
+      }
+    ],
+    "registeredAt": "2025-12-21T18:59:55.161Z",
+    "plate": "NOQ-491",
+    "ownerId": "1011983836462186516",
+    "ownerName": "Sunhelybig",
+    "lastInspection": "2025-12-21T18:59:55.161Z",
+    "status": "POZYTYWNY WYNIK BADANIA TECHNICZNEGO"
+  },
+  "GUILTY": {
+    "inspections": [
+      {
+        "date": "2025-12-21T19:34:51.335Z",
+        "type": "POZYTYWNY WYNIK BADANIA TECHNICZNEGO",
+        "content": "**POZYTYWNY WYNIK BADANIA TECHNICZNEGO**\n\n**Właściciel pojazdu:** <@1188827558280691822>\n**Rodzaj nadwozia:** Osobowy SUV\n**Marka:** BKM\n**Model:** Y50 W\n**Trim:** Competition AWD\n**Rok Produkcji:** 2025\n**Numery rejestracyjne, stan:** GUILTY, Montana\n**Historia pojazdu:** N/A\n**Data ostatnio wykonywanego Badania Technicznego:** 21.12.2025\n**Data następnego Badania Technicznego:** 21.01.2026\n**Stan licznika:** 70.9Mi\n**Wynik badania:** __Pozytywny__\n**Numer SKP:** GVW/01/001\n"
+      }
+    ],
+    "registeredAt": "2025-12-21T19:34:51.335Z",
+    "plate": "GUILTY",
+    "ownerId": "1188827558280691822",
+    "ownerName": "Mkjxznj (mikivx2)",
+    "lastInspection": "2025-12-21T19:34:51.335Z",
+    "status": "POZYTYWNY WYNIK BADANIA TECHNICZNEGO"
+  },
+  "RTO-600": {
+    "inspections": [
+      {
+        "date": "2025-12-21T21:39:28.912Z",
+        "type": "POZYTYWNY WYNIK BADANIA TECHNICZNEGO",
+        "content": "**POZYTYWNY WYNIK BADANIA TECHNICZNEGO**\n\n**Właściciel pojazdu:** <@535526548976173079>\n**Rodzaj nadwozia:** Hatchback\n**Marka:** Renault\n**Model:** Megane\n**Trim:** R.S 280\n**Rok Produkcji:** 2018\n**Numery rejestracyjne, stan:** RTO-600, Wisconsin\n**Historia pojazdu:** -\n**Data ostatnio wykonywanego Badania Technicznego:** 21.12.2025\n**Data następnego Badania Technicznego:** 21.01.2026\n**Stan licznika:** 17.4 Mil\n**Wynik badania:** __Pozytywny__\n**Numer SKP:** GVW/01/009\n"
+      }
+    ],
+    "registeredAt": "2025-12-21T21:39:28.912Z",
+    "plate": "RTO-600",
+    "ownerId": "535526548976173079",
+    "ownerName": "salamaleikumb",
+    "lastInspection": "2025-12-21T21:39:28.912Z",
+    "status": "POZYTYWNY WYNIK BADANIA TECHNICZNEGO"
+  },
+  "TT-2 / WISCONSIN": {
+    "inspections": [
+      {
+        "date": "2025-12-21T23:09:08.396Z",
+        "type": "POZYTYWNY WYNIK BADANIA TECHNICZNEGO",
+        "content": "**POZYTYWNY WYNIK BADANIA TECHNICZNEGO**\n\n**Właściciel pojazdu:** <@1184145464468193320>\n**Rodzaj nadwozia:** Osobowy Sedan\n**Marka:** Celestial\n**Model:** Type-5\n**Trim:** Single Motor RWD\n**Rok Produkcji:** 2013\n**Numery rejestracyjne, stan:** TT-2 / Wisconsin\n**Historia pojazdu:** N/A\n**Data ostatnio wykonywanego Badania Technicznego:** 22.12.2025\n**Data następnego Badania Technicznego:** 22.01.2026\n**Stan licznika:** 1.3mil\n**Wynik badania:** __Pozytywny__\n**Numer SKP:** GVW/02/002\n"
+      }
+    ],
+    "registeredAt": "2025-12-21T23:09:08.396Z",
+    "plate": "TT-2 / WISCONSIN",
+    "ownerId": "1184145464468193320",
+    "ownerName": "Nieznany",
+    "lastInspection": "2025-12-21T23:09:08.396Z",
+    "status": "POZYTYWNY WYNIK BADANIA TECHNICZNEGO"
+  },
+  "M340I / CALIFORNIA": {
+    "inspections": [
+      {
+        "date": "2025-12-22T21:57:26.510Z",
+        "type": "POZYTYWNY WYNIK BADANIA TECHNICZNEGO",
+        "content": "**POZYTYWNY WYNIK BADANIA TECHNICZNEGO**\n\n**Właściciel pojazdu:** <@911642659221827585>\n**Rodzaj nadwozia:** Osobowy Sedan\n**Marka:** BKM\n**Model:** Series 30\n**Trim:** Teenage Dream\n**Rok Produkcji:** 2020\n**Numery rejestracyjne, stan:** M340I / CALIFORNIA\n**Historia pojazdu:** N/A\n**Data ostatnio wykonywanego Badania Technicznego:** 22.12.2025\n**Data następnego Badania Technicznego:** 22.01.2026\n**Stan licznika:** 422.9Mi\n**Wynik badania:** __Pozytywny__\n**Numer SKP:** BMW/01/002\n"
+      }
+    ],
+    "registeredAt": "2025-12-22T21:57:26.510Z",
+    "plate": "M340I / CALIFORNIA",
+    "ownerId": "911642659221827585",
+    "ownerName": "Mentosek",
+    "lastInspection": "2025-12-22T21:57:26.510Z",
+    "status": "POZYTYWNY WYNIK BADANIA TECHNICZNEGO"
+  },
+  "TLU-269 / CALIFORNIA": {
+    "inspections": [
+      {
+        "date": "2025-12-22T22:01:41.082Z",
+        "type": "POZYTYWNY WYNIK BADANIA TECHNICZNEGO",
+        "content": "**POZYTYWNY WYNIK BADANIA TECHNICZNEGO**\n\n**Właściciel pojazdu:** <@1442296748025450641>\n**Rodzaj nadwozia:** Osobowy Hatchback\n**Marka:** Wolfsburg\n**Model:** Pitch\n**Trim:** SE 5-door\n**Rok Produkcji:** 2016\n**Numery rejestracyjne, stan:** TLU-269 / California\n**Historia pojazdu:** N/A\n**Data ostatnio wykonywanego Badania Technicznego:** 22.12.2025\n**Data następnego Badania Technicznego:** 22.01.2026\n**Stan licznika:** 6.7Mi\n**Wynik badania:** __Pozytywny__\n**Numer SKP:** BMW/01/002\n"
+      }
+    ],
+    "registeredAt": "2025-12-22T22:01:41.082Z",
+    "plate": "TLU-269 / CALIFORNIA",
+    "ownerId": "1442296748025450641",
+    "ownerName": "Mhhk",
+    "lastInspection": "2025-12-22T22:01:41.082Z",
+    "status": "POZYTYWNY WYNIK BADANIA TECHNICZNEGO"
+  },
+  "KLASA / ALASKA": {
+    "inspections": [
+      {
+        "date": "2025-12-22T22:08:07.240Z",
+        "type": "POZYTYWNY WYNIK BADANIA TECHNICZNEGO",
+        "content": "**POZYTYWNY WYNIK BADANIA TECHNICZNEGO**\n\n**Właściciel pojazdu:** <@1241841494646591629>\n**Rodzaj nadwozia:** Osobowy Sedan\n**Marka:** Viking\n**Model:** Torslanda Sedan\n**Trim:** T8 Polestar Blackout\n**Rok Produkcji:** 2020\n**Numery rejestracyjne, stan:** KLASA / Alaska\n**Historia pojazdu:** N/A\n**Data ostatnio wykonywanego Badania Technicznego:** 22.12.2025\n**Data następnego Badania Technicznego:** 22.01.2026\n**Stan licznika:** 10.9\n**Wynik badania:** __Pozytywny__\n**Numer SKP:** BMW/01/002\n"
+      }
+    ],
+    "registeredAt": "2025-12-22T22:08:07.240Z",
+    "plate": "KLASA / ALASKA",
+    "ownerId": "1241841494646591629",
+    "ownerName": "error (Demonek_554)",
+    "lastInspection": "2025-12-22T22:08:07.240Z",
+    "status": "POZYTYWNY WYNIK BADANIA TECHNICZNEGO"
+  },
+  "FREEDOM / TEXAS": {
+    "inspections": [
+      {
+        "date": "2025-12-22T22:14:57.959Z",
+        "type": "POZYTYWNY WYNIK BADANIA TECHNICZNEGO",
+        "content": "**POZYTYWNY WYNIK BADANIA TECHNICZNEGO**\n\n**Właściciel pojazdu:** <@851850275789996054>\n**Rodzaj nadwozia:** Osobowy Pickup\n**Marka:** Bandit\n**Model:** Advance Beast\n**Trim:** Rawr 37 Blacktop (opt.)\n**Rok Produkcji:** 2023\n**Numery rejestracyjne, stan:** FREEDOM / Texas\n**Historia pojazdu:** N/A\n**Data ostatnio wykonywanego Badania Technicznego:** 22.12.2025\n**Data następnego Badania Technicznego:** 22.01.2026\n**Stan licznika:** 2.4Mi\n**Wynik badania:** __Pozytywny__\n**Numer SKP:** BMW/01/002\n"
+      }
+    ],
+    "registeredAt": "2025-12-22T22:14:57.959Z",
+    "plate": "FREEDOM / TEXAS",
+    "ownerId": "851850275789996054",
+    "ownerName": "Roadkill (Bartus_062)",
+    "lastInspection": "2025-12-22T22:14:57.959Z",
+    "status": "POZYTYWNY WYNIK BADANIA TECHNICZNEGO"
+  },
+  "0RW-H25  / TENNESSEE": {
+    "inspections": [
+      {
+        "date": "2025-12-22T22:54:17.841Z",
+        "type": "POZYTYWNY WYNIK BADANIA TECHNICZNEGO",
+        "content": "**POZYTYWNY WYNIK BADANIA TECHNICZNEGO**\n\n**Właściciel pojazdu:** <@1145672106575659019>\n**Rodzaj nadwozia:** Osobowy Suv\n**Marka:** Land Rover\n**Model:** Range Rover Sport\n**Trim:** SVR\n**Rok Produkcji:** 2019\n**Numery rejestracyjne, stan:** 0RW-H25  / Tennessee\n**Historia pojazdu:** N/A\n**Data ostatnio wykonywanego Badania Technicznego:** 22.12.2025\n**Data następnego Badania Technicznego:** 22.01.2026\n**Stan licznika:** 2.7mil\n**Wynik badania:** __Pozytywny__\n**Numer SKP:** GVW/02/002\n"
+      }
+    ],
+    "registeredAt": "2025-12-22T22:54:17.841Z",
+    "plate": "0RW-H25  / TENNESSEE",
+    "ownerId": "1145672106575659019",
+    "ownerName": "martynq",
+    "lastInspection": "2025-12-22T22:54:17.841Z",
+    "status": "POZYTYWNY WYNIK BADANIA TECHNICZNEGO"
+  },
+  "PLATTY": {
+    "inspections": [
+      {
+        "date": "2025-12-23T19:35:27.507Z",
+        "type": "POZYTYWNY WYNIK BADANIA TECHNICZNEGO",
+        "content": "**POZYTYWNY WYNIK BADANIA TECHNICZNEGO**\n\n**Właściciel pojazdu:** <@851850275789996054>\n**Rodzaj nadwozia:** pickup\n**Marka:** falcon\n**Model:** advance pro\n**Trim:** platinum earthquake supercrew\n**Rok Produkcji:** 2022\n**Numery rejestracyjne, stan:** PLATTY, Texas\n**Historia pojazdu:** N/A\n**Data ostatnio wykonywanego Badania Technicznego:** 23.12.2025\n**Data następnego Badania Technicznego:** 23.01.2026\n**Stan licznika:** 3.7 mi\n**Wynik badania:** __Pozytywny__\n**Numer SKP:** GVW/02/003\n"
+      }
+    ],
+    "registeredAt": "2025-12-23T19:35:27.507Z",
+    "plate": "PLATTY",
+    "ownerId": "851850275789996054",
+    "ownerName": "Roadkill (Bartus_062)",
+    "lastInspection": "2025-12-23T19:35:27.507Z",
+    "status": "POZYTYWNY WYNIK BADANIA TECHNICZNEGO"
+  },
+  "HVE-57R": {
+    "inspections": [
+      {
+        "date": "2025-12-23T19:47:06.039Z",
+        "type": "POZYTYWNY WYNIK BADANIA TECHNICZNEGO",
+        "content": "**POZYTYWNY WYNIK BADANIA TECHNICZNEGO**\n\n**Właściciel pojazdu:** <@851850275789996054>\n**Rodzaj nadwozia:** suv\n**Marka:** vision\n**Model:** dominator\n**Trim:** eu two-tone v8\n**Rok Produkcji:** 2006\n**Numery rejestracyjne, stan:** HVE-57R, Texas\n**Historia pojazdu:** N/A\n**Data ostatnio wykonywanego Badania Technicznego:** 23.12.2025\n**Data następnego Badania Technicznego:** 23.01.2026\n**Stan licznika:** 0,3\n**Wynik badania:** __Pozytywny__\n**Numer SKP:** GVW/02/003\n"
+      }
+    ],
+    "registeredAt": "2025-12-23T19:47:06.039Z",
+    "plate": "HVE-57R",
+    "ownerId": "851850275789996054",
+    "ownerName": "Roadkill (Bartus_062)",
+    "lastInspection": "2025-12-23T19:47:06.039Z",
+    "status": "POZYTYWNY WYNIK BADANIA TECHNICZNEGO"
+  },
+  "OCF-488": {
+    "inspections": [
+      {
+        "date": "2025-12-23T20:21:30.801Z",
+        "type": "POZYTYWNY WYNIK BADANIA TECHNICZNEGO",
+        "content": "**POZYTYWNY WYNIK BADANIA TECHNICZNEGO**\n\n**Właściciel pojazdu:** <@602751766324445218>\n**Rodzaj nadwozia:** SUV\n**Marka:** Stuttgart\n**Model:** Vaihingen 63\n**Trim:** Night Pack\n**Rok Produkcji:** 2021\n**Numery rejestracyjne, stan:** OCF-488, Ontario\n**Historia pojazdu:** B/D\n**Data ostatnio wykonywanego Badania Technicznego:** 23.12.2025\n**Data następnego Badania Technicznego:** 23.01.2026\n**Stan licznika:** 9.4 Mi\n**Wynik badania:** __Pozytywny__\n**Numer SKP:** GVW/02/005\n"
+      }
+    ],
+    "registeredAt": "2025-12-23T20:21:30.801Z",
+    "plate": "OCF-488",
+    "ownerId": "602751766324445218",
+    "ownerName": "300dGLC",
+    "lastInspection": "2025-12-23T20:21:30.801Z",
+    "status": "POZYTYWNY WYNIK BADANIA TECHNICZNEGO"
+  },
+  "IIE-238 / WISCONSIN": {
+    "inspections": [
+      {
+        "date": "2025-12-23T22:56:29.187Z",
+        "type": "POZYTYWNY WYNIK BADANIA TECHNICZNEGO",
+        "content": "**POZYTYWNY WYNIK BADANIA TECHNICZNEGO**\n\n**Właściciel pojazdu:** <@650297640445149194>\n**Rodzaj nadwozia:** Suv\n**Marka:** Overland\n**Model:** Apache\n**Trim:** Limited\n**Rok Produkcji:** 2004\n**Numery rejestracyjne, stan:** IIE-238 / Wisconsin\n**Historia pojazdu:** -\n**Data ostatnio wykonywanego Badania Technicznego:** 23.12.2025\n**Data następnego Badania Technicznego:** 23.01.2026\n**Stan licznika:** 6.5 Mili\n**Wynik badania:** __Pozytywny__\n**Numer SKP:** GVW/01/009\n"
+      }
+    ],
+    "registeredAt": "2025-12-23T22:56:29.187Z",
+    "plate": "IIE-238 / WISCONSIN",
+    "ownerId": "650297640445149194",
+    "ownerName": "Mirek (myroslav1290)",
+    "lastInspection": "2025-12-23T22:56:29.187Z",
+    "status": "POZYTYWNY WYNIK BADANIA TECHNICZNEGO"
+  },
+  "012-KZL / WISCONSIN": {
+    "inspections": [
+      {
+        "date": "2025-12-25T18:41:49.386Z",
+        "type": "POZYTYWNY WYNIK BADANIA TECHNICZNEGO",
+        "content": "**POZYTYWNY WYNIK BADANIA TECHNICZNEGO**\n\n**Właściciel pojazdu:** <@1069353540256018462>\n**Rodzaj nadwozia:** Osobowy Coupe\n**Marka:** BKM\n**Model:** Regen Coupe Beater\n**Trim:** Beater\n**Rok Produkcji:** 2011\n**Numery rejestracyjne, stan:** 012-KZL / Wisconsin\n**Historia pojazdu:** N/A\n**Data ostatnio wykonywanego Badania Technicznego:** 25.12.2025\n**Data następnego Badania Technicznego:** 25.01.2026\n**Stan licznika:** 6.6Mi\n**Wynik badania:** __Pozytywny__\n**Numer SKP:** BMW/01/002\n"
+      }
+    ],
+    "registeredAt": "2025-12-25T18:41:49.386Z",
+    "plate": "012-KZL / WISCONSIN",
+    "ownerId": "1069353540256018462",
+    "ownerName": "mk3 (chomikxdddddddd1)",
+    "lastInspection": "2025-12-25T18:41:49.386Z",
+    "status": "POZYTYWNY WYNIK BADANIA TECHNICZNEGO"
+  },
+  "WW-550A / ARIZONA": {
+    "inspections": [
+      {
+        "date": "2025-12-25T19:34:52.852Z",
+        "type": "POZYTYWNY WYNIK BADANIA TECHNICZNEGO",
+        "content": "**POZYTYWNY WYNIK BADANIA TECHNICZNEGO**\n\n**Właściciel pojazdu:** <@919533118745100298>\n**Rodzaj nadwozia:** Osobowy Sedan\n**Marka:** Stuttgart\n**Model:** E - Saloon\n**Trim:** 550 RMC - package 4wheel\n**Rok Produkcji:** 2010\n**Numery rejestracyjne, stan:** WW-550A / Arizona\n**Historia pojazdu:** N/A\n**Data ostatnio wykonywanego Badania Technicznego:** 25.12.2025\n**Data następnego Badania Technicznego:** 25.01.2026\n**Stan licznika:** 19.3Mi\n**Wynik badania:** __Pozytywny__\n**Numer SKP:** BMW/01/002\n"
+      }
+    ],
+    "registeredAt": "2025-12-25T19:34:52.852Z",
+    "plate": "WW-550A / ARIZONA",
+    "ownerId": "919533118745100298",
+    "ownerName": "KLAPEK (klapek36yt)",
+    "lastInspection": "2025-12-25T19:34:52.852Z",
+    "status": "POZYTYWNY WYNIK BADANIA TECHNICZNEGO"
+  },
+  "432-N32 / WISCONSIN": {
+    "inspections": [
+      {
+        "date": "2025-12-25T20:41:44.647Z",
+        "type": "POZYTYWNY WYNIK BADANIA TECHNICZNEGO",
+        "content": "**POZYTYWNY WYNIK BADANIA TECHNICZNEGO**\n\n**Właściciel pojazdu:** <@640210932672364544>\n**Rodzaj nadwozia:** Osobowy Hatchback\n**Marka:** Renault\n**Model:** Megane\n**Trim:** RS\n**Rok Produkcji:** 2018\n**Numery rejestracyjne, stan:** 432-N32 / Wisconsin\n**Historia pojazdu:** N/A\n**Data ostatnio wykonywanego Badania Technicznego:** 25.12.2025\n**Data następnego Badania Technicznego:** 25.01.2026\n**Stan licznika:** 6.4Mi\n**Wynik badania:** __Pozytywny__\n**Numer SKP:** BMW/01/002\n"
+      }
+    ],
+    "registeredAt": "2025-12-25T20:41:44.647Z",
+    "plate": "432-N32 / WISCONSIN",
+    "ownerId": "640210932672364544",
+    "ownerName": "ficvvs",
+    "lastInspection": "2025-12-25T20:41:44.647Z",
+    "status": "POZYTYWNY WYNIK BADANIA TECHNICZNEGO"
+  },
+  "31X-039": {
+    "inspections": [
+      {
+        "date": "2025-12-25T20:43:17.976Z",
+        "type": "POZYTYWNY WYNIK BADANIA TECHNICZNEGO",
+        "content": "**POZYTYWNY WYNIK BADANIA TECHNICZNEGO**\n\n**Właściciel pojazdu:** <@640210932672364544>\n**Rodzaj nadwozia:** Osobowy Sedan\n**Marka:** BKM\n**Model:** Hofmeister\n**Trim:** 45i\n**Rok Produkcji:** 2007\n**Numery rejestracyjne, stan:** 31X-039\n**Historia pojazdu:** N/A\n**Data ostatnio wykonywanego Badania Technicznego:** 25.12.2025\n**Data następnego Badania Technicznego:** 25.01.2026\n**Stan licznika:** 113.1Mi\n**Wynik badania:** __Pozytywny__\n**Numer SKP:** BMW/01/002\n"
+      }
+    ],
+    "registeredAt": "2025-12-25T20:43:17.976Z",
+    "plate": "31X-039",
+    "ownerId": "640210932672364544",
+    "ownerName": "ficvvs",
+    "lastInspection": "2025-12-25T20:43:17.976Z",
+    "status": "POZYTYWNY WYNIK BADANIA TECHNICZNEGO"
+  },
+  "XEH-868": {
+    "inspections": [
+      {
+        "date": "2025-12-25T21:24:01.833Z",
+        "type": "POZYTYWNY WYNIK BADANIA TECHNICZNEGO",
+        "content": "**POZYTYWNY WYNIK BADANIA TECHNICZNEGO**\n\n**Właściciel pojazdu:** <@535526548976173079>\n**Rodzaj nadwozia:** sedan\n**Marka:** bkm\n**Model:** w30\n**Trim:** Manual Competition RWD\n**Rok Produkcji:** 2021\n**Numery rejestracyjne, stan:** XEH-868, Wisconsin\n**Historia pojazdu:** N/A\n**Data ostatnio wykonywanego Badania Technicznego:** 25.12.2025\n**Data następnego Badania Technicznego:** 25.01.2026\n**Stan licznika:** 3.9 mi\n**Wynik badania:** __Pozytywny__\n**Numer SKP:** GVW/02/003\n"
+      }
+    ],
+    "registeredAt": "2025-12-25T21:24:01.833Z",
+    "plate": "XEH-868",
+    "ownerId": "535526548976173079",
+    "ownerName": "bshotss",
+    "lastInspection": "2025-12-25T21:24:01.833Z",
+    "status": "POZYTYWNY WYNIK BADANIA TECHNICZNEGO"
+  },
+  "R6 S58": {
+    "inspections": [
+      {
+        "date": "2025-12-25T21:26:47.071Z",
+        "type": "POZYTYWNY WYNIK BADANIA TECHNICZNEGO",
+        "content": "**POZYTYWNY WYNIK BADANIA TECHNICZNEGO**\n\n**Właściciel pojazdu:** <@991657048175542292>\n**Rodzaj nadwozia:** coupe\n**Marka:** bkm\n**Model:** w40 z\n**Trim:** z\n**Rok Produkcji:** 2023\n**Numery rejestracyjne, stan:** R6 S58, California\n**Historia pojazdu:** N/A\n**Data ostatnio wykonywanego Badania Technicznego:** 25.12.2025\n**Data następnego Badania Technicznego:** 25.01.2026\n**Stan licznika:** 17.1 mi\n**Wynik badania:** __Pozytywny__\n**Numer SKP:** GVW/02/003\n"
+      }
+    ],
+    "registeredAt": "2025-12-25T21:26:47.071Z",
+    "plate": "R6 S58",
+    "ownerId": "991657048175542292",
+    "ownerName": "data (mirkos_1978)",
+    "lastInspection": "2025-12-25T21:26:47.071Z",
+    "status": "POZYTYWNY WYNIK BADANIA TECHNICZNEGO"
+  },
+  "EA888": {
+    "inspections": [
+      {
+        "date": "2025-12-25T21:29:54.433Z",
+        "type": "POZYTYWNY WYNIK BADANIA TECHNICZNEGO",
+        "content": "**POZYTYWNY WYNIK BADANIA TECHNICZNEGO**\n\n**Właściciel pojazdu:** <@851850275789996054>\n**Rodzaj nadwozia:** hatchback\n**Marka:** wolfsburg\n**Model:** pitch\n**Trim:** r\n**Rok Produkcji:** 2022\n**Numery rejestracyjne, stan:** EA888, Texas\n**Historia pojazdu:** N/A\n**Data ostatnio wykonywanego Badania Technicznego:** 25.12.2025\n**Data następnego Badania Technicznego:** 25.01.2026\n**Stan licznika:** 3.0 mi\n**Wynik badania:** __Pozytywny__\n**Numer SKP:** GVW/02/003\n"
+      }
+    ],
+    "registeredAt": "2025-12-25T21:29:54.433Z",
+    "plate": "EA888",
+    "ownerId": "851850275789996054",
+    "ownerName": "Roadkill (Bartus_062)",
+    "lastInspection": "2025-12-25T21:29:54.433Z",
+    "status": "POZYTYWNY WYNIK BADANIA TECHNICZNEGO"
+  },
+  "WRRIOR": {
+    "inspections": [
+      {
+        "date": "2025-12-25T21:31:19.044Z",
+        "type": "POZYTYWNY WYNIK BADANIA TECHNICZNEGO",
+        "content": "**POZYTYWNY WYNIK BADANIA TECHNICZNEGO**\n\n**Właściciel pojazdu:** <@851850275789996054>\n**Rodzaj nadwozia:** kombi\n**Marka:** wolfsburg\n**Model:** glide combi\n**Trim:** s\n**Rok Produkcji:** 2009\n**Numery rejestracyjne, stan:** WRRIOR, Texas\n**Historia pojazdu:** N/A\n**Data ostatnio wykonywanego Badania Technicznego:** 25.12.2025\n**Data następnego Badania Technicznego:** 25.01.2026\n**Stan licznika:** 1.7 mi\n**Wynik badania:** __Pozytywny__\n**Numer SKP:** GVW/02/003\n"
+      }
+    ],
+    "registeredAt": "2025-12-25T21:31:19.044Z",
+    "plate": "WRRIOR",
+    "ownerId": "851850275789996054",
+    "ownerName": "Roadkill (Bartus_062)",
+    "lastInspection": "2025-12-25T21:31:19.044Z",
+    "status": "POZYTYWNY WYNIK BADANIA TECHNICZNEGO"
+  },
+  "N4 GRUZ": {
+    "inspections": [
+      {
+        "date": "2025-12-25T22:00:11.052Z",
+        "type": "POZYTYWNY WYNIK BADANIA TECHNICZNEGO",
+        "content": "**POZYTYWNY WYNIK BADANIA TECHNICZNEGO**\n\n**Właściciel pojazdu:** <@851850275789996054>\n**Rodzaj nadwozia:** hatchback\n**Marka:** shizuoka\n**Model:** slick hatchback\n**Trim:** trim x\n**Rok Produkcji:** 2000\n**Numery rejestracyjne, stan:** N4 GRUZ, Texas\n**Historia pojazdu:** N/A\n**Data ostatnio wykonywanego Badania Technicznego:** 25.12.2025\n**Data następnego Badania Technicznego:** 25.01.2026\n**Stan licznika:** 0.5 mi\n**Wynik badania:** __Pozytywny__\n**Numer SKP:** GVW/02/003\n"
+      }
+    ],
+    "registeredAt": "2025-12-25T22:00:11.052Z",
+    "plate": "N4 GRUZ",
+    "ownerId": "851850275789996054",
+    "ownerName": "Roadkill (Bartus_062)",
+    "lastInspection": "2025-12-25T22:00:11.052Z",
+    "status": "POZYTYWNY WYNIK BADANIA TECHNICZNEGO"
+  },
+  "Y0W-951 / WISCONSIN": {
+    "inspections": [
+      {
+        "date": "2025-12-25T23:16:33.959Z",
+        "type": "POZYTYWNY WYNIK BADANIA TECHNICZNEGO",
+        "content": "**POZYTYWNY WYNIK BADANIA TECHNICZNEGO**\n\n**Właściciel pojazdu:** <@1213455103193776138>\n**Rodzaj nadwozia:** Osobowy Avant\n**Marka:** Audi\n**Model:** RS 6\n**Trim:** Performance\n**Rok Produkcji:** 2025\n**Numery rejestracyjne, stan:** Y0W-951 / Wisconsin\n**Historia pojazdu:** N/A\n**Data ostatnio wykonywanego Badania Technicznego:** 26.12.2025\n**Data następnego Badania Technicznego:** 26.01.2026\n**Stan licznika:** 0.0\n**Wynik badania:** __Pozytywny__\n**Numer SKP:** BMW/01/002\n"
+      }
+    ],
+    "registeredAt": "2025-12-25T23:16:33.959Z",
+    "plate": "Y0W-951 / WISCONSIN",
+    "ownerId": "1213455103193776138",
+    "ownerName": "dv00_77",
+    "lastInspection": "2025-12-25T23:16:33.959Z",
+    "status": "POZYTYWNY WYNIK BADANIA TECHNICZNEGO"
+  },
+  "LUF-772 / WISCONSIN": {
+    "inspections": [
+      {
+        "date": "2025-12-25T23:18:11.870Z",
+        "type": "POZYTYWNY WYNIK BADANIA TECHNICZNEGO",
+        "content": "**POZYTYWNY WYNIK BADANIA TECHNICZNEGO**\n\n**Właściciel pojazdu:** <@1213455103193776138>\n**Rodzaj nadwozia:** Osobowy Coupe\n**Marka:** BKM\n**Model:** W40 Z\n**Trim:** Z\n**Rok Produkcji:** 2023\n**Numery rejestracyjne, stan:** LUF-772 / Wisconsin\n**Historia pojazdu:** N/A\n**Data ostatnio wykonywanego Badania Technicznego:** 26.12.2025\n**Data następnego Badania Technicznego:** 26.01.2026\n**Stan licznika:** 4.6Mi\n**Wynik badania:** __Pozytywny__\n**Numer SKP:** BMW/01/002\n"
+      }
+    ],
+    "registeredAt": "2025-12-25T23:18:11.870Z",
+    "plate": "LUF-772 / WISCONSIN",
+    "ownerId": "1213455103193776138",
+    "ownerName": "dv00_77",
+    "lastInspection": "2025-12-25T23:18:11.870Z",
+    "status": "POZYTYWNY WYNIK BADANIA TECHNICZNEGO"
+  },
+  "111MMM": {
+    "inspections": [
+      {
+        "date": "2025-12-26T20:23:41.272Z",
+        "type": "POZYTYWNY WYNIK BADANIA TECHNICZNEGO",
+        "content": "**POZYTYWNY WYNIK BADANIA TECHNICZNEGO**\n\n**Właściciel pojazdu:** <@851850275789996054>\n**Rodzaj nadwozia:** coupe\n**Marka:** bkm\n**Model:** w10\n**Trim:** base\n**Rok Produkcji:** 2012\n**Numery rejestracyjne, stan:** 111MMM, Texas\n**Historia pojazdu:** N/A\n**Data ostatnio wykonywanego Badania Technicznego:** 26.12.2025\n**Data następnego Badania Technicznego:** 26.01.2026\n**Stan licznika:** 15.1 mi\n**Wynik badania:** __Pozytywny__\n**Numer SKP:** GVW/02/003\n"
+      }
+    ],
+    "registeredAt": "2025-12-26T20:23:41.271Z",
+    "plate": "111MMM",
+    "ownerId": "851850275789996054",
+    "ownerName": "Roadkill (Bartus_062)",
+    "lastInspection": "2025-12-26T20:23:41.271Z",
+    "status": "POZYTYWNY WYNIK BADANIA TECHNICZNEGO"
+  },
+  "QTR4": {
+    "inspections": [
+      {
+        "date": "2025-12-26T21:59:33.552Z",
+        "type": "POZYTYWNY WYNIK BADANIA TECHNICZNEGO",
+        "content": "**POZYTYWNY WYNIK BADANIA TECHNICZNEGO**\n\n**Właściciel pojazdu:** <@848612076564906035>\n**Rodzaj nadwozia:** kombi\n**Marka:** audi\n**Model:** rs6\n**Trim:** performance\n**Rok Produkcji:** 2025\n**Numery rejestracyjne, stan:** QTR4, Wisconsin\n**Historia pojazdu:** N/A\n**Data ostatnio wykonywanego Badania Technicznego:** 26.12.2025\n**Data następnego Badania Technicznego:** 26.01.2026\n**Stan licznika:** 33.9 mi\n**Wynik badania:** __Pozytywny__\n**Numer SKP:** GVW/02/003\n"
+      }
+    ],
+    "registeredAt": "2025-12-26T21:59:33.552Z",
+    "plate": "QTR4",
+    "ownerId": "848612076564906035",
+    "ownerName": "Fifiool (Revo_pad247)",
+    "lastInspection": "2025-12-26T21:59:33.552Z",
+    "status": "POZYTYWNY WYNIK BADANIA TECHNICZNEGO",
+    "isImpounded": true
+  },
+  "XMA-383": {
+    "inspections": [
+      {
+        "date": "2025-12-26T22:24:43.442Z",
+        "type": "POZYTYWNY WYNIK BADANIA TECHNICZNEGO",
+        "content": "**POZYTYWNY WYNIK BADANIA TECHNICZNEGO**\n\n**Właściciel pojazdu:** <@793538922470178826>\n**Rodzaj nadwozia:** sedan\n**Marka:** jaguar\n**Model:** xj-l\n**Trim:** r\n**Rok Produkcji:** 2014\n**Numery rejestracyjne, stan:** XMA-383, Wisconsin\n**Historia pojazdu:** N/A\n**Data ostatnio wykonywanego Badania Technicznego:** 26.12.2025\n**Data następnego Badania Technicznego:** 26.01.2026\n**Stan licznika:** 0.1 mi\n**Wynik badania:** __Pozytywny__\n**Numer SKP:** GVW/02/003\n"
+      }
+    ],
+    "registeredAt": "2025-12-26T22:24:43.442Z",
+    "plate": "XMA-383",
+    "ownerId": "793538922470178826",
+    "ownerName": "Kitkat(mlubiak)",
+    "lastInspection": "2025-12-26T22:24:43.442Z",
+    "status": "POZYTYWNY WYNIK BADANIA TECHNICZNEGO"
+  },
+  "QIE-297": {
+    "inspections": [
+      {
+        "date": "2025-12-26T22:29:20.671Z",
+        "type": "POZYTYWNY WYNIK BADANIA TECHNICZNEGO",
+        "content": "**POZYTYWNY WYNIK BADANIA TECHNICZNEGO**\n\n**Właściciel pojazdu:** <@480333454194769920>\n**Rodzaj nadwozia:** sedan\n**Marka:** bkm\n**Model:** gottfrieding\n**Trim:** limited\n**Rok Produkcji:** 2002\n**Numery rejestracyjne, stan:** QIE-297, Wisconsin\n**Historia pojazdu:** N/A\n**Data ostatnio wykonywanego Badania Technicznego:** 26.12.2025\n**Data następnego Badania Technicznego:** 26.01.2026\n**Stan licznika:** 99 mi\n**Wynik badania:** __Pozytywny__\n**Numer SKP:** GVW/02/003\n"
+      }
+    ],
+    "registeredAt": "2025-12-26T22:29:20.671Z",
+    "plate": "QIE-297",
+    "ownerId": "480333454194769920",
+    "ownerName": "Bell (MTKulfon)",
+    "lastInspection": "2025-12-26T22:29:20.671Z",
+    "status": "POZYTYWNY WYNIK BADANIA TECHNICZNEGO"
+  },
+  "WN0-121": {
+    "inspections": [
+      {
+        "date": "2025-12-27T20:24:27.168Z",
+        "type": "POZYTYWNY WYNIK BADANIA TECHNICZNEGO",
+        "content": "**POZYTYWNY WYNIK BADANIA TECHNICZNEGO**\n\n**Właściciel pojazdu:** <@1208088152284073984>\n**Rodzaj nadwozia:** Osobowy Touring\n**Marka:** BKM\n**Model:** Series 30\n**Trim:** 30T W - Sport\n**Rok Produkcji:** 2020\n**Numery rejestracyjne, stan:** WN0-121\n**Historia pojazdu:** N/A\n**Data ostatnio wykonywanego Badania Technicznego:** 27.12.2025\n**Data następnego Badania Technicznego:** 27.01.2026\n**Stan licznika:** 8.6Mi\n**Wynik badania:** __Pozytywny__\n**Numer SKP:** BMW/01/002\n"
+      }
+    ],
+    "registeredAt": "2025-12-27T20:24:27.168Z",
+    "plate": "WN0-121",
+    "ownerId": "1208088152284073984",
+    "ownerName": "MonteKurffaKristo (waxes_7)",
+    "lastInspection": "2025-12-27T20:24:27.168Z",
+    "status": "POZYTYWNY WYNIK BADANIA TECHNICZNEGO"
+  },
+  "QR    F80 / WEST VIRGINIA": {
+    "inspections": [
+      {
+        "date": "2025-12-27T21:48:58.401Z",
+        "type": "POZYTYWNY WYNIK BADANIA TECHNICZNEGO",
+        "content": "**POZYTYWNY WYNIK BADANIA TECHNICZNEGO**\n\n**Właściciel pojazdu:** <@871463937084907530>\n**Rodzaj nadwozia:** Osobowy Sedan\n**Marka:** BKM\n**Model:** Regen M\n**Trim:** Competetive Sport\n**Rok Produkcji:** 2018\n**Numery rejestracyjne, stan:** QR    F80 / West Virginia\n**Historia pojazdu:** N/A\n**Data ostatnio wykonywanego Badania Technicznego:** 27.12.2025\n**Data następnego Badania Technicznego:** 27.01.2026\n**Stan licznika:** 188.5\n**Wynik badania:** __Pozytywny__\n**Numer SKP:** GVW/02/002\n"
+      }
+    ],
+    "registeredAt": "2025-12-27T21:48:58.401Z",
+    "plate": "QR    F80 / WEST VIRGINIA",
+    "ownerId": "871463937084907530",
+    "ownerName": "Mierzwin (Adam_dupa6347)",
+    "lastInspection": "2025-12-27T21:48:58.401Z",
+    "status": "POZYTYWNY WYNIK BADANIA TECHNICZNEGO"
+  },
+  "DVT-674 / ALASKA": {
+    "inspections": [
+      {
+        "date": "2025-12-27T21:53:00.575Z",
+        "type": "POZYTYWNY WYNIK BADANIA TECHNICZNEGO",
+        "content": "**POZYTYWNY WYNIK BADANIA TECHNICZNEGO**\n\n**Właściciel pojazdu:** <@871463937084907530>\n**Rodzaj nadwozia:** Osobowy Sedan\n**Marka:** Mizushima\n**Model:** Yari Evolution\n**Trim:** Final Edition\n**Rok Produkcji:** 2015\n**Numery rejestracyjne, stan:** DVT-674 / Alaska\n**Historia pojazdu:** N/A\n**Data ostatnio wykonywanego Badania Technicznego:** 27.12.2025\n**Data następnego Badania Technicznego:** 27.01.2026\n**Stan licznika:** 0.0mil\n**Wynik badania:** __Pozytywny__\n**Numer SKP:** GVW/02/002\n"
+      }
+    ],
+    "registeredAt": "2025-12-27T21:53:00.575Z",
+    "plate": "DVT-674 / ALASKA",
+    "ownerId": "871463937084907530",
+    "ownerName": "Mierzwin (Adam_dupa6347)",
+    "lastInspection": "2025-12-27T21:53:00.575Z",
+    "status": "POZYTYWNY WYNIK BADANIA TECHNICZNEGO"
+  },
+  "VL3NNN / TEXAS": {
+    "inspections": [
+      {
+        "date": "2025-12-27T21:54:09.233Z",
+        "type": "POZYTYWNY WYNIK BADANIA TECHNICZNEGO",
+        "content": "**POZYTYWNY WYNIK BADANIA TECHNICZNEGO**\n\n**Właściciel pojazdu:** <@851850275789996054>\n**Rodzaj nadwozia:** Osobowy Sedan\n**Marka:** Stuttgart\n**Model:** Vierturig\n**Trim:** 63s Teuer\n**Rok Produkcji:** 2021\n**Numery rejestracyjne, stan:** VL3NNN / Texas\n**Historia pojazdu:** N/A\n**Data ostatnio wykonywanego Badania Technicznego:** 27.12.2025\n**Data następnego Badania Technicznego:** 27.01.2026\n**Stan licznika:** 23.8mil\n**Wynik badania:** __Pozytywny__\n**Numer SKP:** GVW/02/002\n"
+      }
+    ],
+    "registeredAt": "2025-12-27T21:54:09.233Z",
+    "plate": "VL3NNN / TEXAS",
+    "ownerId": "851850275789996054",
+    "ownerName": "Roadkill (Bartus_062)",
+    "lastInspection": "2025-12-27T21:54:09.233Z",
+    "status": "POZYTYWNY WYNIK BADANIA TECHNICZNEGO"
+  },
+  "RJU-163 / WISCONSIN": {
+    "inspections": [
+      {
+        "date": "2025-12-27T23:27:06.993Z",
+        "type": "POZYTYWNY WYNIK BADANIA TECHNICZNEGO",
+        "content": "**POZYTYWNY WYNIK BADANIA TECHNICZNEGO**\n\n**Właściciel pojazdu:** <@947919909583728680>\n**Rodzaj nadwozia:** Osobowy Suv\n**Marka:** Sumo\n**Model:** Woodlands\n**Trim:** XS Ivy\n**Rok Produkcji:** 2005\n**Numery rejestracyjne, stan:** RJU-163 / Wisconsin\n**Historia pojazdu:** N/A\n**Data ostatnio wykonywanego Badania Technicznego:** 28.12.2025\n**Data następnego Badania Technicznego:** 28.01.2026\n**Stan licznika:** 5.0mil\n**Wynik badania:** __Pozytywny__\n**Numer SKP:** GVW/02/002\n"
+      }
+    ],
+    "registeredAt": "2025-12-27T23:27:06.992Z",
+    "plate": "RJU-163 / WISCONSIN",
+    "ownerId": "947919909583728680",
+    "ownerName": "PorscheToGorsze (WYTYFY321)",
+    "lastInspection": "2025-12-27T23:27:06.993Z",
+    "status": "POZYTYWNY WYNIK BADANIA TECHNICZNEGO"
+  },
+  "748800 / MONTANA": {
+    "inspections": [
+      {
+        "date": "2025-12-27T23:49:10.993Z",
+        "type": "POZYTYWNY WYNIK BADANIA TECHNICZNEGO",
+        "content": "**POZYTYWNY WYNIK BADANIA TECHNICZNEGO**\n\n**Właściciel pojazdu:** <@439447459152920579>\n**Rodzaj nadwozia:** Osobowy Coupe\n**Marka:** Bullhorn\n**Model:** Determinator\n**Trim:** TR\n**Rok Produkcji:** 1971\n**Numery rejestracyjne, stan:** 748800 / Montana\n**Historia pojazdu:** N/A\n**Data ostatnio wykonywanego Badania Technicznego:** 28.12.2025\n**Data następnego Badania Technicznego:** 28.01.2026\n**Stan licznika:** 1.4mil\n**Wynik badania:** __Pozytywny__\n**Numer SKP:** GVW/02/002\n"
+      }
+    ],
+    "registeredAt": "2025-12-27T23:49:10.993Z",
+    "plate": "748800 / MONTANA",
+    "ownerId": "439447459152920579",
+    "ownerName": "kabanos427 (itz_limmited)",
+    "lastInspection": "2025-12-27T23:49:10.993Z",
+    "status": "POZYTYWNY WYNIK BADANIA TECHNICZNEGO"
+  },
+  "LUCKY7": {
+    "inspections": [
+      {
+        "date": "2025-12-28T19:05:41.526Z",
+        "type": "POZYTYWNY WYNIK BADANIA TECHNICZNEGO",
+        "content": "**POZYTYWNY WYNIK BADANIA TECHNICZNEGO**\n\n**Właściciel pojazdu:** <@1276569262823182479>\n**Rodzaj nadwozia:** Osobowy sedan\n**Marka:** BKM\n**Model:** W30\n**Trim:** Manual Competition RWD\n**Rok Produkcji:** 2021\n**Numery rejestracyjne, stan:** LUCKY7, Texas\n**Historia pojazdu:** N/A\n**Data ostatnio wykonywanego Badania Technicznego:** 28.12.2025\n**Data następnego Badania Technicznego:** 28.01.2026\n**Stan licznika:** 10.2Mi\n**Wynik badania:** __Pozytywny__\n**Numer SKP:** GVW/01/001\n"
+      }
+    ],
+    "registeredAt": "2025-12-28T19:05:41.526Z",
+    "plate": "LUCKY7",
+    "ownerId": "1276569262823182479",
+    "ownerName": "majkel1945",
+    "lastInspection": "2025-12-28T19:05:41.526Z",
+    "status": "POZYTYWNY WYNIK BADANIA TECHNICZNEGO"
+  },
+  "VL3NNN": {
+    "inspections": [
+      {
+        "date": "2025-12-28T19:14:05.347Z",
+        "type": "POZYTYWNY WYNIK BADANIA TECHNICZNEGO",
+        "content": "**POZYTYWNY WYNIK BADANIA TECHNICZNEGO**\n\n**Właściciel pojazdu:** <@851850275789996054>\n**Rodzaj nadwozia:** sedan\n**Marka:** stuttgart\n**Model:** vierturig\n**Trim:** 63s teuer\n**Rok Produkcji:** 2021\n**Numery rejestracyjne, stan:** VL3NNN, Texas\n**Historia pojazdu:** N/A\n**Data ostatnio wykonywanego Badania Technicznego:** 28.12.2025\n**Data następnego Badania Technicznego:** 28.01.2026\n**Stan licznika:** 5 mi\n**Wynik badania:** __Pozytywny__\n**Numer SKP:** GVW/02/003\n"
+      }
+    ],
+    "registeredAt": "2025-12-28T19:14:05.347Z",
+    "plate": "VL3NNN",
+    "ownerId": "851850275789996054",
+    "ownerName": "Roadkill (Bartus_062)",
+    "lastInspection": "2025-12-28T19:14:05.347Z",
+    "status": "POZYTYWNY WYNIK BADANIA TECHNICZNEGO"
+  },
+  "911 TBS": {
+    "inspections": [
+      {
+        "date": "2025-12-28T19:37:38.603Z",
+        "type": "POZYTYWNY WYNIK BADANIA TECHNICZNEGO",
+        "content": "**POZYTYWNY WYNIK BADANIA TECHNICZNEGO**\n\n**Właściciel pojazdu:** <@1011983836462186516>\n**Rodzaj nadwozia:** Osobowy coupe\n**Marka:** Ferdinand\n**Model:** Rapido Coupe\n**Trim:** Turbo S\n**Rok Produkcji:** 2022\n**Numery rejestracyjne, stan:** 911 TBS, California\n**Historia pojazdu:** N/A\n**Data ostatnio wykonywanego Badania Technicznego:** 28.12.2025\n**Data następnego Badania Technicznego:** 28.01.2026\n**Stan licznika:** 50.3Mi\n**Wynik badania:** __Pozytywny__\n**Numer SKP:** GVW/01/001\n"
+      }
+    ],
+    "registeredAt": "2025-12-28T19:37:38.603Z",
+    "plate": "911 TBS",
+    "ownerId": "1011983836462186516",
+    "ownerName": "wooda",
+    "lastInspection": "2025-12-28T19:37:38.603Z",
+    "status": "POZYTYWNY WYNIK BADANIA TECHNICZNEGO"
+  },
+  "911 GT3": {
+    "inspections": [
+      {
+        "date": "2025-12-28T19:41:20.247Z",
+        "type": "POZYTYWNY WYNIK BADANIA TECHNICZNEGO",
+        "content": "**POZYTYWNY WYNIK BADANIA TECHNICZNEGO**\n\n**Właściciel pojazdu:** <@1011983836462186516>\n**Rodzaj nadwozia:** Osobowy coupe\n**Marka:** Ferdinand\n**Model:** Rapido Coupe\n**Trim:** GT3\n**Rok Produkcji:** 2021\n**Numery rejestracyjne, stan:** 911 GT3, California\n**Historia pojazdu:** N/A\n**Data ostatnio wykonywanego Badania Technicznego:** 28.12.2025\n**Data następnego Badania Technicznego:** 28.01.2026\n**Stan licznika:** 12.2\n**Wynik badania:** __Pozytywny__\n**Numer SKP:** GVW/01/001\n"
+      }
+    ],
+    "registeredAt": "2025-12-28T19:41:20.247Z",
+    "plate": "911 GT3",
+    "ownerId": "1011983836462186516",
+    "ownerName": "wooda",
+    "lastInspection": "2025-12-28T19:41:20.247Z",
+    "status": "POZYTYWNY WYNIK BADANIA TECHNICZNEGO"
+  },
+  "M3T-C51": {
+    "inspections": [
+      {
+        "date": "2025-12-28T20:30:48.199Z",
+        "type": "POZYTYWNY WYNIK BADANIA TECHNICZNEGO",
+        "content": "**POZYTYWNY WYNIK BADANIA TECHNICZNEGO**\n\n**Właściciel pojazdu:** <@602751766324445218>\n**Rodzaj nadwozia:** Kombi\n**Marka:** BKM\n**Model:** W30 Wagon\n**Trim:** Z (EU)\n**Rok Produkcji:** 2021\n**Numery rejestracyjne, stan:** M3T-C51, MI\n**Historia pojazdu:** B/D\n**Data ostatnio wykonywanego Badania Technicznego:** 28.12.2025\n**Data następnego Badania Technicznego:** 28.01.2026\n**Stan licznika:** 125.7 Mi\n**Wynik badania:** __Pozytywny__\n**Numer SKP:** GVW/02/005\n"
+      }
+    ],
+    "registeredAt": "2025-12-28T20:30:48.199Z",
+    "plate": "M3T-C51",
+    "ownerId": "602751766324445218",
+    "ownerName": "300dGLC",
+    "lastInspection": "2025-12-28T20:30:48.199Z",
+    "status": "POZYTYWNY WYNIK BADANIA TECHNICZNEGO"
+  }
+}

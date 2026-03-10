@@ -1,0 +1,11 @@
+{
+  "admin@wsp.gov": {
+    "id": "admin",
+    "email": "admin@wsp.gov",
+    "username": "Administrator",
+    "password": "admin",
+    "badge": "000",
+    "rank": "Chief of Police",
+    "isAdmin": true
+  }
+}

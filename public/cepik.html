@@ -1,0 +1,1215 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CEPiK - System Ewidencji Pojazdów</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style> 
+        body { font-family: 'Inter', sans-serif; }
+        .tab-btn.active { 
+            border-color: #3b82f6;
+            color: #60a5fa;
+            font-weight: 600;
+        }
+        .template-btn.active { background-color: #3b82f6; color: white; }
+        .sortable:hover { cursor: pointer; background-color: #374151; }
+        .modal-backdrop { display: none; }
+        .modal-backdrop.flex { display: flex; }
+    </style>
+</head>
+<body class="bg-gray-900 text-gray-200 flex h-screen">
+
+    <main class="flex-1 p-8 overflow-y-auto">
+        <div class="flex justify-between items-center mb-6">
+            <h1 class="text-3xl font-bold text-white">System Ewidencji Pojazdów i Kierowców (CEPiK)</h1>
+            <button id="logout-button" class="bg-red-600 hover:bg-red-700 text-white font-bold py-2 px-4 rounded-lg flex items-center">
+                <i data-lucide="log-out" class="w-5 h-5 mr-2"></i>Wyloguj
+            </button>
+        </div>
+        
+        <div class="mb-6 border-b border-gray-700">
+            <nav class="flex -mb-px space-x-6">
+                <button data-tab="wystaw" class="tab-btn active py-4 px-1 inline-flex items-center gap-2 text-sm font-medium text-center border-b-2 border-transparent hover:text-blue-400">Wystaw Status</button>
+                <button data-tab="baza" class="tab-btn py-4 px-1 inline-flex items-center gap-2 text-sm font-medium text-center border-b-2 border-transparent text-gray-400 hover:text-blue-400">Baza Danych</button>
+                <button data-tab="diagnosci" class="tab-btn py-4 px-1 inline-flex items-center gap-2 text-sm font-medium text-center border-b-2 border-transparent text-gray-400 hover:text-blue-400">Diagności</button>
+                <button data-tab="panel-admina" id="admin-tab-btn" class="tab-btn py-4 px-1 inline-flex items-center gap-2 text-sm font-medium text-center border-b-2 border-transparent text-gray-400 hover:text-red-400 hidden">
+                    <i data-lucide="shield" class="w-4 h-4"></i>Panel Admina
+                </button>
+            </nav>
+        </div>
+
+        <div id="tab-wystaw" class="tab-content">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                <div class="bg-gray-800 p-6 rounded-lg shadow-lg self-start">
+                    <h2 class="text-xl font-semibold text-white mb-4">Wystaw Status Techniczny</h2>
+                    <div class="mb-4 flex gap-2">
+                        <button data-template="positive" class="template-btn active flex-1 bg-gray-700 hover:bg-gray-600 font-bold py-2 px-4 rounded-lg">Pozytywny</button>
+                        <button data-template="negative" class="template-btn flex-1 bg-gray-700 hover:bg-gray-600 font-bold py-2 px-4 rounded-lg">Negatywny</button>
+                        <button data-template="demontaz" class="template-btn flex-1 bg-gray-700 hover:bg-gray-600 font-bold py-2 px-4 rounded-lg">Demontaż</button>
+                    </div>
+                    <form id="cepik-form" class="space-y-3">
+                    </form>
+                    <button id="generate-btn" class="mt-4 w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-lg">Generuj i Kopiuj</button>
+                </div>
+                <div class="bg-gray-800 p-6 rounded-lg shadow-lg">
+                    <h2 class="text-xl font-semibold text-white mb-4">Podgląd i Zapis</h2>
+                    <div id="preview-container" class="bg-gray-900 p-4 rounded-md h-96 overflow-y-auto whitespace-pre-wrap font-mono text-sm">Wybierz szablon i wypełnij formularz.</div>
+                    <p id="form-message" class="text-center h-4 mt-4"></p>
+                    <button id="save-btn" class="mt-4 w-full bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-4 rounded-lg disabled:bg-gray-500 disabled:cursor-not-allowed" disabled>Zapisz w Bazie Danych</button>
+                </div>
+            </div>
+        </div>
+        
+        <div id="tab-baza" class="tab-content hidden">
+            <!-- Zawartość bazy danych pojazdów zostanie wstrzyknięta tutaj -->
+        </div>
+
+        <div id="tab-diagnosci" class="tab-content hidden">
+            <!-- Panel dodawania diagnostów - tylko dla dyrektora -->
+            <div id="director-panel" class="hidden bg-gray-800 p-6 rounded-lg shadow-lg mb-6">
+                <h2 class="text-xl font-semibold text-white mb-4">Panel Dyrektora - Zarządzanie Diagnostami</h2>
+                <form id="add-diagnostician-form" class="space-y-3">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+                        <input type="email" name="email" placeholder="Email (do logowania)" class="bg-gray-700 rounded p-2 text-sm" required>
+                        <input type="password" name="password" placeholder="Hasło" class="bg-gray-700 rounded p-2 text-sm" required>
+                        <input type="text" name="discordNick" placeholder="Nick Discord" class="bg-gray-700 rounded p-2 text-sm" required>
+                        <input type="text" name="robloxNick" placeholder="Nick Roblox" class="bg-gray-700 rounded p-2 text-sm" required>
+                        <input type="text" name="discordId" placeholder="ID Discord" class="bg-gray-700 rounded p-2 text-sm" required>
+                        <input type="text" name="skpNumber" placeholder="Numer SKP (np. GVW/01/123)" class="bg-gray-700 rounded p-2 text-sm" required>
+                    </div>
+                    <button type="submit" class="w-full bg-teal-600 hover:bg-teal-700 text-white font-bold py-2 px-4 rounded-lg">Dodaj Diagnostę</button>
+                </form>
+                <p id="diagnostician-message" class="text-center h-4 mt-2"></p>
+            </div>
+
+            <div class="bg-gray-800 p-6 rounded-lg shadow-lg">
+                <h2 class="text-xl font-semibold text-white mb-4">Zarejestrowani Diagności</h2>
+                <div class="overflow-x-auto">
+                    <table class="min-w-full text-sm text-left text-gray-300">
+                        <thead class="text-xs text-gray-400 uppercase bg-gray-700">
+                            <tr>
+                                <th class="px-6 py-3">Numer SKP</th>
+                                <th class="px-6 py-3">Nick Discord</th>
+                                <th class="px-6 py-3">ID Discord</th>
+                                <th class="px-6 py-3">Stanowisko</th>
+                                <th id="actions-header" class="px-6 py-3 text-right hidden">Akcje</th>
+                            </tr>
+                        </thead>
+                        <tbody id="diagnosticians-table-body"></tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- ========================================================================= -->
+        <!-- PANEL ADMINA - tylko dla GVW/01/001 -->
+        <!-- ========================================================================= -->
+        <div id="tab-panel-admina" class="tab-content hidden">
+            <div class="bg-gray-800 p-6 rounded-lg shadow-lg mb-6">
+                <h2 class="text-2xl font-semibold text-white mb-6 flex items-center">
+                    <i data-lucide="shield" class="w-7 h-7 mr-3 text-red-500"></i>
+                    Panel Administracyjny - Zarządzanie Diagnostami
+                </h2>
+                
+                <!-- Formularz dodawania diagnosty -->
+                <div class="bg-gray-900 p-5 rounded-lg mb-6 border-l-4 border-green-500">
+                    <h3 class="text-lg font-semibold text-white mb-4 flex items-center">
+                        <i data-lucide="user-plus" class="w-5 h-5 mr-2 text-green-500"></i>
+                        Dodaj Nowego Diagnostę
+                    </h3>
+                    <form id="admin-add-diagnostician-form" class="space-y-4">
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                            <div>
+                                <label class="block text-sm font-medium text-gray-300 mb-2">
+                                    <i data-lucide="mail" class="w-4 h-4 inline mr-1"></i>
+                                    Email (logowanie) *
+                                </label>
+                                <input type="email" name="email" placeholder="diagnosta@cepik.gov" class="w-full bg-gray-700 border border-gray-600 rounded p-2.5 text-sm focus:ring-2 focus:ring-blue-500 focus:border-transparent" required>
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-300 mb-2">
+                                    <i data-lucide="key" class="w-4 h-4 inline mr-1"></i>
+                                    Hasło *
+                                </label>
+                                <input type="password" name="password" placeholder="••••••••" class="w-full bg-gray-700 border border-gray-600 rounded p-2.5 text-sm focus:ring-2 focus:ring-blue-500 focus:border-transparent" required>
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-300 mb-2">
+                                    <i data-lucide="badge" class="w-4 h-4 inline mr-1"></i>
+                                    Numer SKP *
+                                </label>
+                                <input type="text" name="skpNumber" placeholder="GVW/01/123" class="w-full bg-gray-700 border border-gray-600 rounded p-2.5 text-sm focus:ring-2 focus:ring-blue-500 focus:border-transparent" required>
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-300 mb-2">
+                                    <i data-lucide="message-circle" class="w-4 h-4 inline mr-1"></i>
+                                    Nick Discord *
+                                </label>
+                                <input type="text" name="discordNick" placeholder="JanKowalski#1234" class="w-full bg-gray-700 border border-gray-600 rounded p-2.5 text-sm focus:ring-2 focus:ring-blue-500 focus:border-transparent" required>
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-300 mb-2">
+                                    <i data-lucide="gamepad-2" class="w-4 h-4 inline mr-1"></i>
+                                    Nick Roblox *
+                                </label>
+                                <input type="text" name="robloxNick" placeholder="JanKowalski123" class="w-full bg-gray-700 border border-gray-600 rounded p-2.5 text-sm focus:ring-2 focus:ring-blue-500 focus:border-transparent" required>
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-300 mb-2">
+                                    <i data-lucide="hash" class="w-4 h-4 inline mr-1"></i>
+                                    ID Discord (opcjonalne)
+                                </label>
+                                <input type="text" name="discordId" placeholder="123456789012345678" class="w-full bg-gray-700 border border-gray-600 rounded p-2.5 text-sm focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                            </div>
+                        </div>
+                        <button type="submit" class="w-full bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-4 rounded-lg flex items-center justify-center transition-colors">
+                            <i data-lucide="user-plus" class="w-5 h-5 mr-2"></i>
+                            Dodaj Diagnostę do Systemu
+                        </button>
+                    </form>
+                    <p id="admin-add-message" class="text-center h-5 mt-3 font-medium"></p>
+                </div>
+
+                <!-- Tabela diagnostów z możliwością edycji -->
+                <div class="bg-gray-900 p-5 rounded-lg border-l-4 border-blue-500">
+                    <h3 class="text-lg font-semibold text-white mb-4 flex items-center">
+                        <i data-lucide="users" class="w-5 h-5 mr-2 text-blue-500"></i>
+                        Zarejestrowani Diagności w Systemie
+                    </h3>
+                    <div class="overflow-x-auto">
+                        <table class="min-w-full text-sm text-left text-gray-300">
+                            <thead class="text-xs text-gray-400 uppercase bg-gray-800">
+                                <tr>
+                                    <th class="px-4 py-3">
+                                        <i data-lucide="badge" class="w-4 h-4 inline mr-1"></i>
+                                        SKP
+                                    </th>
+                                    <th class="px-4 py-3">
+                                        <i data-lucide="mail" class="w-4 h-4 inline mr-1"></i>
+                                        Email
+                                    </th>
+                                    <th class="px-4 py-3">
+                                        <i data-lucide="message-circle" class="w-4 h-4 inline mr-1"></i>
+                                        Discord Nick
+                                    </th>
+                                    <th class="px-4 py-3">
+                                        <i data-lucide="gamepad-2" class="w-4 h-4 inline mr-1"></i>
+                                        Roblox Nick
+                                    </th>
+                                    <th class="px-4 py-3">
+                                        <i data-lucide="hash" class="w-4 h-4 inline mr-1"></i>
+                                        Discord ID
+                                    </th>
+                                    <th class="px-4 py-3">
+                                        <i data-lucide="shield-check" class="w-4 h-4 inline mr-1"></i>
+                                        Stanowisko
+                                    </th>
+                                    <th class="px-4 py-3 text-right">
+                                        <i data-lucide="settings" class="w-4 h-4 inline mr-1"></i>
+                                        Akcje
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody id="admin-diagnosticians-table" class="divide-y divide-gray-700"></tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- ========================================================================= -->
+    <!-- MODAL EDYCJI DIAGNOSTY -->
+    <!-- ========================================================================= -->
+    <div id="edit-diagnostician-modal" class="modal-backdrop fixed inset-0 bg-black bg-opacity-75 justify-center items-center z-50">
+        <div class="bg-gray-800 rounded-lg shadow-2xl w-full max-w-2xl p-6 m-4 max-h-[90vh] overflow-y-auto">
+            <div class="flex justify-between items-center mb-6 pb-4 border-b border-gray-700">
+                <h2 class="text-2xl font-semibold text-white flex items-center">
+                    <i data-lucide="edit" class="w-6 h-6 mr-3 text-blue-500"></i>
+                    Edytuj Dane Diagnosty
+                </h2>
+                <button id="close-edit-modal" class="text-gray-400 hover:text-white transition-colors">
+                    <i data-lucide="x" class="w-6 h-6"></i>
+                </button>
+            </div>
+            <form id="edit-diagnostician-form" class="space-y-4">
+                <input type="hidden" id="edit-original-email" name="originalEmail">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-sm font-medium text-gray-300 mb-2">
+                            <i data-lucide="mail" class="w-4 h-4 inline mr-1"></i>
+                            Email (logowanie)
+                        </label>
+                        <input type="email" id="edit-email" name="email" class="w-full bg-gray-700 border border-gray-600 rounded p-2.5 text-sm focus:ring-2 focus:ring-blue-500 focus:border-transparent" required>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-300 mb-2">
+                            <i data-lucide="key" class="w-4 h-4 inline mr-1"></i>
+                            Nowe Hasło
+                            <span class="text-xs text-gray-500">(opcjonalnie)</span>
+                        </label>
+                        <input type="password" id="edit-password" name="password" placeholder="Zostaw puste aby nie zmieniać" class="w-full bg-gray-700 border border-gray-600 rounded p-2.5 text-sm focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-300 mb-2">
+                            <i data-lucide="badge" class="w-4 h-4 inline mr-1"></i>
+                            Numer SKP
+                        </label>
+                        <input type="text" id="edit-skpNumber" name="skpNumber" class="w-full bg-gray-700 border border-gray-600 rounded p-2.5 text-sm focus:ring-2 focus:ring-blue-500 focus:border-transparent" required>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-300 mb-2">
+                            <i data-lucide="message-circle" class="w-4 h-4 inline mr-1"></i>
+                            Nick Discord
+                        </label>
+                        <input type="text" id="edit-discordNick" name="discordNick" class="w-full bg-gray-700 border border-gray-600 rounded p-2.5 text-sm focus:ring-2 focus:ring-blue-500 focus:border-transparent" required>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-300 mb-2">
+                            <i data-lucide="gamepad-2" class="w-4 h-4 inline mr-1"></i>
+                            Nick Roblox
+                        </label>
+                        <input type="text" id="edit-robloxNick" name="robloxNick" class="w-full bg-gray-700 border border-gray-600 rounded p-2.5 text-sm focus:ring-2 focus:ring-blue-500 focus:border-transparent" required>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-300 mb-2">
+                            <i data-lucide="hash" class="w-4 h-4 inline mr-1"></i>
+                            ID Discord
+                        </label>
+                        <input type="text" id="edit-discordId" name="discordId" class="w-full bg-gray-700 border border-gray-600 rounded p-2.5 text-sm focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                    </div>
+                </div>
+                <div class="flex gap-3 mt-6 pt-4 border-t border-gray-700">
+                    <button type="submit" class="flex-1 bg-blue-600 hover:bg-blue-700 text-white font-bold py-2.5 px-4 rounded-lg flex items-center justify-center transition-colors">
+                        <i data-lucide="save" class="w-5 h-5 mr-2"></i>
+                        Zapisz Zmiany
+                    </button>
+                    <button type="button" id="cancel-edit" class="flex-1 bg-gray-600 hover:bg-gray-700 text-white font-bold py-2.5 px-4 rounded-lg transition-colors">
+                        Anuluj
+                    </button>
+                </div>
+            </form>
+            <p id="edit-message" class="text-center h-5 mt-3 font-medium"></p>
+        </div>
+    </div>
+    
+    <script src="shared.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', async () => {
+            const userData = await checkAuth('cepik');
+            if (!userData) return;
+            
+            const token = localStorage.getItem('mdt-token');
+            const userSkpNumber = userData.skpNumber || 'GVW/0';
+            
+            let allCitizens = [];
+            try {
+                const response = await fetch('/api/citizens', { headers: { 'Authorization': token } });
+                allCitizens = await response.json();
+            } catch (error) {
+                console.error("Błąd ładowania obywateli:", error);
+            }
+            
+            const form = document.getElementById('cepik-form');
+            const previewContainer = document.getElementById('preview-container');
+            const formMessage = document.getElementById('form-message');
+            const saveBtn = document.getElementById('save-btn');
+            const tabButtons = document.querySelectorAll('.tab-btn');
+            const tabContents = document.querySelectorAll('.tab-content');
+            let currentTemplate = 'positive';
+            let generatedContent = '';
+
+            const templates = {
+                positive: {
+                    title: "POZYTYWNY WYNIK BADANIA TECHNICZNEGO",
+                    fields: [
+                        { name: 'Właściciel pojazdu', type: 'autocomplete' }, { name: 'Rodzaj nadwozia' }, { name: 'Marka' }, { name: 'Model' }, { name: 'Trim' }, { name: 'Rok Produkcji', type: 'number' }, { name: 'Numery rejestracyjne, stan' }, { name: 'Historia pojazdu' }, { name: 'Data ostatnio wykonywanego Badania Technicznego' }, { name: 'Data następnego Badania Technicznego' }, { name: 'Stan licznika' }, { name: 'Wynik badania', value: '__Pozytywny__', readonly: true }, { name: 'Numer SKP', value: userSkpNumber, readonly: true }
+                    ]
+                },
+                negative: {
+                    title: "NEGATYWNY WYNIK BADANIA TECHNICZNEGO",
+                    fields: [
+                        { name: 'Właściciel pojazdu', type: 'autocomplete' }, { name: 'Rodzaj nadwozia' }, { name: 'Marka' }, { name: 'Model' }, { name: 'Trim' }, { name: 'Rok Produkcji', type: 'number' }, { name: 'Numery rejestracyjne, stan' }, { name: 'Historia pojazdu' }, { name: 'Data ostatnio wykonywanego Badania Technicznego' }, { name: 'Data następnego Badania Technicznego', strikethrough: true }, { name: 'Stan licznika' }, { name: 'Wynik badania', value: '__Negatywny__', readonly: true }, { name: 'Powód' }, { name: 'Numer SKP', value: userSkpNumber, readonly: true }, { name: 'Data zawieszenia dowodu rejestracyjnego' }
+                    ]
+                },
+                demontaz: {
+                    title: "ZAŚWIADCZENIE PRZEKAZANIA POJAZDU DO STACJI DEMONTAŻU POJAZDÓW",
+                    fields: [
+                        { name: 'Właściciel pojazdu', type: 'autocomplete' }, { name: 'Rodzaj nadwozia' }, { name: 'Marka' }, { name: 'Model' }, { name: 'Trim' }, { name: 'Rok produkcji', type: 'number' }, { name: 'Numery rejestracyjne, stan' }, { name: 'Historia pojazdu' }, { name: 'Data ostatnio wykonywanego Badania Technicznego' }, { name: 'Data ostatniego ważnego badania technicznego' }, { name: 'Stan licznika' }, { name: 'Numer SKP', value: userSkpNumber, readonly: true }, { name: 'Powód przekazania' }
+                    ]
+                }
+            };
+            
+            function renderForm() {
+                const template = templates[currentTemplate];
+                form.innerHTML = template.fields.map(field => {
+                    const id = field.name.toLowerCase().replace(/[\s,:]/g, '-');
+                    const value = field.value || '';
+                    if (field.type === 'autocomplete') {
+                        return `<div class="relative"><input type="text" id="${id}" placeholder="${field.name}" class="w-full bg-gray-700 rounded p-2" required><div class="autocomplete-suggestions absolute w-full bg-gray-600 rounded-b-md overflow-y-auto z-10 border-t border-gray-500 hidden" style="max-height: 150px;"></div></div>`;
+                    }
+                    return `<input type="${field.type || 'text'}" id="${id}" placeholder="${field.name}" value="${value}" ${field.readonly ? 'readonly' : ''} class="w-full bg-gray-700 rounded p-2 ${field.readonly ? 'cursor-not-allowed' : ''}" required>`;
+                }).join('');
+                
+                form.querySelectorAll('input').forEach(input => {
+                    const parent = input.parentElement;
+                    if (parent && parent.classList.contains('relative')) {
+                         setupCitizenAutocomplete(input, input.nextElementSibling, allCitizens);
+                    }
+                });
+                
+                // ================================================================
+                // AUTOMATYCZNE WYPEŁNIANIE DAT
+                // ================================================================
+                // Dzisiejsza data w formacie DD.MM.YYYY
+                const today = new Date();
+                const todayStr = today.toLocaleDateString('pl-PL');
+                
+                // Data za miesiąc
+                const nextMonth = new Date();
+                nextMonth.setMonth(nextMonth.getMonth() + 1);
+                const nextMonthStr = nextMonth.toLocaleDateString('pl-PL');
+                
+                // Wypełnij pole "Data ostatnio wykonywanego Badania Technicznego"
+                const lastInspectionField = document.getElementById('data-ostatnio-wykonywanego-badania-technicznego');
+                if (lastInspectionField && !lastInspectionField.value) {
+                    lastInspectionField.value = todayStr;
+                }
+                
+                // Wypełnij pole "Data następnego Badania Technicznego"
+                const nextInspectionField = document.getElementById('data-następnego-badania-technicznego');
+                if (nextInspectionField && !nextInspectionField.value) {
+                    nextInspectionField.value = nextMonthStr;
+                }
+                
+                // Również dla pola "Data ostatniego ważnego badania technicznego" (demontaż)
+                const lastValidField = document.getElementById('data-ostatniego-ważnego-badania-technicznego');
+                if (lastValidField && !lastValidField.value) {
+                    lastValidField.value = nextMonthStr;
+                }
+            }
+            
+            function generatePreview() {
+                const template = templates[currentTemplate];
+                let content = `**${template.title}**\n\n`;
+                let isValid = true;
+                template.fields.forEach(field => {
+                    const id = field.name.toLowerCase().replace(/[\s,:]/g, '-');
+                    const input = document.getElementById(id);
+                    const value = input.value.trim();
+                    if (!value && input.required) isValid = false;
+                    
+                    if (field.type === 'autocomplete' && !/^.+\(<@\d+>\)$/.test(value) && !/^<@\d+>$/.test(value)) {
+                        isValid = false; 
+                    }
+
+                    const fieldValue = field.strikethrough ? `~~${value}~~` : value;
+                    content += `**${field.name}:** ${fieldValue}\n`;
+                });
+                
+                previewContainer.textContent = content;
+                generatedContent = content;
+                saveBtn.disabled = !isValid;
+                return isValid;
+            }
+
+            document.querySelectorAll('.template-btn').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    document.querySelector('.template-btn.active').classList.remove('active');
+                    btn.classList.add('active');
+                    currentTemplate = btn.dataset.template;
+                    renderForm();
+                    generatePreview();
+                });
+            });
+
+            form.addEventListener('input', generatePreview);
+
+            document.getElementById('generate-btn').addEventListener('click', () => {
+                if (generatePreview()) {
+                    navigator.clipboard.writeText(generatedContent).then(() => {
+                        formMessage.textContent = 'Skopiowano do schowka!';
+                        formMessage.classList.add('text-green-400');
+                    }).catch(() => {
+                        formMessage.textContent = 'Błąd kopiowania.';
+                        formMessage.classList.add('text-red-400');
+                    });
+                } else {
+                    formMessage.textContent = 'Wypełnij wszystkie wymagane pola (sprawdź czy właściciel jest wybrany z listy).';
+                    formMessage.classList.add('text-red-400');
+                }
+                setTimeout(() => {
+                    formMessage.textContent = '';
+                    formMessage.classList.remove('text-green-400', 'text-red-400');
+                }, 3000);
+            });
+
+            saveBtn.addEventListener('click', async () => {
+                 if (!generatePreview()) {
+                    alert('Proszę wypełnić wszystkie pola poprawnie (właściciel musi być pingiem Discord).');
+                    return;
+                }
+
+                formMessage.textContent = 'Zapisywanie w bazie...';
+                try {
+                    const response = await fetch('/api/vehicle-inspection', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json', 'Authorization': token },
+                        body: JSON.stringify({ reportType: templates[currentTemplate].title, reportContent: generatedContent })
+                    });
+                    const result = await response.json();
+                    if (!response.ok) throw new Error(result.message);
+                    
+                    formMessage.textContent = "Pomyślnie zapisano w bazie danych!";
+                    formMessage.classList.add('text-green-400');
+                    form.reset();
+                    renderForm();
+                    generatePreview();
+
+                } catch (error) {
+                    formMessage.textContent = `Błąd: ${error.message}`;
+                    formMessage.classList.add('text-red-400');
+                } finally {
+                     setTimeout(() => {
+                        formMessage.textContent = '';
+                        formMessage.classList.remove('text-green-400', 'text-red-400');
+                    }, 4000);
+                }
+            });
+            
+            function handleLogout(e) {
+            e.preventDefault();
+            clearAuthSession();
+            window.location.href = 'index.html';
+}
+
+           document.getElementById('logout-button').addEventListener('click', handleLogout);
+            
+            tabButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    tabButtons.forEach(btn => btn.classList.remove('active'));
+                    button.classList.add('active');
+                    
+                    const tabId = `tab-${button.dataset.tab}`;
+                    tabContents.forEach(content => content.classList.add('hidden'));
+                    document.getElementById(tabId).classList.remove('hidden');
+
+                    if (button.dataset.tab === 'baza') {
+                        initializeVehicleDatabase();
+                    } else if (button.dataset.tab === 'diagnosci') {
+                        fetchDiagnosticians();
+                    }
+                });
+            });
+
+            async function fetchDiagnosticians() {
+                const tableBody = document.getElementById('diagnosticians-table-body');
+                try {
+                    const response = await fetch('/api/diagnosticians', { headers: { 'Authorization': token } });
+                    const data = await response.json();
+                    tableBody.innerHTML = data.map(d => {
+                         const isLead = d.skpNumber && d.skpNumber.endsWith('001');
+                         const title = isLead ? '<span class="block text-xs text-yellow-400">Założyciel, Naczelnik diagnostyki</span>' : 'Diagnosta';
+                         return `
+                            <tr class="hover:bg-gray-700">
+                                <td class="px-6 py-4 font-mono">${d.skpNumber}</td>
+                                <td class="px-6 py-4">${d.discordNick}</td>
+                                <td class="px-6 py-4">${d.discordId}</td>
+                                <td class="px-6 py-4">${title}</td>
+                            </tr>
+                        `}).join('');
+                } catch(e) {
+                    tableBody.innerHTML = '<tr><td colspan="4" class="text-center py-4 text-red-500">Błąd ładowania danych.</td></tr>';
+                }
+            }
+            
+            async function initializeVehicleDatabase() {
+                const container = document.getElementById('tab-baza');
+                if (container.dataset.initialized) return;
+
+                const dbHTML = `
+                    <div class="bg-gray-800 p-4 rounded-lg shadow-lg mb-6">
+                        <div class="flex items-center space-x-4">
+                            <input type="text" id="db-search-input" class="flex-grow bg-gray-700 border-gray-600 rounded-md shadow-sm py-2 px-3 text-white focus:outline-none focus:ring-blue-500 focus:border-blue-500" placeholder="Filtruj po numerze rejestracyjnym lub właścicielu...">
+                        </div>
+                    </div>
+                    <div id="db-table-container" class="bg-gray-800 rounded-lg shadow-lg overflow-hidden">
+                        <div class="overflow-x-auto">
+                            <table class="min-w-full text-sm text-left text-gray-300">
+                                <thead class="text-xs text-gray-400 uppercase bg-gray-700">
+                                    <tr>
+                                        <th class="px-6 py-3">Rejestracja</th>
+                                        <th class="px-6 py-3">Właściciel</th>
+                                        <th class="px-6 py-3">Status</th>
+                                        <th id="db-sort-date" class="px-6 py-3 sortable">Data Ostatniego Badania <i data-lucide="arrow-down-up" class="inline w-3 h-3 ml-1"></i></th>
+                                    </tr>
+                                </thead>
+                                <tbody id="db-vehicles-table-body"></tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div id="db-message-container" class="text-center py-10"></div>
+                    <div id="db-vehicle-details-modal" class="modal-backdrop fixed top-0 left-0 w-full h-full bg-black bg-opacity-70 z-50 justify-center items-center p-4">
+                        <div class="bg-gray-800 rounded-lg shadow-xl w-full max-w-4xl p-6 relative max-h-[90vh] flex flex-col">
+                            <div class="flex justify-between items-center mb-4">
+                                <h3 id="db-modal-plate" class="text-2xl font-bold text-white"></h3>
+                                <button id="db-edit-vehicle-btn" class="hidden bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-lg">Edytuj</button>
+                            </div>
+                            <div id="db-modal-content" class="flex-grow overflow-y-auto space-y-4 text-sm pr-4"></div>
+                            <p id="db-edit-message" class="text-center h-4 mt-2"></p>
+                            <div id="db-modal-actions" class="flex justify-end gap-4 mt-4">
+                                <button id="db-modal-close-button" class="bg-gray-600 hover:bg-gray-500 text-white font-bold py-2 px-4 rounded-lg">Zamknij</button>
+                                <button id="db-save-vehicle-btn" class="hidden bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-4 rounded-lg">Zapisz Zmiany</button>
+                            </div>
+                        </div>
+                    </div>
+                `;
+                container.innerHTML = dbHTML;
+                lucide.createIcons();
+                container.dataset.initialized = 'true';
+
+                const searchInput = document.getElementById('db-search-input');
+                const tableBody = document.getElementById('db-vehicles-table-body');
+                const messageContainer = document.getElementById('db-message-container');
+                const sortDateButton = document.getElementById('db-sort-date');
+                const modal = document.getElementById('db-vehicle-details-modal');
+                const modalPlate = document.getElementById('db-modal-plate');
+                const modalContent = document.getElementById('db-modal-content');
+                const modalCloseButton = document.getElementById('db-modal-close-button');
+                const editVehicleBtn = document.getElementById('db-edit-vehicle-btn');
+                const saveVehicleBtn = document.getElementById('db-save-vehicle-btn');
+                const editMessage = document.getElementById('db-edit-message');
+
+                let allVehicles = [];
+                let dateSortDirection = 'desc';
+                let currentEditingPlate = null;
+                const isCepilLead = userData.isDiagnostician && userData.skpNumber && userData.skpNumber.endsWith('001');
+
+                async function loadAndRenderVehicles() {
+                    messageContainer.innerHTML = '<p class="text-gray-500">Ładowanie danych...</p>';
+                    tableBody.innerHTML = '';
+                    try {
+                        const response = await fetch('/api/vehicles', { headers: { 'Authorization': token } });
+                        if (!response.ok) throw new Error('Błąd odpowiedzi serwera');
+                        allVehicles = await response.json();
+                        renderTable();
+                    } catch (error) {
+                        messageContainer.innerHTML = `<p class="text-red-500">Nie udało się załadować bazy pojazdów: ${error.message}</p>`;
+                    }
+                }
+
+                function renderTable() {
+                    allVehicles.sort((a, b) => {
+                        const dateA = new Date(a.lastInspection);
+                        const dateB = new Date(b.lastInspection);
+                        return dateSortDirection === 'asc' ? dateA - dateB : dateB - dateA;
+                    });
+                    
+                    const filterText = searchInput.value.toLowerCase();
+                    const filteredVehicles = allVehicles.filter(v => 
+                        v.plate.toLowerCase().includes(filterText) ||
+                        (v.ownerName && v.ownerName.toLowerCase().includes(filterText))
+                    );
+
+                    tableBody.innerHTML = ''; 
+                    if (filteredVehicles.length === 0) {
+                        messageContainer.innerHTML = '<p class="text-gray-500">Brak pojazdów w bazie danych.</p>';
+                    } else {
+                        messageContainer.innerHTML = '';
+                    }
+
+                    filteredVehicles.forEach(vehicle => {
+                        const row = document.createElement('tr');
+                        row.className = 'hover:bg-gray-700 cursor-pointer';
+                        row.dataset.plate = vehicle.plate;
+                        
+                        let statusClass = 'text-gray-400';
+                        let statusText = vehicle.status;
+                        if(vehicle.status && vehicle.status.includes('POZYTYWNY')) statusClass = 'text-green-400';
+                        if(vehicle.status && vehicle.status.includes('NEGATYWNY')) statusClass = 'text-red-400';
+                        if(vehicle.status && vehicle.status.includes('DEMONTAŻ')) statusClass = 'text-yellow-400';
+                         if(vehicle.isImpounded) {
+                            statusText = 'ZAREKWIROWANY';
+                            statusClass = 'text-yellow-400';
+                        }
+
+                        row.innerHTML = `
+                            <td class="px-6 py-4 font-mono text-blue-400">${vehicle.plate}</td>
+                            <td class="px-6 py-4">${vehicle.ownerName}</td>
+                            <td class="px-6 py-4 font-bold ${statusClass}">${statusText}</td>
+                            <td class="px-6 py-4">${vehicle.lastInspection ? new Date(vehicle.lastInspection).toLocaleString('pl-PL') : 'Brak danych'}</td>
+                        `;
+                        tableBody.appendChild(row);
+                    });
+                }
+
+                async function showVehicleDetails(plate) {
+                    currentEditingPlate = plate;
+                    const response = await fetch(`/api/vehicle/${plate}`, { headers: { 'Authorization': token }});
+                    const data = await response.json();
+                    
+                    modalPlate.textContent = `Szczegóły pojazdu: ${data.plate}`;
+                    
+                    let historyHtml = '<h3>Historia Badań Technicznych</h3>';
+                    data.inspections.forEach((insp, index) => {
+                        // Sprawdź uprawnienia: admin, badge 101, Superintendent LUB GVW/01/001
+                        const canDelete = (userData && (userData.isAdmin || userData.badge === '101' || userData.rank === 'Superintendent' || userData.skpNumber === 'GVW/01/001'));
+                        const deleteButton = canDelete ? `<button data-plate="${plate}" data-date="${insp.date}" class="delete-inspection-btn text-red-500 hover:text-red-400 p-1 transition-colors"><i data-lucide="trash-2" class="w-4 h-4 pointer-events-none"></i></button>` : '';
+
+                        historyHtml += `
+                            <div class="mt-4 bg-gray-900 p-3 rounded-lg border-l-2 border-gray-700 hover:border-red-500 transition-colors">
+                                <div class="flex justify-between items-center">
+                                    <p class="text-sm font-semibold text-gray-400">${new Date(insp.date).toLocaleString('pl-PL')}</p>
+                                    ${deleteButton}
+                                </div>
+                                <pre class="whitespace-pre-wrap font-mono text-xs mt-2">${insp.content}</pre>
+                            </div>
+                        `;
+                    });
+
+                    modalContent.innerHTML = historyHtml;
+                    
+                    if (isCepilLead) {
+                        editVehicleBtn.classList.remove('hidden');
+                    } else {
+                        editVehicleBtn.classList.add('hidden');
+                    }
+                    
+                    lucide.createIcons();
+                    modal.classList.add('flex');
+                }
+
+                editVehicleBtn.addEventListener('click', () => {
+                    modalContent.innerHTML = `
+                        <div>
+                            <label for="new-owner-id" class="block text-sm font-medium text-gray-400">Nowy właściciel (zacznij pisać, aby wyszukać)</label>
+                            <div class="relative">
+                                <input type="text" id="new-owner-id" class="mt-1 w-full bg-gray-700 rounded p-2" autocomplete="off">
+                                <div id="owner-suggestions" class="autocomplete-suggestions absolute w-full bg-gray-600 rounded-b-md overflow-y-auto z-20 border-t border-gray-500 hidden" style="max-height: 150px;"></div>
+                            </div>
+                        </div>
+                    `;
+                    setupCitizenAutocomplete(
+                        document.getElementById('new-owner-id'),
+                        document.getElementById('owner-suggestions'),
+                        allCitizens
+                    );
+                    editVehicleBtn.classList.add('hidden');
+                    saveVehicleBtn.classList.remove('hidden');
+                });
+
+                saveVehicleBtn.addEventListener('click', async () => {
+                    const ownerInput = document.getElementById('new-owner-id').value;
+                    const match = ownerInput.match(/<@(\d+)>/);
+                    if (!match) {
+                        editMessage.textContent = "Wybierz właściciela z listy.";
+                        return;
+                    }
+                    const ownerId = match[1];
+                    editMessage.textContent = "Zapisywanie...";
+
+                    try {
+                        const response = await fetch(`/api/vehicle/${currentEditingPlate}`, {
+                            method: 'PUT',
+                            headers: { 'Content-Type': 'application/json', 'Authorization': token },
+                            body: JSON.stringify({ ownerId: ownerId })
+                        });
+                        const result = await response.json();
+                        if (!response.ok) throw new Error(result.message);
+                        
+                        editMessage.textContent = "Zapisano pomyślnie!";
+                        setTimeout(() => {
+                           modal.classList.remove('flex');
+                           loadAndRenderVehicles();
+                        }, 1500);
+
+                    } catch(error) {
+                        editMessage.textContent = `Błąd: ${error.message}`;
+                    }
+                });
+                
+                modalContent.addEventListener('click', async (e) => {
+                    const deleteBtn = e.target.closest('.delete-inspection-btn');
+                    if (deleteBtn) {
+                        const plate = deleteBtn.dataset.plate;
+                        const inspectionDate = deleteBtn.dataset.date;
+                        
+                        if (confirm('Czy na pewno chcesz usunąć ten przegląd?\n\nTej akcji nie można cofnąć!')) {
+                            try {
+                                const response = await fetch(`/api/vehicle-inspection/${encodeURIComponent(plate)}/${encodeURIComponent(inspectionDate)}`, {
+                                    method: 'DELETE',
+                                    headers: { 'Authorization': token }
+                                });
+                                
+                                if (!response.ok) {
+                                    const errorData = await response.json();
+                                    throw new Error(errorData.message || 'Błąd podczas usuwania przeglądu');
+                                }
+                                
+                                // Odśwież szczegóły pojazdu
+                                await showVehicleDetails(plate);
+                                
+                                // Odśwież tabelę pojazdów
+                                await loadAndRenderVehicles();
+                                
+                                // Pokazanie komunikatu sukcesu
+                                editMessage.textContent = '✓ Przegląd został usunięty';
+                                editMessage.className = 'text-center h-4 text-green-400';
+                                setTimeout(() => {
+                                    editMessage.textContent = '';
+                                    editMessage.className = 'text-center h-4';
+                                }, 3000);
+                            } catch (error) {
+                                console.error('Błąd usuwania przeglądu:', error);
+                                editMessage.textContent = `✗ Błąd: ${error.message}`;
+                                editMessage.className = 'text-center h-4 text-red-400';
+                            }
+                        }
+                    }
+                });
+
+                searchInput.addEventListener('input', renderTable);
+                sortDateButton.addEventListener('click', () => {
+                    dateSortDirection = dateSortDirection === 'asc' ? 'desc' : 'asc';
+                    renderTable();
+                });
+                
+                tableBody.addEventListener('click', (e) => {
+                    const row = e.target.closest('tr');
+                    if (row && row.dataset.plate) {
+                        showVehicleDetails(row.dataset.plate);
+                    }
+                });
+                
+                modalCloseButton.addEventListener('click', () => {
+                    modal.classList.remove('flex');
+                    saveVehicleBtn.classList.add('hidden');
+                    editVehicleBtn.classList.remove('hidden');
+                    editMessage.textContent = '';
+                });
+
+                await loadAndRenderVehicles();
+            }
+
+            // ================================================================
+            // ZARZĄDZANIE DIAGNOSTAMI - tylko dla dyrektora
+            // ================================================================
+            
+            const directorPanel = document.getElementById('director-panel');
+            const actionsHeader = document.getElementById('actions-header');
+            const diagnosticianForm = document.getElementById('add-diagnostician-form');
+            const diagnosticianMessage = document.getElementById('diagnostician-message');
+            const diagnosticiansTableBody = document.getElementById('diagnosticians-table-body');
+            
+            // Sprawdź czy użytkownik jest dyrektorem (po SKP lub email)
+            const isDirector = userData.skpNumber && userData.skpNumber.startsWith('GVW/00/');
+            
+            if (isDirector) {
+                directorPanel.classList.remove('hidden');
+                actionsHeader.classList.remove('hidden');
+            }
+            
+            // Załaduj listę diagnostów
+            async function loadDiagnosticians() {
+                try {
+                    const response = await fetch('/api/diagnosticians', {
+                        headers: { 'Authorization': token }
+                    });
+                    
+                    if (!response.ok) {
+                        console.error('Błąd ładowania diagnostów:', response.status);
+                        return;
+                    }
+                    
+                    const diagnosticians = await response.json();
+                    diagnosticiansTableBody.innerHTML = '';
+                    
+                    if (diagnosticians.length === 0) {
+                        diagnosticiansTableBody.innerHTML = '<tr><td colspan="' + (isDirector ? '5' : '4') + '" class="px-6 py-4 text-center text-gray-500">Brak diagnostów w systemie</td></tr>';
+                        return;
+                    }
+                    
+                    diagnosticians.forEach(diag => {
+                        const row = document.createElement('tr');
+                        row.className = 'border-b border-gray-700 hover:bg-gray-700';
+                        
+                        // Określ stanowisko na podstawie SKP
+                        let position = 'Diagnosta';
+                        if (diag.skpNumber && diag.skpNumber.startsWith('GVW/00/')) {
+                            position = 'Dyrektor Diagnostyki';
+                        }
+                        
+                        row.innerHTML = `
+                            <td class="px-6 py-4 font-medium">${diag.skpNumber || 'Brak'}</td>
+                            <td class="px-6 py-4">${diag.discordNick || diag.email}</td>
+                            <td class="px-6 py-4">${diag.discordId || 'Brak'}</td>
+                            <td class="px-6 py-4">${position}</td>
+                            ${isDirector ? `
+                            <td class="px-6 py-4 text-right">
+                                ${diag.email !== userData.email ? `
+                                <button onclick="deleteDiagnostician('${diag.email}')" class="text-red-400 hover:text-red-300 text-sm font-medium">
+                                    Usuń
+                                </button>
+                                ` : '<span class="text-gray-500 text-sm">To Ty</span>'}
+                            </td>
+                            ` : ''}
+                        `;
+                        
+                        diagnosticiansTableBody.appendChild(row);
+                    });
+                } catch (error) {
+                    console.error('Błąd ładowania diagnostów:', error);
+                    diagnosticiansTableBody.innerHTML = '<tr><td colspan="' + (isDirector ? '5' : '4') + '" class="px-6 py-4 text-center text-red-500">Błąd ładowania danych</td></tr>';
+                }
+            }
+            
+            // Dodawanie diagosty (tylko dyrektor)
+            if (isDirector) {
+                diagnosticianForm.addEventListener('submit', async (e) => {
+                    e.preventDefault();
+                    diagnosticianMessage.textContent = 'Dodawanie...';
+                    diagnosticianMessage.className = 'text-center h-4 mt-2 text-blue-400';
+                    
+                    const formData = new FormData(diagnosticianForm);
+                    const newDiagnostician = Object.fromEntries(formData.entries());
+
+                    try {
+                        const response = await fetch('/api/diagnosticians', {
+                            method: 'POST',
+                            headers: { 'Content-Type': 'application/json', 'Authorization': token },
+                            body: JSON.stringify(newDiagnostician)
+                        });
+                        const data = await response.json();
+                        
+                        if (!response.ok) {
+                            throw new Error(data.message || 'Błąd serwera');
+                        }
+
+                        diagnosticianMessage.textContent = 'Dodano pomyślnie!';
+                        diagnosticianMessage.className = 'text-center h-4 mt-2 text-green-400';
+                        diagnosticianForm.reset();
+                        loadDiagnosticians();
+                        
+                        setTimeout(() => { diagnosticianMessage.textContent = ''; }, 3000);
+                    } catch (error) {
+                        diagnosticianMessage.textContent = `Błąd: ${error.message}`;
+                        diagnosticianMessage.className = 'text-center h-4 mt-2 text-red-400';
+                    }
+                });
+            }
+            
+            // Usuwanie diagosty (tylko dyrektor)
+            window.deleteDiagnostician = async function(email) {
+                if (!isDirector) return;
+                
+                if (!confirm('Czy na pewno chcesz usunąć tego diagnostę? Tej akcji nie można cofnąć.')) {
+                    return;
+                }
+                
+                try {
+                    const response = await fetch(`/api/diagnosticians/${encodeURIComponent(email)}`, {
+                        method: 'DELETE',
+                        headers: { 'Authorization': token }
+                    });
+                    
+                    if (response.ok) {
+                        loadDiagnosticians();
+                    } else {
+                        const data = await response.json();
+                        alert('Błąd podczas usuwania: ' + (data.message || 'Nieznany błąd'));
+                    }
+                } catch (error) {
+                    console.error('Błąd usuwania diagosty:', error);
+                    alert('Błąd podczas usuwania diagosty');
+                }
+            };
+            
+            // Załaduj diagnostów przy starcie
+            loadDiagnosticians();
+
+            // ================================================================
+            // PANEL ADMINA - tylko dla GVW/01/001
+            // ================================================================
+            
+            const isAdmin = userData.skpNumber === 'GVW/01/001';
+            
+            if (isAdmin) {
+                console.log('🛡️ Panel Admina aktywny dla:', userData.skpNumber);
+                
+                // Pokaż zakładkę Panel Admina
+                document.getElementById('admin-tab-btn').classList.remove('hidden');
+                
+                // Elementy panelu admina
+                const adminAddForm = document.getElementById('admin-add-diagnostician-form');
+                const adminAddMessage = document.getElementById('admin-add-message');
+                const adminTable = document.getElementById('admin-diagnosticians-table');
+                const editModal = document.getElementById('edit-diagnostician-modal');
+                const editForm = document.getElementById('edit-diagnostician-form');
+                const editMessage = document.getElementById('edit-message');
+                const closeEditModal = document.getElementById('close-edit-modal');
+                const cancelEdit = document.getElementById('cancel-edit');
+                
+                // ================================================================
+                // Funkcja ładowania diagnostów w panelu admina
+                // ================================================================
+                async function loadAdminDiagnosticians() {
+                    try {
+                        const response = await fetch('/api/diagnosticians', {
+                            headers: { 'Authorization': token }
+                        });
+                        
+                        if (!response.ok) {
+                            console.error('Błąd ładowania diagnostów:', response.status);
+                            adminTable.innerHTML = '<tr><td colspan="7" class="px-4 py-4 text-center text-red-500">Błąd: ' + response.status + '</td></tr>';
+                            return;
+                        }
+                        
+                        const diagnosticians = await response.json();
+                        adminTable.innerHTML = '';
+                        
+                        if (diagnosticians.length === 0) {
+                            adminTable.innerHTML = '<tr><td colspan="7" class="px-4 py-4 text-center text-gray-500">Brak diagnostów w systemie</td></tr>';
+                            return;
+                        }
+                        
+                        diagnosticians.forEach(diag => {
+                            const row = document.createElement('tr');
+                            row.className = 'hover:bg-gray-800 transition-colors';
+                            
+                            // Określ stanowisko i kolor
+                            let position = 'Diagnosta';
+                            let badgeColor = 'bg-gray-600';
+                            if (diag.skpNumber === 'GVW/01/001') {
+                                position = 'Administrator CEPiK';
+                                badgeColor = 'bg-red-600';
+                            } else if (diag.skpNumber && diag.skpNumber.startsWith('GVW/00/')) {
+                                position = 'Dyrektor Diagnostyki';
+                                badgeColor = 'bg-purple-600';
+                            }
+                            
+                            const isCurrentUser = diag.email === userData.email;
+                            
+                            row.innerHTML = `
+                                <td class="px-4 py-3 font-mono text-blue-400 font-semibold">${diag.skpNumber || 'Brak'}</td>
+                                <td class="px-4 py-3">${diag.email || 'Brak'}</td>
+                                <td class="px-4 py-3">${diag.discordNick || 'Brak'}</td>
+                                <td class="px-4 py-3">${diag.robloxNick || 'Brak'}</td>
+                                <td class="px-4 py-3 font-mono text-xs">${diag.discordId || '-'}</td>
+                                <td class="px-4 py-3">
+                                    <span class="px-2 py-1 rounded text-xs font-semibold ${badgeColor} text-white">
+                                        ${position}
+                                    </span>
+                                </td>
+                                <td class="px-4 py-3 text-right space-x-2">
+                                    <button onclick="editDiagnostician('${diag.email}')" class="text-blue-400 hover:text-blue-300 text-sm font-medium transition-colors">
+                                        <i data-lucide="edit-2" class="w-4 h-4 inline"></i>
+                                        Edytuj
+                                    </button>
+                                    ${!isCurrentUser ? `
+                                    <button onclick="adminDeleteDiagnostician('${diag.email}')" class="text-red-400 hover:text-red-300 text-sm font-medium transition-colors">
+                                        <i data-lucide="trash-2" class="w-4 h-4 inline"></i>
+                                        Usuń
+                                    </button>
+                                    ` : '<span class="text-gray-500 text-sm italic">To Ty</span>'}
+                                </td>
+                            `;
+                            
+                            adminTable.appendChild(row);
+                        });
+                        
+                        lucide.createIcons();
+                    } catch (error) {
+                        console.error('Błąd ładowania diagnostów:', error);
+                        adminTable.innerHTML = '<tr><td colspan="7" class="px-4 py-4 text-center text-red-500">Błąd ładowania danych</td></tr>';
+                    }
+                }
+                
+                // ================================================================
+                // Dodawanie diagnosty
+                // ================================================================
+                adminAddForm.addEventListener('submit', async (e) => {
+                    e.preventDefault();
+                    adminAddMessage.textContent = 'Dodawanie diagnosty...';
+                    adminAddMessage.className = 'text-center h-5 mt-3 font-medium text-blue-400';
+                    
+                    const formData = new FormData(adminAddForm);
+                    const newDiagnostician = Object.fromEntries(formData.entries());
+                    
+                    try {
+                        const response = await fetch('/api/diagnosticians', {
+                            method: 'POST',
+                            headers: { 'Content-Type': 'application/json', 'Authorization': token },
+                            body: JSON.stringify(newDiagnostician)
+                        });
+                        
+                        const data = await response.json();
+                        
+                        if (!response.ok) {
+                            throw new Error(data.message || 'Błąd serwera');
+                        }
+                        
+                        adminAddMessage.textContent = '✓ Diagnosta dodany pomyślnie!';
+                        adminAddMessage.className = 'text-center h-5 mt-3 font-medium text-green-400';
+                        adminAddForm.reset();
+                        loadAdminDiagnosticians();
+                        
+                        setTimeout(() => { adminAddMessage.textContent = ''; }, 4000);
+                    } catch (error) {
+                        adminAddMessage.textContent = `✗ Błąd: ${error.message}`;
+                        adminAddMessage.className = 'text-center h-5 mt-3 font-medium text-red-400';
+                    }
+                });
+                
+                // ================================================================
+                // Funkcja edycji diagnosty
+                // ================================================================
+                window.editDiagnostician = async function(email) {
+                    try {
+                        const response = await fetch('/api/diagnosticians', {
+                            headers: { 'Authorization': token }
+                        });
+                        const diagnosticians = await response.json();
+                        const diag = diagnosticians.find(d => d.email === email);
+                        
+                        if (!diag) {
+                            alert('Nie znaleziono diagnosty');
+                            return;
+                        }
+                        
+                        // Wypełnij formularz edycji
+                        document.getElementById('edit-original-email').value = diag.email;
+                        document.getElementById('edit-email').value = diag.email;
+                        document.getElementById('edit-password').value = '';
+                        document.getElementById('edit-skpNumber').value = diag.skpNumber || '';
+                        document.getElementById('edit-discordNick').value = diag.discordNick || '';
+                        document.getElementById('edit-robloxNick').value = diag.robloxNick || '';
+                        document.getElementById('edit-discordId').value = diag.discordId || '';
+                        
+                        editModal.classList.add('flex');
+                        editMessage.textContent = '';
+                        lucide.createIcons();
+                    } catch (error) {
+                        console.error('Błąd ładowania diagnosty:', error);
+                        alert('Błąd ładowania danych diagnosty');
+                    }
+                };
+                
+                // ================================================================
+                // Zapisywanie edycji diagnosty
+                // ================================================================
+                editForm.addEventListener('submit', async (e) => {
+                    e.preventDefault();
+                    editMessage.textContent = 'Zapisywanie zmian...';
+                    editMessage.className = 'text-center h-5 mt-3 font-medium text-blue-400';
+                    
+                    const formData = new FormData(editForm);
+                    const originalEmail = formData.get('originalEmail');
+                    const updatedData = {
+                        email: formData.get('email'),
+                        skpNumber: formData.get('skpNumber'),
+                        discordNick: formData.get('discordNick'),
+                        robloxNick: formData.get('robloxNick'),
+                        discordId: formData.get('discordId')
+                    };
+                    
+                    // Dodaj hasło tylko jeśli zostało wpisane
+                    const password = formData.get('password');
+                    if (password && password.trim()) {
+                        updatedData.password = password;
+                    }
+                    
+                    try {
+                        const response = await fetch(`/api/diagnosticians/${encodeURIComponent(originalEmail)}`, {
+                            method: 'PUT',
+                            headers: { 'Content-Type': 'application/json', 'Authorization': token },
+                            body: JSON.stringify(updatedData)
+                        });
+                        
+                        const data = await response.json();
+                        
+                        if (!response.ok) {
+                            throw new Error(data.message || 'Błąd serwera');
+                        }
+                        
+                        editMessage.textContent = '✓ Zmiany zapisane pomyślnie!';
+                        editMessage.className = 'text-center h-5 mt-3 font-medium text-green-400';
+                        
+                        setTimeout(() => {
+                            editModal.classList.remove('flex');
+                            editMessage.textContent = '';
+                            loadAdminDiagnosticians();
+                        }, 1500);
+                    } catch (error) {
+                        editMessage.textContent = `✗ Błąd: ${error.message}`;
+                        editMessage.className = 'text-center h-5 mt-3 font-medium text-red-400';
+                    }
+                });
+                
+                // ================================================================
+                // Zamykanie modala edycji
+                // ================================================================
+                closeEditModal.addEventListener('click', () => {
+                    editModal.classList.remove('flex');
+                    editMessage.textContent = '';
+                });
+                
+                cancelEdit.addEventListener('click', () => {
+                    editModal.classList.remove('flex');
+                    editMessage.textContent = '';
+                });
+                
+                // Zamknięcie modala po kliknięciu w tło
+                editModal.addEventListener('click', (e) => {
+                    if (e.target === editModal) {
+                        editModal.classList.remove('flex');
+                        editMessage.textContent = '';
+                    }
+                });
+                
+                // ================================================================
+                // Usuwanie diagnosty (admin)
+                // ================================================================
+                window.adminDeleteDiagnostician = async function(email) {
+                    if (!confirm(`Czy na pewno chcesz usunąć diagnostę: ${email}?\n\nTej akcji nie można cofnąć!`)) {
+                        return;
+                    }
+                    
+                    try {
+                        const response = await fetch(`/api/diagnosticians/${encodeURIComponent(email)}`, {
+                            method: 'DELETE',
+                            headers: { 'Authorization': token }
+                        });
+                        
+                        if (response.ok) {
+                            loadAdminDiagnosticians();
+                            // Pokazanie komunikatu sukcesu
+                            adminAddMessage.textContent = '✓ Diagnosta został usunięty';
+                            adminAddMessage.className = 'text-center h-5 mt-3 font-medium text-green-400';
+                            setTimeout(() => { adminAddMessage.textContent = ''; }, 3000);
+                        } else {
+                            const data = await response.json();
+                            alert('Błąd podczas usuwania: ' + (data.message || 'Nieznany błąd'));
+                        }
+                    } catch (error) {
+                        console.error('Błąd usuwania diagnosty:', error);
+                        alert('Błąd podczas usuwania diagnosty');
+                    }
+                };
+                
+                // ================================================================
+                // Załaduj diagnostów w panelu admina przy starcie
+                // ================================================================
+                loadAdminDiagnosticians();
+                
+                console.log('✅ Panel Admina załadowany pomyślnie');
+            }
+
+            renderForm();
+            lucide.createIcons();
+        });
+    </script>
+</body>
+</html>

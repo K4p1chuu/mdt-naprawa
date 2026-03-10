@@ -1,0 +1,13 @@
+{
+  "director@dot.gov": {
+    "id": "dot_01",
+    "email": "director@dot.gov",
+    "username": "Dyrektor DOT",
+    "password": "admin",
+    "badge": "01",
+    "rank": "01 WisDOT Director",
+    "isAdmin": true,
+    "department": "DOT",
+    "token": "7ff22221174509cbecd5665bfaeb56afddc23535dd948674969aa43cff040acc"
+  }
+}

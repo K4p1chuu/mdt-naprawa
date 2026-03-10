@@ -1,0 +1,865 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UERD - Emergency Mobile Terminal</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Ikony Lucide -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+        body { font-family: 'Inter', sans-serif; }
+        
+        /* Stylistyka UERD - Czerwone akcenty */
+        .sidebar-link:hover { background-color: #7f1d1d; color: white; } /* Red-900 */
+        .sidebar-link.active { background-color: #991b1b; color: white; border-right: 4px solid #f87171; } /* Red-800 */
+        .btn-uerd { background-color: #dc2626; color: white; transition: 0.3s; }
+        .btn-uerd:hover { background-color: #b91c1c; }
+        .btn-outline-uerd { border: 1px solid #dc2626; color: #dc2626; transition: 0.3s; }
+        .btn-outline-uerd:hover { background-color: #dc2626; color: white; }
+        
+        /* Ukrywanie sekcji */
+        .section-content { display: none; }
+        .section-content.active { display: block; }
+
+        /* Style tabel */
+        .uerd-table { width: 100%; text-align: left; border-collapse: separate; border-spacing: 0; }
+        .uerd-table th { background-color: #374151; color: #9ca3af; font-size: 0.75rem; text-transform: uppercase; padding: 0.75rem 1.5rem; font-weight: 600; letter-spacing: 0.05em; }
+        .uerd-table td { border-bottom: 1px solid #374151; padding: 1rem 1.5rem; font-size: 0.875rem; color: #e5e7eb; }
+        .uerd-table tbody tr:hover { background-color: #1f2937; }
+
+        /* Ukrywanie pól formularza generatora */
+        .doc-field { display: none; }
+
+        /* Modal Backdrop */
+        .modal-backdrop { display: none; background-color: rgba(0,0,0,0.7); }
+        .modal-backdrop.flex { display: flex; }
+    </style>
+</head>
+<body class="bg-gray-900 text-gray-100 flex h-screen overflow-hidden">
+
+    <!-- SIDEBAR -->
+    <aside class="w-64 bg-gray-800 flex flex-col border-r border-gray-700 shadow-2xl z-20">
+        <div class="h-16 flex items-center justify-center border-b border-gray-700 bg-gray-900">
+            <h1 class="text-2xl font-bold text-red-500 tracking-wider">UERD</h1>
+        </div>
+
+        <div class="flex-grow overflow-y-auto py-4 px-3 space-y-2">
+            <p class="px-3 text-xs font-semibold text-gray-500 uppercase tracking-wider mb-1">Główne</p>
+            <a href="#" onclick="showSection('dashboard')" class="sidebar-link active flex items-center px-3 py-2 rounded-lg text-gray-300 transition-colors">
+                <i data-lucide="activity" class="w-5 h-5 mr-3"></i> Centrum Dowodzenia
+            </a>
+
+            <p class="px-3 text-xs font-semibold text-gray-500 uppercase tracking-wider mt-6 mb-1">Akcje</p>
+            <a href="#" onclick="showSection('interventions')" class="sidebar-link flex items-center px-3 py-2 rounded-lg text-gray-300 transition-colors">
+                <i data-lucide="ambulance" class="w-5 h-5 mr-3"></i> Interwencje / Zgony
+            </a>
+
+            <p class="px-3 text-xs font-semibold text-gray-500 uppercase tracking-wider mt-6 mb-1">Dokumentacja</p>
+            <a href="#" onclick="showSection('doc-generator')" class="sidebar-link flex items-center px-3 py-2 rounded-lg text-gray-300 transition-colors">
+                <i data-lucide="file-text" class="w-5 h-5 mr-3"></i> Generator Dokumentów
+            </a>
+            <a href="#" onclick="showSection('disability-card')" class="sidebar-link flex items-center px-3 py-2 rounded-lg text-gray-300 transition-colors">
+                <i data-lucide="credit-card" class="w-5 h-5 mr-3"></i> Karta Inwalidzka (Foto)
+            </a>
+
+            <!-- Widoczne tylko dla Rangi 12 (Admin) -->
+            <div id="admin-link-container" style="display: none;">
+                <p class="px-3 text-xs font-semibold text-red-500 uppercase tracking-wider mt-6 mb-1">Administracja</p>
+                <a href="#" onclick="showSection('admin-panel')" class="sidebar-link flex items-center px-3 py-2 rounded-lg text-gray-300 transition-colors">
+                    <i data-lucide="shield-alert" class="w-5 h-5 mr-3"></i> Panel Zarządzania
+                </a>
+            </div>
+        </div>
+
+        <!-- STOPKA Z WYLOGOWANIEM -->
+        <div class="p-4 border-t border-gray-700 bg-gray-900 flex justify-between items-center">
+            <div class="flex items-center">
+                <div class="w-8 h-8 rounded-full bg-red-600 flex items-center justify-center font-bold">U</div>
+                <div class="ml-3">
+                    <p id="user-display-name" class="text-sm font-medium text-white">Ładowanie...</p>
+                    <p id="user-display-rank" class="text-xs text-gray-400">...</p>
+                </div>
+            </div>
+            <button onclick="logoutUERD()" class="text-gray-400 hover:text-red-500 transition-colors p-2 rounded-lg hover:bg-gray-800" title="Wyloguj">
+                <i data-lucide="log-out" class="w-5 h-5"></i>
+            </button>
+        </div>
+    </aside>
+
+    <!-- MAIN CONTENT -->
+    <main class="flex-1 overflow-y-auto bg-gray-900 p-8 relative">
+        
+        <!-- DASHBOARD SECTION -->
+        <div id="dashboard" class="section-content active">
+            <header class="mb-8">
+                <h2 class="text-3xl font-bold text-white">Centrum Dowodzenia UERD</h2>
+                <p class="text-gray-400">Urząd Ewidencji Ratownictwa</p>
+            </header>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+                <div class="bg-gray-800 p-6 rounded-xl border border-gray-700 shadow-lg">
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <p class="text-gray-400 text-sm">Aktywni Ratownicy</p>
+                            <h3 class="text-2xl font-bold text-white">8</h3>
+                        </div>
+                        <div class="p-3 bg-red-500/20 rounded-full text-red-500"><i data-lucide="users"></i></div>
+                    </div>
+                </div>
+                <div class="bg-gray-800 p-6 rounded-xl border border-gray-700 shadow-lg">
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <p class="text-gray-400 text-sm">Dzisiejsze Interwencje</p>
+                            <h3 class="text-2xl font-bold text-white">12</h3>
+                        </div>
+                        <div class="p-3 bg-blue-500/20 rounded-full text-blue-500"><i data-lucide="activity"></i></div>
+                    </div>
+                </div>
+                <div class="bg-gray-800 p-6 rounded-xl border border-gray-700 shadow-lg">
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <p class="text-gray-400 text-sm">Status Systemu</p>
+                            <h3 class="text-2xl font-bold text-green-500">ONLINE</h3>
+                        </div>
+                        <div class="p-3 bg-green-500/20 rounded-full text-green-500"><i data-lucide="server"></i></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- INTERWENCJE / AKT ZGONU SECTION (DATABASE) -->
+        <div id="interventions" class="section-content">
+            <div class="flex justify-between items-center mb-6">
+                <h2 class="text-2xl font-bold text-white">Rejestr Interwencji i Zgonów</h2>
+            </div>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                <!-- Formularz -->
+                <div class="lg:col-span-1 bg-gray-800 p-6 rounded-xl border border-gray-700 shadow-lg h-fit">
+                    <h3 class="text-lg font-semibold mb-4 text-gray-300 border-b border-gray-700 pb-2">Nowe Zgłoszenie</h3>
+                    <form id="intervention-form" class="space-y-4">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-400 mb-1">Obywatel (Ping/ID)</label>
+                            <input type="text" id="int-citizen" placeholder="np. <@123456789>" class="w-full bg-gray-700 border border-gray-600 rounded-lg p-2.5 text-white focus:ring-2 focus:ring-red-500 focus:border-transparent outline-none">
+                        </div>
+
+                        <div>
+                            <label class="block text-sm font-medium text-gray-400 mb-1">Rodzaj Zgłoszenia</label>
+                            <select id="intervention-type" class="w-full bg-gray-700 border border-gray-600 rounded-lg p-2.5 text-white focus:ring-2 focus:ring-red-500 outline-none">
+                                <option value="INTERWENCJA">Zwykła Interwencja Medyczna</option>
+                                <option value="AKT_ZGONU">AKT ZGONU (Resetuje kartotekę)</option>
+                            </select>
+                        </div>
+
+                        <div id="death-warning" class="hidden bg-red-900/30 border border-red-500/50 p-4 rounded-lg">
+                            <div class="flex items-start">
+                                <i data-lucide="alert-triangle" class="text-red-500 w-5 h-5 mr-2 flex-shrink-0"></i>
+                                <div class="text-xs text-gray-300">
+                                    <span class="font-bold text-red-400">UWAGA:</span> To trwale wyczyści kartotekę obywatela w systemie policyjnym.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="block text-sm font-medium text-gray-400 mb-1">Opis / Przyczyna</label>
+                            <textarea id="int-reason" rows="3" class="w-full bg-gray-700 border border-gray-600 rounded-lg p-2.5 text-white focus:ring-2 focus:ring-red-500 outline-none"></textarea>
+                        </div>
+
+                        <button type="submit" class="w-full btn-uerd font-bold py-3 rounded-lg shadow-lg">
+                            Zatwierdź Raport
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Lista -->
+                <div class="lg:col-span-2 bg-gray-800 rounded-xl border border-gray-700 shadow-lg overflow-hidden">
+                    <div class="p-4 border-b border-gray-700 bg-gray-850">
+                        <h3 class="text-lg font-semibold text-gray-200">Ostatnie Interwencje</h3>
+                    </div>
+                    <div class="overflow-x-auto">
+                        <table class="uerd-table">
+                            <thead>
+                                <tr>
+                                    <th>Data</th>
+                                    <th>Obywatel</th>
+                                    <th>Typ</th>
+                                    <th>Opis</th>
+                                    <th class="text-right">Akcja</th>
+                                </tr>
+                            </thead>
+                            <tbody id="intervention-list">
+                                <!-- JS -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- GENERATOR DOKUMENTÓW (MARKDOWN) -->
+        <div id="doc-generator" class="section-content">
+            <h2 class="text-2xl font-bold text-white mb-6">Generator Dokumentacji Medycznej</h2>
+            
+            <div class="bg-gray-800 rounded-xl border border-gray-700 shadow-lg overflow-hidden">
+                
+                <!-- Tabs -->
+                <div class="flex border-b border-gray-700 overflow-x-auto">
+                    <button class="doc-tab px-6 py-3 text-sm font-medium text-white bg-gray-700 border-b-2 border-red-500 focus:outline-none" data-target="karta_pacjenta">Karta Pacjenta</button>
+                    <button class="doc-tab px-6 py-3 text-sm font-medium text-gray-400 hover:text-white focus:outline-none" data-target="akt_zgonu">Akt Zgonu</button>
+                    <button class="doc-tab px-6 py-3 text-sm font-medium text-gray-400 hover:text-white focus:outline-none" data-target="akt_urodzenia">Akt Urodzenia</button>
+                    <button class="doc-tab px-6 py-3 text-sm font-medium text-gray-400 hover:text-white focus:outline-none" data-target="wynik_badania">Wynik Badania</button>
+                    <button class="doc-tab px-6 py-3 text-sm font-medium text-gray-400 hover:text-white focus:outline-none" data-target="zwolnienie">Zwolnienie Lekarskie</button>
+                </div>
+
+                <div class="p-6 grid grid-cols-1 lg:grid-cols-2 gap-8">
+                    <!-- Formularz -->
+                    <div>
+                        <h3 class="text-lg font-semibold mb-4 text-red-400" id="form-title">Karta Pacjenta</h3>
+                        <div class="space-y-4">
+                            <!-- Wspólne Pola -->
+                            <div>
+                                <label class="block text-xs text-gray-500 mb-1">Imię</label>
+                                <input type="text" id="doc-name" class="w-full bg-gray-700 rounded p-2 text-white border border-gray-600">
+                            </div>
+                            <div>
+                                <label class="block text-xs text-gray-500 mb-1">Nazwisko</label>
+                                <input type="text" id="doc-surname" class="w-full bg-gray-700 rounded p-2 text-white border border-gray-600">
+                            </div>
+
+                            <!-- Karta Pacjenta Pola -->
+                            <div class="doc-field field-karta_pacjenta" style="display:block;">
+                                <label class="block text-xs text-gray-500 mb-1">Stan osoby poszkodowanej</label>
+                                <input type="text" id="doc-kp-stan" class="w-full bg-gray-700 rounded p-2 text-white border border-gray-600">
+                            </div>
+                            <div class="doc-field field-karta_pacjenta" style="display:block;">
+                                <label class="block text-xs text-gray-500 mb-1">Podjęte działania medyczne</label>
+                                <input type="text" id="doc-kp-dzialanie" class="w-full bg-gray-700 rounded p-2 text-white border border-gray-600">
+                            </div>
+                            <div class="doc-field field-karta_pacjenta" style="display:block;">
+                                <label class="block text-xs text-gray-500 mb-1">Transport Karetką</label>
+                                <select id="doc-kp-transport" class="w-full bg-gray-700 rounded p-2 text-white border border-gray-600">
+                                    <option value="Tak">Tak</option>
+                                    <option value="Nie">Nie</option>
+                                </select>
+                            </div>
+
+                            <!-- Akt Zgonu Pola -->
+                            <div class="doc-field field-akt_zgonu">
+                                <label class="block text-xs text-gray-500 mb-1">Wiek</label>
+                                <input type="text" id="doc-az-wiek" class="w-full bg-gray-700 rounded p-2 text-white border border-gray-600">
+                            </div>
+                            <div class="doc-field field-akt_zgonu">
+                                <label class="block text-xs text-gray-500 mb-1">Przyczyna zgonu</label>
+                                <input type="text" id="doc-az-przyczyna" class="w-full bg-gray-700 rounded p-2 text-white border border-gray-600">
+                            </div>
+                            <div class="doc-field field-akt_zgonu">
+                                <label class="block text-xs text-gray-500 mb-1">Obrażenia widoczne na ciele (opcjonalnie)</label>
+                                <input type="text" id="doc-az-obrazenia" class="w-full bg-gray-700 rounded p-2 text-white border border-gray-600">
+                            </div>
+                            <div class="doc-field field-akt_zgonu">
+                                <label class="block text-xs text-gray-500 mb-1">Dzień i godzina zgonu</label>
+                                <input type="text" id="doc-az-data" class="w-full bg-gray-700 rounded p-2 text-white border border-gray-600" placeholder="DD.MM.YYYY HH:MM">
+                            </div>
+                            <div class="doc-field field-akt_zgonu">
+                                <label class="block text-xs text-gray-500 mb-1">Miejsce zgonu</label>
+                                <input type="text" id="doc-az-miejsce" class="w-full bg-gray-700 rounded p-2 text-white border border-gray-600">
+                            </div>
+                            <div class="doc-field field-akt_zgonu">
+                                <label class="block text-xs text-gray-500 mb-1">Zdjęcie osoby zmarłej (Link)</label>
+                                <input type="text" id="doc-az-foto" class="w-full bg-gray-700 rounded p-2 text-white border border-gray-600">
+                            </div>
+
+                            <!-- Akt Urodzenia Pola -->
+                            <div class="doc-field field-akt_urodzenia">
+                                <label class="block text-xs text-gray-500 mb-1">Dane rodziców</label>
+                                <textarea id="doc-au-rodzice" class="w-full bg-gray-700 rounded p-2 text-white border border-gray-600"></textarea>
+                            </div>
+
+                            <!-- Wynik Badania Pola -->
+                            <div class="doc-field field-wynik_badania">
+                                <label class="block text-xs text-gray-500 mb-1">Powód badania</label>
+                                <input type="text" id="doc-wb-powod" class="w-full bg-gray-700 rounded p-2 text-white border border-gray-600">
+                            </div>
+                            <div class="doc-field field-wynik_badania">
+                                <label class="block text-xs text-gray-500 mb-1">Data badania</label>
+                                <input type="text" id="doc-wb-data" class="w-full bg-gray-700 rounded p-2 text-white border border-gray-600">
+                            </div>
+                            <div class="doc-field field-wynik_badania">
+                                <label class="block text-xs text-gray-500 mb-1">Wynik badania</label>
+                                <textarea id="doc-wb-wynik" class="w-full bg-gray-700 rounded p-2 text-white border border-gray-600"></textarea>
+                            </div>
+
+                            <!-- Zwolnienie Lekarskie Pola -->
+                            <div class="doc-field field-zwolnienie">
+                                <label class="block text-xs text-gray-500 mb-1">Okres zwolnienia</label>
+                                <input type="text" id="doc-zl-okres" class="w-full bg-gray-700 rounded p-2 text-white border border-gray-600">
+                            </div>
+                            <div class="doc-field field-zwolnienie">
+                                <label class="block text-xs text-gray-500 mb-1">Powód zwolnienia</label>
+                                <input type="text" id="doc-zl-powod" class="w-full bg-gray-700 rounded p-2 text-white border border-gray-600">
+                            </div>
+                            <div class="doc-field field-zwolnienie">
+                                <label class="block text-xs text-gray-500 mb-1">Ping pracodawcy (jeśli jest)</label>
+                                <input type="text" id="doc-zl-pracodawca" class="w-full bg-gray-700 rounded p-2 text-white border border-gray-600">
+                            </div>
+
+                            <!-- Stopka (Podpis) -->
+                            <div>
+                                <label class="block text-xs text-gray-500 mb-1">Podpis Wystawiającego</label>
+                                <input type="text" id="doc-signature" class="w-full bg-gray-700 rounded p-2 text-white border border-gray-600" value="Jan Kowalski [Ranga 12]">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Wynik -->
+                    <div class="flex flex-col">
+                        <h3 class="text-lg font-semibold mb-4 text-gray-300">Podgląd (Discord Format)</h3>
+                        <div class="relative flex-grow">
+                            <textarea id="doc-output" readonly class="w-full h-full min-h-[300px] bg-gray-950 font-mono text-green-400 p-4 rounded-lg text-sm border border-gray-700 focus:outline-none"></textarea>
+                            <button onclick="copyDoc()" class="absolute top-2 right-2 bg-gray-700 hover:bg-gray-600 text-white text-xs px-3 py-1 rounded border border-gray-600">Kopiuj</button>
+                        </div>
+                        <button onclick="sendDocToDiscord()" class="mt-4 w-full btn-uerd py-3 rounded-lg font-bold shadow-lg flex items-center justify-center">
+                            <i data-lucide="send" class="w-4 h-4 mr-2"></i> Wyślij na Kanał
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- KARTA INWALIDZKA GENERATOR (CANVAS) -->
+        <div id="disability-card" class="section-content">
+            <h2 class="text-2xl font-bold text-white mb-6">Karta Inwalidzka (Wersja Graficzna)</h2>
+            
+            <div class="flex flex-col xl:flex-row gap-8 mb-8">
+                <!-- Formularz -->
+                <div class="bg-gray-800 p-6 rounded-xl border border-gray-700 shadow-lg w-full xl:w-1/3">
+                    <h3 class="text-lg font-semibold mb-4 text-gray-300">Dane Pacjenta</h3>
+                    <div class="space-y-3">
+                        <div class="grid grid-cols-2 gap-2">
+                            <div>
+                                <label class="block text-xs text-gray-500">Imię</label>
+                                <input type="text" id="card-name" class="w-full bg-gray-700 rounded p-2 text-white border border-gray-600" placeholder="Jan">
+                            </div>
+                            <div>
+                                <label class="block text-xs text-gray-500">Nazwisko</label>
+                                <input type="text" id="card-surname" class="w-full bg-gray-700 rounded p-2 text-white border border-gray-600" placeholder="Kowalski">
+                            </div>
+                        </div>
+                        <div>
+                            <label class="block text-xs text-gray-500">Data Urodzenia</label>
+                            <input type="text" id="card-dob" class="w-full bg-gray-700 rounded p-2 text-white border border-gray-600" placeholder="01.01.1990">
+                        </div>
+                        <div>
+                            <label class="block text-xs text-gray-500">Numer Karty / ID</label>
+                            <input type="text" id="card-number" class="w-full bg-gray-700 rounded p-2 text-white border border-gray-600" placeholder="UERD/2025/001">
+                        </div>
+                        <div>
+                            <label class="block text-xs text-gray-500">Stopień Niepełnosprawności</label>
+                            <input type="text" id="card-degree" class="w-full bg-gray-700 rounded p-2 text-white border border-gray-600" placeholder="ZNACZNY">
+                        </div>
+                         <div>
+                            <label class="block text-xs text-gray-500">Data Ważności</label>
+                            <input type="text" id="card-expiry" class="w-full bg-gray-700 rounded p-2 text-white border border-gray-600" placeholder="Bezterminowo">
+                        </div>
+                        <div class="flex gap-2 pt-4">
+                            <button onclick="saveCardToSystem()" class="flex-1 bg-blue-600 hover:bg-blue-700 text-white py-2 rounded text-sm font-bold">Zapisz w Systemie</button>
+                            <button onclick="downloadCard()" class="flex-1 bg-green-600 hover:bg-green-700 text-white py-2 rounded text-sm font-bold">Pobierz PNG</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Podgląd Canvas -->
+                <div class="flex-1 flex justify-center items-start bg-gray-800 p-4 rounded-xl border border-gray-700 overflow-auto">
+                    <canvas id="cardCanvas" class="max-w-full h-auto shadow-2xl rounded-lg"></canvas>
+                </div>
+            </div>
+
+            <!-- Lista Kart -->
+            <div class="bg-gray-800 rounded-xl border border-gray-700 shadow-lg overflow-hidden">
+                <div class="p-4 border-b border-gray-700">
+                    <h3 class="text-lg font-semibold text-gray-200">Wydane Karty Inwalidzkie</h3>
+                </div>
+                <table class="uerd-table">
+                    <thead>
+                        <tr>
+                            <th>Numer Karty</th>
+                            <th>Obywatel</th>
+                            <th>Stopień</th>
+                            <th>Ważność</th>
+                            <th class="text-right">Akcja</th>
+                        </tr>
+                    </thead>
+                    <tbody id="cards-list">
+                        <!-- JS wypełni to -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- ADMIN PANEL (UERD) -->
+        <div id="admin-panel" class="section-content">
+            <h2 class="text-2xl font-bold text-white mb-6">Panel Zarządzania Personelem UERD</h2>
+            <div class="bg-gray-800 rounded-xl border border-gray-700 overflow-hidden">
+                <table class="uerd-table">
+                    <thead>
+                        <tr>
+                            <th>Nazwa</th>
+                            <th>Ranga</th>
+                            <th>Email / Login</th>
+                            <th class="text-right">Akcje</th>
+                        </tr>
+                    </thead>
+                    <tbody id="uerd-users-list">
+                       <!-- JS Wypełni dane -->
+                    </tbody>
+                </table>
+                <div class="p-4 bg-gray-750 border-t border-gray-700 flex justify-end items-center">
+                    <button onclick="openAddUserModal()" class="btn-uerd px-4 py-2 rounded text-sm font-bold">+ Dodaj Pracownika</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- MODAL DODAWANIA PRACOWNIKA -->
+    <div id="add-user-modal" class="modal-backdrop fixed inset-0 z-50 justify-center items-center">
+        <div class="bg-gray-800 rounded-lg shadow-xl w-full max-w-md p-6 border border-gray-700">
+            <div class="flex justify-between items-center mb-4">
+                <h3 class="text-xl font-bold text-white">Dodaj Nowego Pracownika</h3>
+                <button onclick="closeAddUserModal()" class="text-gray-400 hover:text-white"><i data-lucide="x" class="w-6 h-6"></i></button>
+            </div>
+            <form id="add-user-form" class="space-y-4">
+                <div>
+                    <label class="block text-sm font-medium text-gray-400 mb-1">Nazwa Użytkownika</label>
+                    <input type="text" id="new-user-name" class="w-full bg-gray-700 rounded p-2 text-white border border-gray-600 focus:border-red-500 outline-none" required>
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-gray-400 mb-1">Email (Login)</label>
+                    <input type="email" id="new-user-email" class="w-full bg-gray-700 rounded p-2 text-white border border-gray-600 focus:border-red-500 outline-none" required>
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-gray-400 mb-1">Hasło</label>
+                    <input type="password" id="new-user-pass" class="w-full bg-gray-700 rounded p-2 text-white border border-gray-600 focus:border-red-500 outline-none" required>
+                </div>
+                <div class="grid grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-sm font-medium text-gray-400 mb-1">Odznaka/Numer</label>
+                        <input type="text" id="new-user-badge" class="w-full bg-gray-700 rounded p-2 text-white border border-gray-600 focus:border-red-500 outline-none" required>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-400 mb-1">Ranga</label>
+                        <select id="new-user-rank" class="w-full bg-gray-700 rounded p-2 text-white border border-gray-600 focus:border-red-500 outline-none">
+                            <option>Basic Firefighter (Fire + EMS)</option>
+                            <option>Emergency Medical Responder (EMR) (Fire + EMS)</option>
+                            <option>Certified FireMedic (Fire + EMS)</option>
+                            <option>Paramedic Specialist (Fire + EMS)</option>
+                            <option>FireMedic Operator (Fire + EMS)</option>
+                            <option>Firefighter Specialist (Fire + EMS)</option>
+                            <option>Senior FireMedic (Fire + EMS)</option>
+                            <option>Platoon Leader (Fire + EMS)</option>
+                            <option>Division Captain (Fire + EMS)</option>
+                            <option>Deputy Commissioner of Medical & Fire Response</option>
+                            <option>Deputy Commissioner of Fire & Medical Operations</option>
+                            <option>Commissioner of Emergency Services</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="pt-4 flex justify-end gap-2">
+                    <button type="button" onclick="closeAddUserModal()" class="px-4 py-2 text-gray-400 hover:text-white">Anuluj</button>
+                    <button type="submit" class="btn-uerd px-4 py-2 rounded font-bold shadow-lg">Zapisz</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // --- ICONS ---
+        lucide.createIcons();
+
+        // --- AUTH & DATA (NAPRAWIONE) ---
+        let currentUser = null;
+        
+        async function loadUserData() {
+            // 1. Sprawdź oba możliwe tokeny
+            const token = localStorage.getItem('mdt-token')
+            
+            if (!token) {
+                console.warn("Brak tokenu. Przekierowanie do logowania.");
+                window.location.href = 'index.html';
+                return;
+            }
+
+            try {
+                // 2. Pobierz dane z serwera (to zweryfikuje czy token jest ważny)
+                const response = await fetch('/api/user-data', {
+                    headers: { 'Authorization': token }
+                });
+
+                if (!response.ok) {
+                    throw new Error('Nieprawidłowy token lub sesja wygasła');
+                }
+
+                const data = await response.json();
+                currentUser = data.userData;
+
+                // 3. Zapisz poprawne dane lokalnie
+                localStorage.setItem('userData', JSON.stringify(currentUser));
+
+                // 4. Aktualizuj UI
+                document.getElementById('user-display-name').textContent = currentUser.username;
+                document.getElementById('user-display-rank').textContent = `${currentUser.rank} [${currentUser.badge}]`;
+                
+                // Ustaw podpis w generatorze
+                const sigField = document.getElementById('doc-signature');
+                if(sigField) sigField.value = `${currentUser.username} [${currentUser.rank}]`;
+                
+                // Pokaż panel admina jeśli uprawniony
+                const isAdmin = currentUser.isAdmin || (currentUser.rank && (currentUser.rank.includes('12') || currentUser.rank.includes('Zarząd')));
+                if (isAdmin) {
+                    document.getElementById('admin-link-container').style.display = 'block';
+                }
+
+            } catch (error) {
+                console.error("Błąd autoryzacji:", error);
+                // Wyczyść śmieci i wyrzuć
+                localStorage.removeItem('mdt-token');
+                localStorage.removeItem('token');
+                localStorage.removeItem('userData');
+                window.location.href = 'index.html';
+            }
+        }
+        
+        // Inicjalizacja autoryzacji przy starcie
+        loadUserData();
+
+        // --- NAVIGATION ---
+        function showSection(id) {
+            document.querySelectorAll('.section-content').forEach(el => el.classList.remove('active'));
+            document.getElementById(id).classList.add('active');
+            
+            document.querySelectorAll('.sidebar-link').forEach(el => el.classList.remove('active'));
+            event.currentTarget.classList.add('active');
+
+            if (id === 'admin-panel') {
+                loadUERDUsers();
+            }
+        }
+
+        // --- LOGOUT LOGIC ---
+        function logoutUERD() {
+            if(confirm("Czy na pewno chcesz się wylogować?")) {
+                localStorage.removeItem('mdt-token');
+                localStorage.removeItem('token'); // Czyścimy oba
+                localStorage.removeItem('userData');
+                window.location.href = 'index.html';
+            }
+        }
+
+        // --- GENERIC DELETE FUNCTION (Local Tables) ---
+        function deleteRow(btn) {
+            if(confirm("Czy na pewno chcesz usunąć ten wpis?")) {
+                const row = btn.closest('tr');
+                row.remove();
+            }
+        }
+
+        // --- ADMIN PANEL LOGIC (NEW) ---
+        async function loadUERDUsers() {
+            const list = document.getElementById('uerd-users-list');
+            list.innerHTML = '<tr><td colspan="4" class="text-center py-4 text-gray-500">Ładowanie...</td></tr>';
+            
+            try {
+                const token = localStorage.getItem('mdt-token') || localStorage.getItem('token');
+                const response = await fetch('/api/uerd/users', {
+                    headers: { 'Authorization': token }
+                });
+                
+                if (!response.ok) throw new Error('Brak uprawnień');
+                const users = await response.json();
+
+                list.innerHTML = '';
+                if(users.length === 0) {
+                     list.innerHTML = '<tr><td colspan="4" class="text-center py-4 text-gray-500">Brak pracowników</td></tr>';
+                     return;
+                }
+
+                users.forEach(u => {
+                    const isAdmin = (u.rank && (u.rank.includes('12') || u.rank.includes('Zarząd'))) || u.isAdmin;
+                    const badgeClass = isAdmin ? 'bg-red-900 text-red-200' : 'bg-gray-700 text-gray-300';
+                    
+                    const row = document.createElement('tr');
+                    row.innerHTML = `
+                        <td>${u.username} <span class="text-gray-500 text-xs">[${u.badge}]</span></td>
+                        <td><span class="${badgeClass} px-2 py-1 rounded text-xs">${u.rank}</span></td>
+                        <td>${u.email}</td>
+                        <td class="text-right">
+                            <button onclick="deleteUERDUser('${u.id}')" class="text-red-400 hover:text-red-300 p-2"><i data-lucide="trash-2" class="w-4 h-4"></i></button>
+                        </td>
+                    `;
+                    list.appendChild(row);
+                });
+                lucide.createIcons();
+
+            } catch (error) {
+                list.innerHTML = `<tr><td colspan="4" class="text-center py-4 text-red-500">Błąd: ${error.message}</td></tr>`;
+            }
+        }
+
+        function openAddUserModal() {
+            document.getElementById('add-user-modal').classList.add('flex');
+        }
+
+        function closeAddUserModal() {
+            document.getElementById('add-user-modal').classList.remove('flex');
+        }
+
+        document.getElementById('add-user-form').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const token = localStorage.getItem('mdt-token') || localStorage.getItem('token');
+            
+            const newUser = {
+                username: document.getElementById('new-user-name').value,
+                email: document.getElementById('new-user-email').value,
+                password: document.getElementById('new-user-pass').value,
+                badge: document.getElementById('new-user-badge').value,
+                rank: document.getElementById('new-user-rank').value
+            };
+
+            try {
+                const response = await fetch('/api/uerd/users', {
+                    method: 'POST',
+                    headers: { 
+                        'Content-Type': 'application/json',
+                        'Authorization': token 
+                    },
+                    body: JSON.stringify(newUser)
+                });
+
+                const result = await response.json();
+                if(!response.ok) throw new Error(result.message || 'Błąd zapisu');
+
+                alert('Dodano pracownika!');
+                closeAddUserModal();
+                document.getElementById('add-user-form').reset();
+                loadUERDUsers();
+
+            } catch(error) {
+                alert('Błąd: ' + error.message);
+            }
+        });
+
+        async function deleteUERDUser(id) {
+             if(!confirm("Czy na pewno chcesz usunąć tego pracownika?")) return;
+             const token = localStorage.getItem('mdt-token') || localStorage.getItem('token');
+             
+             try {
+                const response = await fetch(`/api/uerd/users/${id}`, {
+                    method: 'DELETE',
+                    headers: { 'Authorization': token }
+                });
+                
+                if(!response.ok) throw new Error('Nie udało się usunąć');
+                loadUERDUsers();
+             } catch (e) {
+                 alert(e.message);
+             }
+        }
+
+        // --- DOCUMENT GENERATOR LOGIC ---
+        let currentDocType = 'karta_pacjenta';
+        
+        document.querySelectorAll('.doc-tab').forEach(tab => {
+            tab.addEventListener('click', () => {
+                document.querySelectorAll('.doc-tab').forEach(t => {
+                    t.classList.remove('bg-gray-700', 'text-white', 'border-b-2', 'border-red-500');
+                    t.classList.add('text-gray-400');
+                });
+                
+                tab.classList.add('bg-gray-700', 'text-white', 'border-b-2', 'border-red-500');
+                tab.classList.remove('text-gray-400');
+                
+                currentDocType = tab.dataset.target;
+                document.querySelectorAll('.doc-field').forEach(f => f.style.display = 'none');
+                document.querySelectorAll(`.field-${currentDocType}`).forEach(f => f.style.display = 'block');
+                
+                document.getElementById('form-title').innerText = tab.innerText;
+                generateDocument();
+            });
+        });
+
+        const docInputs = document.querySelectorAll('#doc-generator input, #doc-generator select, #doc-generator textarea');
+        docInputs.forEach(input => {
+            input.addEventListener('input', generateDocument);
+        });
+
+        function generateDocument() {
+            const name = document.getElementById('doc-name').value;
+            const surname = document.getElementById('doc-surname').value;
+            const signature = document.getElementById('doc-signature').value;
+            let template = '';
+
+            if (currentDocType === 'karta_pacjenta') {
+                const stan = document.getElementById('doc-kp-stan').value;
+                const dzialanie = document.getElementById('doc-kp-dzialanie').value;
+                const transport = document.getElementById('doc-kp-transport').value;
+                template = `# Karta Pacjenta <:UERD:1394667806888296609>\n\n\`\`\`**Imię:** ${name}\n**Nazwisko:** ${surname}\n**Stan osoby poszkodowanej:** ${stan}\n**Podjęte działanie medyczne:** ${dzialanie}\n**Transport Karetka:** ${transport}\n**Podpis lekarza wystawiającego:** ${signature}\`\`\``;
+            } 
+            else if (currentDocType === 'akt_zgonu') {
+                const wiek = document.getElementById('doc-az-wiek').value;
+                const przyczyna = document.getElementById('doc-az-przyczyna').value;
+                const obrazenia = document.getElementById('doc-az-obrazenia').value;
+                const data = document.getElementById('doc-az-data').value;
+                const miejsce = document.getElementById('doc-az-miejsce').value;
+                const foto = document.getElementById('doc-az-foto').value;
+                template = `# Akt Zgonu <:UERD:1394667806888296609>\n\n\`\`\`**Imię:** ${name}\n**Nazwisko:** ${surname}\n**Wiek:** ${wiek}\n**Przyczyna zgonu:** ${przyczyna}\n**Obrażenia widoczne na ciele (opcjonalnie):** ${obrazenia}\n**Dzień i godzina zgonu:** ${data}\n**Miejsce zgonu:** ${miejsce}\n**Zdjęcie osoby zmarłej:** ${foto}\n**Podpis lekarza wystawiającego:** ${signature}\`\`\``;
+            }
+            else if (currentDocType === 'akt_urodzenia') {
+                const rodzice = document.getElementById('doc-au-rodzice').value;
+                template = `# Akt Urodzenia <:UERD:1394667806888296609>\n\n\`\`\`**Imię:** ${name}\n**Nazwisko:** ${surname}\n**Dane rodziców:** ${rodzice}\n**Podpis lekarza wystawiającego:** ${signature}\`\`\``;
+            }
+            else if (currentDocType === 'wynik_badania') {
+                const powod = document.getElementById('doc-wb-powod').value;
+                const data = document.getElementById('doc-wb-data').value;
+                const wynik = document.getElementById('doc-wb-wynik').value;
+                template = `# Wynik Badania <:UERD:1394667806888296609>\n\n\`\`\`**Imię:** ${name}\n**Nazwisko:** ${surname}\n**Powód badania:** ${powod}\n**Data badania:** ${data}\n**Wynik badania:** ${wynik}\`\`\``;
+            }
+            else if (currentDocType === 'zwolnienie') {
+                const okres = document.getElementById('doc-zl-okres').value;
+                const powod = document.getElementById('doc-zl-powod').value;
+                const pracodawca = document.getElementById('doc-zl-pracodawca').value;
+                template = `# Zwolnienia Lekaskie <:UERD:1394667806888296609>\n\n\`\`\`**Imię:** ${name}\n**Nazwisko:** ${surname}\n**Okres zwolnienia:** ${okres}\n**Powód zwolnienia:** ${powod}\n**Podpis osoby wystawiającego:** ${signature}\n**Ping pracodawcy (jeśli jest):** ${pracodawca || 'Brak'}\`\`\``;
+            }
+
+            document.getElementById('doc-output').value = template;
+        }
+
+        function copyDoc() {
+            const output = document.getElementById('doc-output');
+            output.select();
+            document.execCommand('copy');
+            alert('Skopiowano do schowka!');
+        }
+
+        function sendDocToDiscord() {
+            alert("Symulacja: Dokument został wysłany na odpowiedni kanał Discord.");
+        }
+
+
+        // --- INTERVENTION LOGIC ---
+        const typeSelect = document.getElementById('intervention-type');
+        const deathWarning = document.getElementById('death-warning');
+        const interventionList = document.getElementById('intervention-list');
+
+        typeSelect.addEventListener('change', (e) => {
+            if (e.target.value === 'AKT_ZGONU') {
+                deathWarning.classList.remove('hidden');
+            } else {
+                deathWarning.classList.add('hidden');
+            }
+        });
+
+        document.getElementById('intervention-form').addEventListener('submit', (e) => {
+            e.preventDefault();
+            const citizen = document.getElementById('int-citizen').value;
+            const type = typeSelect.value;
+            const reason = document.getElementById('int-reason').value;
+            const date = new Date().toLocaleString('pl-PL', { month: 'numeric', day: 'numeric', hour: '2-digit', minute: '2-digit'});
+
+            const newRow = `
+                <tr>
+                    <td>${date}</td>
+                    <td>${citizen}</td>
+                    <td><span class="px-2 py-1 rounded text-xs ${type === 'AKT_ZGONU' ? 'bg-red-900 text-red-200' : 'bg-blue-900 text-blue-200'}">${type}</span></td>
+                    <td>${reason}</td>
+                    <td class="text-right"><button onclick="deleteRow(this)" class="text-red-400 hover:text-red-300"><i data-lucide="trash-2" class="w-4 h-4"></i></button></td>
+                </tr>
+            `;
+            interventionList.insertAdjacentHTML('afterbegin', newRow);
+            lucide.createIcons();
+
+            if (type === 'AKT_ZGONU') {
+                alert('Symulacja: Wysłano Akt Zgonu. Kartoteka zresetowana.');
+            } else {
+                alert('Zapisano raport.');
+            }
+            document.getElementById('intervention-form').reset();
+            deathWarning.classList.add('hidden');
+        });
+
+        // --- DISABILITY CARD CANVAS & LOGIC ---
+        const canvas = document.getElementById('cardCanvas');
+        const ctx = canvas.getContext('2d');
+        const cardImage = new Image();
+        const cardsList = document.getElementById('cards-list');
+        
+        cardImage.src = 'image_d44362.jpg'; 
+
+        cardImage.onload = () => {
+            canvas.width = cardImage.width;
+            canvas.height = cardImage.height;
+            updateCard();
+        };
+
+        function updateCard() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            ctx.drawImage(cardImage, 0, 0);
+
+            ctx.fillStyle = "black"; 
+            ctx.font = "bold 24px Arial";
+
+            const name = document.getElementById('card-name').value;
+            const surname = document.getElementById('card-surname').value;
+            const dob = document.getElementById('card-dob').value;
+            const number = document.getElementById('card-number').value;
+            const degree = document.getElementById('card-degree').value;
+            const expiry = document.getElementById('card-expiry').value;
+
+            ctx.fillText(name, 250, 180); 
+            ctx.fillText(surname, 250, 220);
+            ctx.fillText(dob, 250, 260);
+            ctx.fillText(number, 250, 300);
+            ctx.fillText(degree, 250, 340);
+            ctx.fillText(expiry, 250, 380);
+        }
+        
+        document.querySelectorAll('#disability-card input').forEach(input => {
+            input.addEventListener('input', updateCard);
+        });
+
+        function downloadCard() {
+            const link = document.createElement('a');
+            link.download = 'karta-inwalidzka.png';
+            link.href = canvas.toDataURL();
+            link.click();
+        }
+
+        function saveCardToSystem() {
+            const name = document.getElementById('card-name').value;
+            const surname = document.getElementById('card-surname').value;
+            const number = document.getElementById('card-number').value;
+            const degree = document.getElementById('card-degree').value;
+            const expiry = document.getElementById('card-expiry').value;
+
+            if(!number) return alert("Wpisz numer karty!");
+
+            const newRow = `
+                <tr>
+                    <td class="font-mono font-bold">${number}</td>
+                    <td>${name} ${surname}</td>
+                    <td>${degree}</td>
+                    <td>${expiry}</td>
+                    <td class="text-right"><button onclick="deleteRow(this)" class="text-red-400 hover:text-red-300"><i data-lucide="trash-2" class="w-4 h-4"></i></button></td>
+                </tr>
+            `;
+            cardsList.insertAdjacentHTML('afterbegin', newRow);
+            lucide.createIcons();
+            alert("Karta zapisana w systemie UERD.");
+        }
+
+        // Initialize (już na końcu skryptu)
+        generateDocument();
+
+    </script>
+</body>
+</html>

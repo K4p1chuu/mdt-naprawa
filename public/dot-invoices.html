@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>WisDOT - Faktury</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        body { background-color: #1a1a1a; color: #f3f4f6; }
+        .input-dark { background-color: #2d2d2d; border: 1px solid #444; color: white; padding: 8px; width: 100%; margin-bottom: 10px; }
+        .paper-sheet { background-color: #e2e8f0; color: #000; padding: 40px; border-radius: 4px; max-width: 800px; margin: 0 auto; box-shadow: 0 0 20px rgba(0,0,0,0.5); }
+    </style>
+</head>
+<body class="p-8">
+    
+    <div class="mb-4">
+        <a href="dot-panel.html" class="text-yellow-500 hover:text-yellow-400">&larr; Powrót do panelu</a>
+    </div>
+
+    <div class="flex gap-8">
+        <!-- Panel boczny: Wyszukiwanie -->
+        <div class="w-1/3 bg-gray-900 p-4 rounded border border-gray-700 h-fit">
+            <h3 class="text-xl mb-4 font-bold text-yellow-500">Dane Klienta</h3>
+            <input type="text" id="citizenSearch" placeholder="Szukaj obywatela..." class="input-dark" oninput="searchCitizen(this.value)">
+            <div id="searchResults" class="max-h-40 overflow-y-auto bg-gray-800 rounded mb-4"></div>
+            
+            <label class="block text-sm text-gray-400">Wybrany Obywatel:</label>
+            <input type="text" id="selectedPayer" class="input-dark" readonly placeholder="Wybierz z listy...">
+        </div>
+
+        <!-- Formularz Faktury -->
+        <div class="w-2/3">
+            <div class="paper-sheet" id="invoicePaper">
+                <div class="text-center mb-8 border-b-2 border-black pb-4">
+                    <h1 class="text-3xl font-bold uppercase tracking-widest">Wezwanie do zapłaty</h1>
+                    <p class="text-sm">WisDOT Invoice System</p>
+                </div>
+
+                <div class="grid grid-cols-2 gap-4 mb-6">
+                    <div>
+                        <p class="font-bold">Osoba wystawiająca fakturę:</p>
+                        <input type="text" id="issuerName" class="bg-transparent border-b border-black w-full outline-none" placeholder="Twoje imię i nazwisko">
+                    </div>
+                    <div>
+                        <p class="font-bold">Osoba skierowana do zapłaty:</p>
+                        <input type="text" id="payerNameDisplay" class="bg-transparent border-b border-black w-full outline-none" readonly>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-2 gap-4 mb-6">
+                    <div>
+                        <p class="font-bold">Data wystawienia:</p>
+                        <input type="date" id="invoiceDate" class="bg-transparent border-b border-black w-full">
+                    </div>
+                    <div>
+                        <p class="font-bold">Termin płatności:</p>
+                        <input type="date" id="paymentDate" class="bg-transparent border-b border-black w-full">
+                    </div>
+                </div>
+
+                <div class="mb-6">
+                    <p class="font-bold">Rodzaj wykonywanej usługi:</p>
+                    <textarea id="serviceType" class="bg-transparent border border-black w-full p-2 h-24 mt-1" placeholder="Opisz usługę..."></textarea>
+                </div>
+
+                <div class="grid grid-cols-2 gap-4 mb-8">
+                    <div>
+                        <p class="font-bold">Kwota do zapłaty ($):</p>
+                        <input type="number" id="amount" class="bg-transparent border-b border-black w-full text-xl font-bold">
+                    </div>
+                    <div>
+                        <p class="font-bold">Status faktury:</p>
+                        <select id="status" class="bg-transparent border-b border-black w-full">
+                            <option value="Nieopłacona">Nieopłacona</option>
+                            <option value="Opłacona">Opłacona</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-2 gap-12 mt-12">
+                    <div class="text-center">
+                        <input type="text" class="w-full border-b border-black text-center font-script text-xl" placeholder="(Podpis wystawiającego)">
+                        <p class="text-xs mt-1">Podpis osoby wystawiającej</p>
+                    </div>
+                    <div class="text-center">
+                        <input type="text" class="w-full border-b border-black text-center font-script text-xl" placeholder="(Podpis odbierającego)">
+                        <p class="text-xs mt-1">Podpis osoby odbierającej</p>
+                    </div>
+                </div>
+
+                <div class="mt-8 text-xs text-center text-red-700 italic border-t border-gray-400 pt-2">
+                    W przypadku nieopłacenia faktury na czas, zostanie skierowana sprawa do sądu, jednocześnie narażając odbiorcę na dodatkowe koszty związane z procesem sądowym.
+                </div>
+            </div>
+
+            <button onclick="saveInvoice()" class="mt-6 w-full bg-yellow-600 hover:bg-yellow-500 text-black font-bold py-3 px-4 rounded shadow-lg transition duration-200">
+                Wystaw i Zapisz Fakturę
+            </button>
+        </div>
+    </div>
+
+    <script>
+        // Ustawienie dzisiejszej daty
+        document.getElementById('invoiceDate').valueAsDate = new Date();
+        
+        function searchCitizen(query) {
+            if(query.length < 2) {
+                document.getElementById('searchResults').innerHTML = '';
+                return;
+            }
+            fetch(`/api/search/citizen?q=${query}`)
+                .then(r => r.json())
+                .then(data => {
+                    const resDiv = document.getElementById('searchResults');
+                    resDiv.innerHTML = '';
+                    data.forEach(c => {
+                        const div = document.createElement('div');
+                        div.className = 'p-2 hover:bg-gray-700 cursor-pointer text-sm border-b border-gray-700';
+                        div.innerText = c.name;
+                        div.onclick = () => {
+                            document.getElementById('selectedPayer').value = c.name;
+                            document.getElementById('payerNameDisplay').value = c.name;
+                            resDiv.innerHTML = '';
+                        };
+                        resDiv.appendChild(div);
+                    });
+                });
+        }
+
+        function saveInvoice() {
+            const data = {
+                issuer: document.getElementById('issuerName').value,
+                payer: document.getElementById('selectedPayer').value,
+                date: document.getElementById('invoiceDate').value,
+                deadline: document.getElementById('paymentDate').value,
+                service: document.getElementById('serviceType').value,
+                amount: document.getElementById('amount').value,
+                status: document.getElementById('status').value
+            };
+
+            if(!data.payer || !data.amount || !data.service) {
+                alert("Wypełnij wszystkie pola!");
+                return;
+            }
+
+            fetch('/api/dot/invoice', {
+                method: 'POST',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify(data)
+            }).then(() => {
+                alert("Faktura zapisana pomyślnie.");
+                window.location.reload();
+            });
+        }
+    </script>
+</body>
+</html>

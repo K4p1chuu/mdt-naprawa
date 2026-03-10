@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Godziny Służby - MDT</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .modal-backdrop { display: none; }
+        .modal-backdrop.flex { display: flex; }
+        .tab-btn.active {
+            background-color: #3b82f6;
+            color: white;
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-gray-200 flex h-screen">
+
+    <aside id="sidebar-container" class="w-64 bg-gray-800 p-4 flex flex-col min-h-screen flex-shrink-0"></aside>
+
+    <main class="flex-1 p-8 overflow-y-auto">
+        <h1 class="text-3xl font-bold text-white mb-6">Godziny Służby</h1>
+
+        <div class="bg-gray-800 p-6 rounded-lg shadow-lg mb-8">
+            <h2 class="text-xl font-semibold text-white mb-4">Twoja Służba</h2>
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                <button id="duty-start-btn" class="bg-green-600 hover:bg-green-700 disabled:bg-gray-500 text-white font-bold py-3 px-6 rounded-lg w-full sm:w-auto transition-colors">Rozpocznij Służbę</button>
+                <button id="duty-end-btn" class="bg-red-600 hover:bg-red-700 disabled:bg-gray-500 text-white font-bold py-3 px-6 rounded-lg w-full sm:w-auto transition-colors" disabled>Zakończ Służbę</button>
+            </div>
+            <div id="duty-timer-container" class="mt-4 text-center hidden">
+                <p class="text-gray-400">Czas na służbie:</p>
+                <p id="duty-timer" class="text-3xl font-mono font-bold text-white">00:00:00</p>
+            </div>
+             <p id="duty-message" class="text-center text-amber-400 h-5 mt-4"></p>
+        </div>
+
+        <div class="mb-8">
+            <div class="flex border-b border-gray-700">
+                <button data-tab="wsp" class="tab-btn active py-2 px-4 font-semibold text-gray-400 hover:bg-gray-700 rounded-t-lg">WSP</button>
+                <button data-tab="ocso" class="tab-btn py-2 px-4 font-semibold text-gray-400 hover:bg-gray-700 rounded-t-lg">OCSO</button>
+            </div>
+        </div>
+
+        <div id="tab-content-wsp" class="tab-content">
+            <div class="grid grid-cols-1 xl:grid-cols-2 gap-8">
+                <div class="bg-gray-800 p-6 rounded-lg shadow-lg">
+                    <div class="flex justify-between items-center mb-4">
+                        <h2 class="text-xl font-semibold text-white">Topka Tygodniowa - WSP</h2>
+                        <button id="payout-btn" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-lg text-sm hidden">Wypłata</button>
+                    </div>
+                    <div class="overflow-auto max-h-96">
+                        <table class="min-w-full text-sm text-left text-gray-300">
+                            <thead class="text-xs text-gray-400 uppercase bg-gray-700 sticky top-0">
+                                <tr>
+                                    <th class="px-4 py-2">Funkcjonariusz</th>
+                                    <th class="px-4 py-2 text-center">Godziny</th>
+                                    <th class="px-4 py-2 text-right">Zarobki</th>
+                                </tr>
+                            </thead>
+                            <tbody id="wsp-temporary-leaderboard"></tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="bg-gray-800 p-6 rounded-lg shadow-lg">
+                    <h2 class="text-xl font-semibold text-white mb-4">Topka Ogólna - WSP</h2>
+                     <div class="overflow-auto max-h-96">
+                        <table class="min-w-full text-sm text-left text-gray-300">
+                            <thead class="text-xs text-gray-400 uppercase bg-gray-700 sticky top-0">
+                                <tr>
+                                    <th class="px-4 py-2">Funkcjonariusz</th>
+                                    <th class="px-4 py-2 text-center">Godziny</th>
+                                    <th class="px-4 py-2 text-right">Zarobki</th>
+                                </tr>
+                            </thead>
+                            <tbody id="wsp-total-leaderboard"></tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="tab-content-ocso" class="tab-content hidden">
+            <div class="grid grid-cols-1 xl:grid-cols-2 gap-8">
+                <div class="bg-gray-800 p-6 rounded-lg shadow-lg">
+                    <h2 class="text-xl font-semibold text-white mb-4">Topka Tygodniowa - OCSO</h2>
+                    <div class="overflow-auto max-h-96">
+                        <table class="min-w-full text-sm text-left text-gray-300">
+                            <thead class="text-xs text-gray-400 uppercase bg-gray-700 sticky top-0">
+                                <tr>
+                                    <th class="px-4 py-2">Funkcjonariusz</th>
+                                    <th class="px-4 py-2 text-center">Godziny</th>
+                                    <th class="px-4 py-2 text-right">Zarobki</th>
+                                </tr>
+                            </thead>
+                            <tbody id="ocso-temporary-leaderboard"></tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="bg-gray-800 p-6 rounded-lg shadow-lg">
+                    <h2 class="text-xl font-semibold text-white mb-4">Topka Ogólna - OCSO</h2>
+                     <div class="overflow-auto max-h-96">
+                        <table class="min-w-full text-sm text-left text-gray-300">
+                            <thead class="text-xs text-gray-400 uppercase bg-gray-700 sticky top-0">
+                                <tr>
+                                    <th class="px-4 py-2">Funkcjonariusz</th>
+                                    <th class="px-4 py-2 text-center">Godziny</th>
+                                    <th class="px-4 py-2 text-right">Zarobki</th>
+                                </tr>
+                            </thead>
+                            <tbody id="ocso-total-leaderboard"></tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <div id="confirm-modal" class="modal-backdrop fixed top-0 left-0 w-full h-full bg-black bg-opacity-70 z-50 justify-center items-center">
+        <div class="bg-gray-800 rounded-lg shadow-xl w-full max-w-md p-6 relative">
+            <h3 id="confirm-modal-title" class="text-lg font-medium leading-6 text-white">Potwierdź akcję</h3>
+            <p id="confirm-modal-text" class="mt-2 text-sm text-gray-400">Czy na pewno chcesz kontynuować?</p>
+            <div class="mt-6 flex justify-end space-x-4">
+                <button type="button" id="confirm-cancel-button" class="bg-gray-600 hover:bg-gray-500 text-white font-bold py-2 px-4 rounded-lg">Anuluj</button>
+                <button type="button" id="confirm-danger-button" class="bg-red-600 hover:bg-red-700 text-white font-bold py-2 px-4 rounded-lg">Potwierdź</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="shared.js"></script>
+    <script>
+    document.addEventListener('DOMContentLoaded', async () => {
+        const userData = await loadSidebarAndUserData('godziny');
+        if (!userData) return;
+
+        const token = localStorage.getItem('mdt-token');
+
+        const startBtn = document.getElementById('duty-start-btn');
+        const endBtn = document.getElementById('duty-end-btn');
+        const timerContainer = document.getElementById('duty-timer-container');
+        const timerEl = document.getElementById('duty-timer');
+        const dutyMessage = document.getElementById('duty-message');
+        const payoutBtn = document.getElementById('payout-btn');
+        const confirmModal = document.getElementById('confirm-modal');
+        const confirmModalText = document.getElementById('confirm-modal-text');
+        const confirmCancelButton = document.getElementById('confirm-cancel-button');
+        const confirmDangerButton = document.getElementById('confirm-danger-button');
+        let actionToConfirm = null;
+
+        const leaderboards = {
+            wsp_temp: document.getElementById('wsp-temporary-leaderboard'),
+            wsp_total: document.getElementById('wsp-total-leaderboard'),
+            ocso_temp: document.getElementById('ocso-temporary-leaderboard'),
+            ocso_total: document.getElementById('ocso-total-leaderboard')
+        };
+
+        let dutyInterval;
+
+        function formatTime(seconds) {
+            const h = Math.floor(seconds / 3600).toString().padStart(2, '0');
+            const m = Math.floor((seconds % 3600) / 60).toString().padStart(2, '0');
+            const s = Math.floor(seconds % 60).toString().padStart(2, '0');
+            return `${h}:${m}:${s}`;
+        }
+
+        function formatHoursToHMS(totalHours) {
+            const totalSeconds = Math.floor((totalHours || 0) * 3600);
+            const h = Math.floor(totalSeconds / 3600).toString().padStart(2, '0');
+            const m = Math.floor((totalSeconds % 3600) / 60).toString().padStart(2, '0');
+            const s = Math.floor(totalSeconds % 60).toString().padStart(2, '0');
+            return `${h}:${m}:${s}`;
+        }
+
+        function checkTimeAndSetDutyButton() {
+            // USUNIĘTA WALIDACJA GODZIN - MOŻNA ROZPOCZĄĆ SŁUŻBĘ O DOWOLNEJ PORZE
+            // Nie blokujemy przycisku, jeśli użytkownik nie jest na służbie
+            if (endBtn.disabled) {
+                startBtn.disabled = false;
+                dutyMessage.textContent = '';
+            }
+        }
+
+        async function updateDutyStatus() {
+            const response = await fetch('/api/duty/status', { headers: { 'Authorization': token } });
+            const data = await response.json();
+
+            if (data.onDuty) {
+                startBtn.disabled = true;
+                endBtn.disabled = false;
+                timerContainer.classList.remove('hidden');
+                dutyMessage.textContent = '';
+                const startTime = new Date(data.startTime);
+
+                if (dutyInterval) clearInterval(dutyInterval);
+                dutyInterval = setInterval(() => {
+                    const now = new Date();
+                    const diffSeconds = Math.floor((now - startTime) / 1000);
+                    timerEl.textContent = formatTime(diffSeconds);
+                }, 1000);
+            } else {
+                endBtn.disabled = true;
+                timerContainer.classList.add('hidden');
+                if (dutyInterval) clearInterval(dutyInterval);
+                timerEl.textContent = '00:00:00';
+                checkTimeAndSetDutyButton();
+            }
+        }
+
+        async function updateLeaderboards() {
+            try {
+                const ranksResponse = await fetch('/api/config/ranks', { headers: { 'Authorization': token }});
+                const RANKS = await ranksResponse.json();
+
+                const response = await fetch('/api/duty/leaderboard', { headers: { 'Authorization': token } });
+                const data = await response.json();
+
+                const sortFunction = (a, b, rankOrder, hourType) => {
+                    const rankIndexA = rankOrder.indexOf(a.rank);
+                    const rankIndexB = rankOrder.indexOf(b.rank);
+
+                    const effectiveRankA = rankIndexA === -1 ? Infinity : rankIndexA;
+                    const effectiveRankB = rankIndexB === -1 ? Infinity : rankIndexB;
+
+                    if (effectiveRankA !== effectiveRankB) {
+                        return effectiveRankA - effectiveRankB;
+                    }
+                    return (b[hourType] || 0) - (a[hourType] || 0);
+                };
+
+                const populateTable = (tbody, users, hourType) => {
+                     tbody.innerHTML = users.map(u => `
+                        <tr class="hover:bg-gray-700">
+                            <td class="px-4 py-2 font-medium">${u.username} #${u.badge}</td>
+                            <td class="px-4 py-2 text-center font-mono">${formatHoursToHMS(u[hourType] || 0)}</td>
+                            <td class="px-4 py-2 text-right font-mono">$${(u[hourType === 'temporaryHours' ? 'temporaryEarnings' : 'totalEarnings'] || 0).toLocaleString('pl-PL')}</td>
+                        </tr>
+                    `).join('') || `<tr><td colspan="3" class="text-center py-4 text-gray-500">Brak danych</td></tr>`;
+                };
+
+                const wspUsers = data.filter(u => u.department === 'WSP');
+                const ocsoUsers = data.filter(u => u.department === 'OCSO');
+
+                populateTable(leaderboards.wsp_temp, [...wspUsers].sort((a, b) => sortFunction(a, b, RANKS.WSP, 'temporaryHours')), 'temporaryHours');
+                populateTable(leaderboards.wsp_total, [...wspUsers].sort((a, b) => sortFunction(a, b, RANKS.WSP, 'totalHours')), 'totalHours');
+                populateTable(leaderboards.ocso_temp, [...ocsoUsers].sort((a, b) => sortFunction(a, b, RANKS.OCSO, 'temporaryHours')), 'temporaryHours');
+                populateTable(leaderboards.ocso_total, [...ocsoUsers].sort((a, b) => sortFunction(a, b, RANKS.OCSO, 'totalHours')), 'totalHours');
+
+            } catch (error) {
+                console.error('Błąd pobierania rankingów:', error);
+            }
+        }
+
+        startBtn.addEventListener('click', async () => {
+            dutyMessage.textContent = "Rozpoczynanie służby...";
+            const response = await fetch('/api/duty/start', { method: 'POST', headers: { 'Authorization': token } });
+            const data = await response.json();
+            if (data.success) {
+                 dutyMessage.textContent = "";
+                 await updateDutyStatus();
+            } else {
+                dutyMessage.textContent = data.message;
+                 setTimeout(() => checkTimeAndSetDutyButton(), 3000);
+            }
+        });
+
+        endBtn.addEventListener('click', async () => {
+            dutyMessage.textContent = "Kończenie służby...";
+            const response = await fetch('/api/duty/end', { method: 'POST', headers: { 'Authorization': token } });
+            const data = await response.json();
+             if (data.success) {
+                dutyMessage.textContent = `Służba zakończona. Zaliczono ${data.hoursCompleted} pełnych godzin, zarobiono $${data.earnings}.`;
+                await updateDutyStatus();
+                await updateLeaderboards();
+                 setTimeout(() => dutyMessage.textContent = "", 5000);
+            } else {
+                dutyMessage.textContent = data.message;
+            }
+        });
+
+        if (userData.isAdmin || (userData.rank === 'Superintendent' && userData.badge === '101')) {
+            payoutBtn.classList.remove('hidden');
+        }
+
+        function showConfirmModal(text, onConfirm) {
+            confirmModalText.textContent = text;
+            actionToConfirm = onConfirm;
+            confirmModal.classList.add('flex');
+        }
+
+        confirmCancelButton.addEventListener('click', () => {
+            confirmModal.classList.remove('flex');
+            actionToConfirm = null;
+        });
+
+        confirmDangerButton.addEventListener('click', () => {
+            if (typeof actionToConfirm === 'function') {
+                actionToConfirm();
+            }
+            confirmModal.classList.remove('flex');
+            actionToConfirm = null;
+        });
+
+        payoutBtn.addEventListener('click', () => {
+            showConfirmModal('Czy na pewno chcesz przetworzyć wypłatę? Zresetuje to topkę tygodniową dla wszystkich funkcjonariuszy.', processPayout);
+        });
+
+        async function processPayout() {
+             const response = await fetch('/api/duty/payout', { method: 'POST', headers: { 'Authorization': token } });
+             const data = await response.json();
+             if (data.success) {
+                 alert('Wypłata została przetworzona.');
+                 await updateLeaderboards();
+             } else {
+                 alert(`Błąd: ${data.message}`);
+             }
+        }
+
+        const tabs = document.querySelectorAll('.tab-btn');
+        const tabContents = document.querySelectorAll('.tab-content');
+
+        tabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                tabs.forEach(item => item.classList.remove('active'));
+                tab.classList.add('active');
+
+                const target = document.querySelector(`#tab-content-${tab.dataset.tab}`);
+                tabContents.forEach(content => content.classList.add('hidden'));
+                target.classList.remove('hidden');
+            });
+        });
+
+        await updateDutyStatus();
+        await updateLeaderboards();
+
+        setInterval(updateLeaderboards, 60 * 1000);
+        setInterval(checkTimeAndSetDutyButton, 30 * 1000); 
+    });
+    </script>
+</body>
+</html>

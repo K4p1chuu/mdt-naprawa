@@ -1,0 +1,62 @@
+[
+  {
+    "type": "Pojazd",
+    "details": {
+      "marka": "Range Rover",
+      "model": "Sport",
+      "typPojazdu": "Suv",
+      "trim": "-",
+      "rejestracja": "FBZ-606",
+      "stanRejestracji": "Brak",
+      "kolor": "Czarny",
+      "cechy": "-",
+      "kierowca": "-",
+      "wlasciciel": "-",
+      "powod": "Ucieczka przed policją"
+    },
+    "id": "7d62f9af-7f30-45a6-b710-664775349345",
+    "author": "Franciszek Trawa",
+    "authorBadge": "140",
+    "createdAt": "2025-12-26T23:06:02.097Z"
+  },
+  {
+    "type": "Pojazd",
+    "details": {
+      "marka": "Wolfsburg",
+      "model": "Charge",
+      "typPojazdu": "Sedan",
+      "trim": "GTS VR6",
+      "rejestracja": "QJF-830 ",
+      "stanRejestracji": "Wisconsin",
+      "kolor": "Żółty",
+      "cechy": "Czarna rejestracja, srebrne felgi",
+      "kierowca": "ksvysmordo (nikt56489) (<@1304212100255842355>)",
+      "wlasciciel": "ksvysmordo (nikt56489) (<@1304212100255842355>)",
+      "powod": "Ucieczka przed policją"
+    },
+    "id": "09dfa706-02aa-478d-a87b-2b82c5760c1b",
+    "author": "Franciszek Trawa",
+    "authorBadge": "140",
+    "createdAt": "2025-12-26T22:38:58.310Z"
+  },
+  {
+    "type": "Pojazd",
+    "details": {
+      "marka": "Celestial",
+      "model": "Type -5",
+      "typPojazdu": " sedan ",
+      "trim": "Surge",
+      "rejestracja": "- (odegral zdejmowanie tablic i nie mial)",
+      "stanRejestracji": "Wisconsin",
+      "kolor": "Czarny",
+      "cechy": "Full black",
+      "kierowca": "-",
+      "wlasciciel": "-",
+      "powod": "głównie ucieczka przed policja, jazda pod prad, spowodywanie zagrozenia dla ruchy."
+    },
+    "id": "28b07493-988a-4d52-89b2-c5ba626e00b4",
+    "author": "Mathew South",
+    "authorBadge": "267",
+    "createdAt": "2025-12-26T22:17:58.905Z"
+  }
+]

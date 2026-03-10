@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>WisDOT - Parking</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>body { background-color: #1a1a1a; color: #f3f4f6; }</style>
+</head>
+<body class="p-8">
+    <a href="dot-panel.html" class="text-yellow-500 hover:text-yellow-400 mb-4 block">&larr; Powrót</a>
+    
+    <div class="max-w-2xl mx-auto bg-gray-900 p-8 rounded border border-gray-700">
+        <h1 class="text-3xl font-bold text-yellow-500 mb-6 text-center">Rejestr Parkingu WisDOT</h1>
+        
+        <div class="mb-4">
+            <label class="block text-gray-400 text-sm mb-1">Właściciel Pojazdu:</label>
+            <div class="flex gap-2">
+                <input type="text" id="ownerSearch" placeholder="Wpisz nazwisko..." class="flex-1 bg-gray-800 border border-gray-600 p-2 rounded text-white">
+                <button onclick="searchOwner()" class="bg-blue-600 px-4 rounded">Szukaj</button>
+            </div>
+            <select id="ownerSelect" class="w-full mt-2 bg-gray-800 border border-gray-600 p-2 rounded text-white hidden">
+                <option value="">-- Wybierz właściciela z listy --</option>
+            </select>
+        </div>
+
+        <div class="grid grid-cols-2 gap-4 mb-4">
+            <div>
+                <label class="block text-gray-400 text-sm mb-1">Model Pojazdu:</label>
+                <input type="text" class="w-full bg-gray-800 border border-gray-600 p-2 rounded text-white">
+            </div>
+            <div>
+                <label class="block text-gray-400 text-sm mb-1">Nr Rejestracyjny:</label>
+                <input type="text" class="w-full bg-gray-800 border border-gray-600 p-2 rounded text-white uppercase font-mono">
+            </div>
+        </div>
+
+        <div class="mb-6">
+            <label class="block text-gray-400 text-sm mb-1">Powód odholowania:</label>
+            <textarea class="w-full bg-gray-800 border border-gray-600 p-2 rounded text-white h-24"></textarea>
+        </div>
+
+        <button class="w-full bg-yellow-600 hover:bg-yellow-500 text-black font-bold py-3 rounded">Zapisz Pojazd na Parkingu</button>
+    </div>
+
+    <script>
+        function searchOwner() {
+            const q = document.getElementById('ownerSearch').value;
+            fetch(`/api/search/citizen?q=${q}`)
+                .then(r => r.json())
+                .then(data => {
+                    const select = document.getElementById('ownerSelect');
+                    select.innerHTML = '<option value="">-- Wybierz właściciela --</option>';
+                    select.classList.remove('hidden');
+                    data.forEach(c => {
+                        const opt = document.createElement('option');
+                        opt.value = c.name;
+                        opt.innerText = c.name;
+                        select.appendChild(opt);
+                    });
+                });
+        }
+    </script>
+</body>
+</html>

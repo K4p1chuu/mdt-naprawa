@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>WisDOT - Panel Główny</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        body { background-color: #1a1a1a; color: #f3f4f6; }
+        .dot-orange { color: #ff9900; }
+        .bg-dot-orange { background-color: #ff9900; }
+        .nav-item:hover { background-color: #333; cursor: pointer; }
+    </style>
+</head>
+<body class="flex h-screen">
+
+    <!-- Sidebar -->
+    <div class="w-64 bg-black border-r border-gray-800 flex flex-col">
+        <div class="p-4 text-center border-b border-gray-800">
+            <h1 class="text-2xl font-bold dot-orange">WisDOT</h1>
+            <p class="text-xs text-gray-500">Department of Transportation</p>
+        </div>
+        <nav class="flex-1 overflow-y-auto">
+            <a href="dot-panel.html" class="block p-4 nav-item border-l-4 border-yellow-500 bg-gray-900"><i class="fas fa-home mr-3"></i>Strona Główna</a>
+            <a href="dot-invoices.html" class="block p-4 nav-item"><i class="fas fa-file-invoice-dollar mr-3"></i>Faktury</a>
+            <a href="dot-reports.html" class="block p-4 nav-item"><i class="fas fa-clipboard-list mr-3"></i>Raporty</a>
+            <a href="dot-parking.html" class="block p-4 nav-item"><i class="fas fa-parking mr-3"></i>Parking</a>
+            <a href="dot-admin.html" class="block p-4 nav-item text-red-400"><i class="fas fa-user-shield mr-3"></i>Panel Zarządu (01)</a>
+            <a href="index.html" class="block p-4 nav-item mt-10"><i class="fas fa-sign-out-alt mr-3"></i>Wyloguj</a>
+        </nav>
+        <div class="p-4 border-t border-gray-800">
+            <div id="userInfo" class="text-sm text-center text-gray-400">
+                Ładowanie...
+            </div>
+        </div>
+    </div>
+
+    <!-- Content -->
+    <div class="flex-1 overflow-y-auto p-8">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            
+            <!-- Cennik -->
+            <div class="bg-gray-900 p-6 rounded-lg shadow-lg border border-gray-800 col-span-2">
+                <h2 class="text-xl font-bold mb-4 dot-orange"><i class="fas fa-tags mr-2"></i>Aktualny Cennik</h2>
+                <div id="priceListDisplay" class="prose prose-invert max-w-none text-gray-300">
+                    Ładowanie cennika...
+                </div>
+            </div>
+
+            <!-- Odznaki -->
+            <div class="bg-gray-900 p-6 rounded-lg shadow-lg border border-gray-800">
+                <h2 class="text-xl font-bold mb-4 dot-orange"><i class="fas fa-medal mr-2"></i>Dostępne Odznaki</h2>
+                <div id="badgesList" class="grid grid-cols-3 gap-4">
+                    <!-- Odznaki generowane przez JS -->
+                </div>
+            </div>
+
+            <!-- Ogłoszenia -->
+            <div class="bg-gray-900 p-6 rounded-lg shadow-lg border border-gray-800">
+                <h2 class="text-xl font-bold mb-4 dot-orange"><i class="fas fa-bullhorn mr-2"></i>Ogłoszenia</h2>
+                <p class="text-gray-400">Brak nowych ogłoszeń dla personelu.</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Pobieranie danych przy starcie
+        fetch('/api/dot/data')
+            .then(r => r.json())
+            .then(data => {
+                document.getElementById('priceListDisplay').innerHTML = data.prices;
+                
+                const badgeContainer = document.getElementById('badgesList');
+                badgeContainer.innerHTML = '';
+                if(data.badges) {
+                    data.badges.forEach(badge => {
+                        const div = document.createElement('div');
+                        div.className = 'text-center p-2 bg-gray-800 rounded';
+                        div.innerHTML = `<img src="${badge.image}" class="w-12 h-12 mx-auto mb-2 object-contain"><p class="text-xs">${badge.name}</p>`;
+                        badgeContainer.appendChild(div);
+                    });
+                }
+            });
+
+        // Mock user info (później podłącz pod system logowania)
+        document.getElementById('userInfo').innerHTML = `Zalogowany: <br><span class="text-white font-bold">Operator WisDOT</span>`;
+    </script>
+</body>
+</html>
